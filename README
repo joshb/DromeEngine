@@ -1,0 +1,81 @@
+Drome Engine 0.4.4 (December 19, 2010)
+
+ABOUT
+-----
+Drome Engine is a 3D game engine that's written in C++ and
+uses OpenGL for graphics rendering. It is available under a
+BSD-style license (see the "COPYING" file that's included with
+Drome Engine for more information).
+
+The latest version of Drome Engine can be found at:
+http://joshbeam.com/software/drome_engine/
+
+FEATURES
+--------
+Some of Drome Engine's features include:
+
+    - GLSL shader support
+    - Particle effects
+    - PNG and PCX image loading
+    - TrueType font loading and rendering
+    - Parsing of simple XML data
+    - Simple physics
+    - Resource management with reference counting that causes
+      unused resources (such as textures) to be removed from
+      memory automatically
+
+PLATFORMS
+---------
+Drome Engine has been developed and tested on the following
+operating systems:
+
+    - Mac OS X
+    - Arch Linux
+
+REQUIREMENTS
+------------
+The following optional tools/libraries are required in order
+to use certain features of Drome Engine:
+
+    - CMake - http://www.cmake.org/
+      Required to build on some platforms.
+
+    - OpenGL or OpenGL ES - http://www.opengl.org/
+      Required for all OpenGL-based graphics functionality.
+
+    - libpng - http://www.libpng.org/
+      Required for loading PNG images on platforms other than
+      Mac OS X and iOS.
+
+    - FreeType2 - http://www.freetype.org/
+      Required for TrueType font loading on platforms other than
+      Mac OS X and iOS.
+
+    - SDL - http://www.libsdl.org/
+      Required for window creation and input handling on platforms
+      other than Mac OS X and iOS.
+
+Drome Engine is built as a set of static libraries by default, so any
+program that statically links the engine should also link (dynamically
+or statically) with the applicable libraries listed above.
+
+COMPILING
+---------
+Drome Engine uses the CMake build system. You can compile it by
+running the following commands from within the root directory of
+the Drome Engine source:
+
+$ mkdir build
+$ cd build
+$ cmake .. && make
+
+When the compilation is complete, a demo application called DromeDemo
+can be found in the demo directory inside the build directory that
+you created.
+
+There is also a shell script called run.sh in the root directory of
+the Drome Engine source that can be executed to automatically build
+Drome Engine and run the DromeDemo application.
+
+Drome Engine also includes Xcode projects for Mac OS X and iOS in
+the xcode_mac and xcode_ios directories, respectively.

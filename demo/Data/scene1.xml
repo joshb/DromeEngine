@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dromescene>
+	<texture filePath="data/texture.png" />
+	<texture filePath="data/normalmap.png" />
+
+	<block position="0 0 -5" bounds="10 10 0.5" normalmapIndex="1" />
+	<block position="0 0 5" bounds="10 10 0.5" normalmapIndex="1" />
+	<block position="-10 0 0" bounds="0.5 10 5" normalmapIndex="1" />
+	<block position="10 0 0" bounds="0.5 10 5" normalmapIndex="1" />
+	<block position="0 -10 0" bounds="10 0.5 5" normalmapIndex="1" />
+	<block position="0 10 0" bounds="10 0.5 5" normalmapIndex="1" />
+
+	<block position="0 0 -4" bounds="5 5 0.5" normalmapIndex="1" />
+	<block position="0 0 -3" bounds="2.5 2.5 0.5" normalmapIndex="1" />
+	<block position="0 0 -2" bounds="1.25 1.25 0.5" normalmapIndex="1" />
+</dromescene>
