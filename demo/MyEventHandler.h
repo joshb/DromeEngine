@@ -23,30 +23,33 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <iostream>
-#include <DromeCore/IOContext_SDL.h>
-#include "MyEventHandler.h"
+#ifndef __MYEVENTHANDLER_H__
+#define __MYEVENTHANDLER_H__
 
-using namespace std;
-using namespace DromeCore;
+#include "MyScene1.h"
 
-int
-main(int argc, char *argv[])
+class MyEventHandler : public DromeCore::EventHandler
 {
-	bool result = false;
+	protected:
+		DromeCore::IOContext *m_io;
+		DromeGfx::GfxDriver *m_driver;
+		DromeCore::ButtonState m_buttonState;
+		DromeGfx::Scene *m_scene;
 
-	try {
-		File::init(argc, (const char **)argv);
+		int m_resolutionIndex;
+		bool m_wireframe, m_grabMouse;
 
-		// create and run MyEventHandler
-		MyEventHandler *handler = new MyEventHandler(new IOContext_SDL());
-		result = handler->run();
+	public:
+		MyEventHandler(DromeCore::IOContext *io);
+		~MyEventHandler();
 
-		// cleanup
-		delete handler;
-	} catch(Exception ex) {
-		cout << "EXCEPTION: " << ex.toString() << endl;
-	}
+		bool run();
+		void cycle(float secondsElapsed);
 
-	return result ? 0 : 1;
-}
+		void windowDimensionsChanged(int width, int height);
+		void mouseMove(int x, int y, int xrel, int yrel);
+		void buttonPress(DromeCore::Button button);
+		void buttonRelease(DromeCore::Button button);
+};
+
+#endif /* __MYEVENTHANDLER_H__ */

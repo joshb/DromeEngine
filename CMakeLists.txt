@@ -13,4 +13,8 @@ set(PROJECT_VERSION "0.4.4")
 
 include_directories(include)
 
+if(APPLE)
+	add_definitions(-DAPPLE)
+endif(APPLE)
+
 subdirs(include src demo doc utils)

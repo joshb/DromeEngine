@@ -24,7 +24,7 @@
  */
 
 #include <iostream>
-#include <DromeCore/IOContext_SDL.h>
+#include <DromeCore/IOContext_Cocoa.h>
 #include "MyEventHandler.h"
 
 using namespace std;
@@ -36,10 +36,10 @@ main(int argc, char *argv[])
 	bool result = false;
 
 	try {
-		File::init(argc, (const char **)argv);
+		DromeCore::File::init(argc, (const char **)argv);
 
 		// create and run MyEventHandler
-		MyEventHandler *handler = new MyEventHandler(new IOContext_SDL());
+		MyEventHandler *handler = new MyEventHandler(new IOContext_Cocoa());
 		result = handler->run();
 
 		// cleanup

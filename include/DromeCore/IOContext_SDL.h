@@ -23,30 +23,50 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <iostream>
-#include <DromeCore/IOContext_SDL.h>
-#include "MyEventHandler.h"
+#ifndef __DROMECORE_IOCONTEXT_SDL_H__
+#define __DROMECORE_IOCONTEXT_SDL_H__
 
-using namespace std;
-using namespace DromeCore;
+#include <SDL/SDL.h>
+#include "IOContext.h"
 
-int
-main(int argc, char *argv[])
-{
-	bool result = false;
+namespace DromeCore {
 
-	try {
-		File::init(argc, (const char **)argv);
+class IOContext_SDL : public IOContext {
+	protected:
+		int m_windowWidth, m_windowHeight;
+		bool m_fullscreen;
+		string m_windowTitle;
 
-		// create and run MyEventHandler
-		MyEventHandler *handler = new MyEventHandler(new IOContext_SDL());
-		result = handler->run();
+		bool m_initialized;
+		bool m_running;
+		bool m_grabInput;
 
-		// cleanup
-		delete handler;
-	} catch(Exception ex) {
-		cout << "EXCEPTION: " << ex.toString() << endl;
-	}
+	protected:
+		SDL_Surface *setVideoMode();
 
-	return result ? 0 : 1;
-}
+	public:
+		IOContext_SDL();
+
+		int getWindowWidth() const;
+		int getWindowHeight() const;
+		void setWindowDimensions(int width, int height);
+		bool getFullScreen() const;
+		void setFullScreen(bool value);
+		string getWindowTitle() const;
+		void setWindowTitle(const string &value);
+
+		bool init();
+		void shutdown();
+		bool run();
+		void quit();
+
+		void *getProcAddress(const char *functionName) const;
+		void swapBuffers();
+		void checkInput();
+		void grabMousePointer();
+		void releaseMousePointer();
+};
+
+} // namespace DromeCore
+
+#endif /* __DROMECORE_IOCONTEXT_SDL_H__ */

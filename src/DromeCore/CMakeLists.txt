@@ -24,7 +24,7 @@ if(APPLE)
 
 	# build with Cocoa support
 	set(SRCS ${SRCS} File_Apple.mm IOContext_Cocoa.mm)
-	add_definitions(-DAPPLE -DCOCOA_FOUND)
+	add_definitions(-DCOCOA_FOUND)
 else(APPLE)
 	find_package(SDL)
 	if(SDL_FOUND)

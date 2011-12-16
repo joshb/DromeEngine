@@ -1,4 +1,9 @@
-set(SRCS Block.cpp MyScene1.cpp main.cpp)
+set(SRCS Block.cpp MyEventHandler.cpp MyScene1.cpp)
+if(APPLE)
+	set(SRCS ${SRCS} main.mm)
+else(APPLE)
+	set(SRCS ${SRCS} main.cpp)
+endif(APPLE)
 add_executable(DromeDemo ${SRCS})
 
 target_link_libraries(

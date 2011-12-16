@@ -24,48 +24,11 @@
  */
 
 #include <cstdlib>
-#include <SDL/SDL.h>
-#include <DromeCore/IOContext.h>
+#include <DromeCore/IOContext_SDL.h>
 
 using namespace std;
 
 namespace DromeCore {
-
-class IOContext_SDL : public IOContext {
-	protected:
-		int m_windowWidth, m_windowHeight;
-		bool m_fullscreen;
-		string m_windowTitle;
-
-		bool m_initialized;
-		bool m_running;
-		bool m_grabInput;
-
-	protected:
-		SDL_Surface *setVideoMode();
-
-	public:
-		IOContext_SDL();
-
-		int getWindowWidth() const;
-		int getWindowHeight() const;
-		void setWindowDimensions(int width, int height);
-		bool getFullScreen() const;
-		void setFullScreen(bool value);
-		string getWindowTitle() const;
-		void setWindowTitle(const string &value);
-
-		bool init();
-		void shutdown();
-		bool run();
-		void quit();
-
-		void *getProcAddress(const char *functionName) const;
-		void swapBuffers();
-		void checkInput();
-		void grabMousePointer();
-		void releaseMousePointer();
-};
 
 IOContext_SDL::IOContext_SDL()
 {
@@ -472,12 +435,6 @@ IOContext_SDL::releaseMousePointer()
 	SDL_ShowCursor(SDL_ENABLE);
 	SDL_WM_GrabInput(SDL_GRAB_OFF);
 	m_grabInput = false;
-}
-
-IOContext *
-io_sdl_new_context()
-{
-	return new IOContext_SDL;
 }
 
 } // namespace DromeCore

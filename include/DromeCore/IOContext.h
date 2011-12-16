@@ -137,15 +137,6 @@ class IOContext {
 		 * Makes the mouse pointer non-windowed, so that it can be moved outside of the rendering window.
 		 */
 		virtual void releaseMousePointer() = 0;
-
-	// static functions
-		/**
-		 * Creates a new IOContext.
-		 *
-		 * @param type Type of IOContext to create. Valid types include "null", "cocoa", and "sdl".
-		 * @return Pointer to new IOContext.
-		 */
-		static IOContext *create(const char *type = NULL);
 };
 
 } // namespace DromeCore

@@ -118,26 +118,4 @@ IOContext::cycle()
 	m_handler->cycle(secondsElapsed);
 }
 
-extern IOContext *io_cocoa_new_context();
-extern IOContext *io_sdl_new_context();
-
-IOContext *
-IOContext::create(const char *type)
-{
-#ifdef APPLE
-	if(!type)
-		type = "cocoa";
-	if(strcmp(type, "cocoa") == 0)
-		return io_cocoa_new_context();
-#endif /* APPLE */
-#ifdef SDL_FOUND
-	if(!type)
-		type = "sdl";
-	if(strcmp(type, "sdl") == 0)
-		return io_sdl_new_context();
-#endif /* SDL_FOUND */
-
-	return NULL;
-}
-
 } // namespace DromeCore
