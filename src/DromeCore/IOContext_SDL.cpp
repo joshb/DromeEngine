@@ -164,17 +164,11 @@ IOContext_SDL::shutdown()
 	fprintf(stderr, "SDL shutdown\n");
 }
 
-bool
-IOContext_SDL::run()
+void
+IOContext_SDL::cycle()
 {
-	m_running = true;
-
-	while(m_running) {
-		checkInput();
-		cycle();
-	}
-
-	return true;
+	checkInput();
+	IOContext::cycle();
 }
 
 void

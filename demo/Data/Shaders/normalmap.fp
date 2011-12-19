@@ -4,13 +4,13 @@ const float MAX_DIST_SQUARED = MAX_DIST * MAX_DIST;
 
 uniform sampler2D texture;
 uniform sampler2D normalmap;
-uniform sampler2DShadow shadowmap[3];
+//uniform sampler2DShadow shadowmap[3];
 uniform vec3 lightColor[3];
 
 varying vec3 lightDirection[3];
 varying vec3 lightPositionOut[3];
 varying vec3 lightHalfAngle[3];
-varying vec4 shadowCoords[3];
+//varying vec4 shadowCoords[3];
 
 void
 main()
@@ -27,6 +27,7 @@ main()
 
 	// loop through each light
 	for(int i = 0; i < 3; ++i) {
+		/*
 		// get fragment/shadow map depth
 		float fragmentDepth = shadowCoords[i].z / shadowCoords[i].w;
 
@@ -41,6 +42,7 @@ main()
 			shadowDepth = shadow2DProj(shadowmap[2], shadowCoords[2]).z;
 
 		if(shadowCoords[i].w < 0.0 || shadowDepth > fragmentDepth) {
+		*/
 			float dist = dot(lightPositionOut[i], lightPositionOut[i]);
 			if(dist > MAX_DIST_SQUARED)
 				dist = MAX_DIST_SQUARED;
@@ -53,7 +55,9 @@ main()
 			// specular
 			float s = pow(clamp(dot(fragmentNormal, normalize(lightHalfAngle[i])), 0.0, 1.0), 8.0) * (1.0 - dist);
 			specular += (color + 0.75) * s;
+		/*
 		}
+		*/
 	}
 
 	vec4 sample = texture2D(texture, gl_TexCoord[0].xy);

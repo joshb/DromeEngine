@@ -41,8 +41,6 @@ class IOContext {
 		EventHandler *m_handler;
 		int m_ticks;
 
-		void cycle();
-
 	public:
 		IOContext();
 		virtual ~IOContext();
@@ -108,12 +106,12 @@ class IOContext {
 		 */
 		virtual bool init() = 0;
 
+		virtual void cycle();
+
 		/**
 		 * Performs platform-specific IO shutdown, such as closing the rendering window.
 		 */
 		virtual void shutdown() = 0;
-
-		virtual bool run() = 0;
 
 		/**
 		 * Calls the platform-specific function to get the address of the OpenGL function with the given name.

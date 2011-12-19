@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2011 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,76 +30,14 @@
 #include "IOContext.h"
 
 namespace DromeCore {
-	class IOContext_Cocoa;
-} // namespace DromeCore
-
-/*
- * DromeAppDelegate interface
- */
-@interface DromeAppDelegate : NSObject <NSApplicationDelegate>
-{
-	DromeCore::IOContext_Cocoa *io;
-}
-
-@property DromeCore::IOContext_Cocoa *io;
-
-- (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication;
-- (NSApplicationTerminateReply) applicationShouldTerminate:(NSApplication *)app;
-@end
-
-/*
- * DromeWindowDelegate interface
- */
-@interface DromeWindowDelegate : NSObject <NSWindowDelegate>
-{
-	DromeCore::IOContext_Cocoa *io;
-}
-
-@property DromeCore::IOContext_Cocoa *io;
-
-- (BOOL) windowShouldClose:(id)sender;
-@end
-
-/*
- * DromeGLView interface
- */
-@interface DromeGLView : NSOpenGLView
-{
-	DromeCore::IOContext_Cocoa *io;
-}
-
-@property DromeCore::IOContext_Cocoa *io;
-
-- (BOOL) acceptsFirstResponder;
-
-- (void) timerFireMethod:(NSTimer *)theTimer;
-- (void) keyDown:(NSEvent *)theEvent;
-- (void) keyUp:(NSEvent *)theEvent;
-- (void) flagsChanged:(NSEvent *)theEvent;
-- (void) mouseDown:(NSEvent *)theEvent;
-- (void) mouseUp:(NSEvent *)theEvent;
-- (void) rightMouseDown:(NSEvent *)theEvent;
-- (void) rightMouseUp:(NSEvent *)theEvent;
-- (void) otherMouseDown:(NSEvent *)theEvent;
-- (void) otherMouseUp:(NSEvent *)theEvent;
-- (void) scrollWheel:(NSEvent *)theEvent;
-- (void) mouseDragged:(NSEvent *)theEvent;
-- (void) rightMouseDragged:(NSEvent *)theEvent;
-- (void) otherMouseDragged:(NSEvent *)theEvent;
-- (void) mouseMoved:(NSEvent *)theEvent;
-@end
-
-namespace DromeCore {
 
 /*
  * IOContext_Cocoa
  */
 class IOContext_Cocoa : public IOContext {
 	protected:
-		NSAutoreleasePool *m_pool;
 		NSWindow *m_window;
-		DromeGLView *m_view;
-		NSTimer *m_timer;
+		NSOpenGLView *m_view;
 
 		int m_windowWidth, m_windowHeight;
 		bool m_fullscreen;
@@ -108,7 +46,7 @@ class IOContext_Cocoa : public IOContext {
 		bool m_grabMousePointer;
 
 	public:
-		IOContext_Cocoa();
+		IOContext_Cocoa(NSWindow *window, NSOpenGLView *view);
 		~IOContext_Cocoa();
 
 		int getWindowWidth() const;
@@ -128,15 +66,40 @@ class IOContext_Cocoa : public IOContext {
 		void grabMousePointer();
 		void releaseMousePointer();
 
-		void cocoaTimerFireMethod(NSTimer *theTimer);
 		void cocoaKeyDown(NSEvent *theEvent);
 		void cocoaKeyUp(NSEvent *theEvent);
 		void cocoaMouseDown(NSEvent *theEvent);
 		void cocoaMouseUp(NSEvent *theEvent);
 		void cocoaScrollWheel(NSEvent *theEvent);
 		void cocoaMouseMoved(NSEvent *theEvent);
+		void cocoaReshape();
 };
 
 } // namespace DromeCore
+
+/*
+ * DromeNSWindow interface
+ */
+@interface DromeNSWindow : NSWindow
+{
+	DromeCore::IOContext_Cocoa *io;
+}
+
+@property DromeCore::IOContext_Cocoa *io;
+
+@end
+
+/*
+ * DromeNSOpenGLView interface
+ */
+@interface DromeNSOpenGLView : NSOpenGLView
+{
+	DromeCore::IOContext_Cocoa *io;
+	NSTrackingArea *trackingArea;
+}
+
+@property DromeCore::IOContext_Cocoa *io;
+
+@end
 
 #endif /* __DROMECORE_IOCONTEXT_COCOA_H__ */

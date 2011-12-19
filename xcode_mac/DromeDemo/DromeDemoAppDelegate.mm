@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2011 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,50 +23,62 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMECORE_IOCONTEXT_SDL_H__
-#define __DROMECORE_IOCONTEXT_SDL_H__
+#import "DromeDemoAppDelegate.h"
 
-#include <SDL/SDL.h>
-#include "IOContext.h"
+using namespace DromeCore;
 
-namespace DromeCore {
+@implementation DromeDemoAppDelegate
 
-class IOContext_SDL : public IOContext {
-	protected:
-		int m_windowWidth, m_windowHeight;
-		bool m_fullscreen;
-		string m_windowTitle;
+@synthesize window;
+@synthesize view;
 
-		bool m_initialized;
-		bool m_running;
-		bool m_grabInput;
+- (id)init
+{
+	if(self = [super init]) {
+		io = NULL;
+		handler = NULL;
+	}
+	
+	return self;
+}
 
-	protected:
-		SDL_Surface *setVideoMode();
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+	// create IOContext and MyEventHandler instances
+	try {
+		io = new IOContext_Cocoa(window, view);
+		handler = new MyEventHandler(io);
+	} catch(Exception ex) {
+		printf("EXCEPTION: %s\n", ex.toString().c_str());
+		[window close];
+		return;
+	}
+	
+	// create timer to render the scene at 60fps
+    timer = [NSTimer timerWithTimeInterval: (1.0f / 60.0f)
+		target: self
+		selector: @selector(timerFireMethod:)
+		userInfo: nil
+		repeats: YES];
+	[[NSRunLoop currentRunLoop] addTimer: timer forMode: NSDefaultRunLoopMode];
+}
 
-	public:
-		IOContext_SDL();
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+	if(handler != NULL)
+		delete handler;
+	if(io != NULL)
+		delete io;
+}
 
-		int getWindowWidth() const;
-		int getWindowHeight() const;
-		void setWindowDimensions(int width, int height);
-		bool getFullScreen() const;
-		void setFullScreen(bool value);
-		string getWindowTitle() const;
-		void setWindowTitle(const string &value);
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+	return YES;
+}
 
-		bool init();
-		void cycle();
-		void shutdown();
-		void quit();
+- (void)timerFireMethod:(NSTimer *)theTimer
+{
+	io->cycle();
+}
 
-		void *getProcAddress(const char *functionName) const;
-		void swapBuffers();
-		void checkInput();
-		void grabMousePointer();
-		void releaseMousePointer();
-};
-
-} // namespace DromeCore
-
-#endif /* __DROMECORE_IOCONTEXT_SDL_H__ */
+@end

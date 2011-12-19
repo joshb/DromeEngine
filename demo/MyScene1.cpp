@@ -192,6 +192,7 @@ MyScene1::render(GfxDriver *driver)
 		lightPosition[i] = Vector3(cosf(r), sinf(r)) * 7.5f;
 		lightPosition[i].z = 0.0f;
 
+/*
 		// create light camera
 		Camera lightCamera;
 		lightCamera.setPosition(lightPosition[i]);
@@ -212,6 +213,7 @@ MyScene1::render(GfxDriver *driver)
 			driver->setModelViewMatrix(Matrix4().translate(m_sceneObjects[j]->getPosition()) * lightCamera.getMatrix());
 			m_sceneObjects[j]->render(driver);
 		}
+*/
 	}
 
 	// render scene to the default framebuffer
@@ -223,13 +225,13 @@ MyScene1::render(GfxDriver *driver)
 	driver->bindShaderProgram(m_shaderProgram);
 	m_shaderProgram->setUniform("texture", 0);
 	m_shaderProgram->setUniform("normalmap", 1);
-	m_shaderProgram->setUniform("shadowmap[0]", 2);
-	m_shaderProgram->setUniform("shadowmap[1]", 3);
-	m_shaderProgram->setUniform("shadowmap[2]", 4);
+//	m_shaderProgram->setUniform("shadowmap[0]", 2);
+//	m_shaderProgram->setUniform("shadowmap[1]", 3);
+//	m_shaderProgram->setUniform("shadowmap[2]", 4);
 	m_shaderProgram->setUniform("cameraPosition", m_camera.getPosition());
 	m_shaderProgram->setUniform("lightColor", m_lightColor, 3);
 	m_shaderProgram->setUniform("lightPosition", lightPosition, 3);
-	m_shaderProgram->setUniform("shadowMatrix", shadowMatrix, 3);
+//	m_shaderProgram->setUniform("shadowMatrix", shadowMatrix, 3);
 
 	// render scene objects from player's perspective
 	driver->setModelViewMatrix(m_camera.getMatrix());

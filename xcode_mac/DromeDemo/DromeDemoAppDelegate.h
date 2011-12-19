@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2011 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,30 +23,19 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <iostream>
-#include <DromeCore/IOContext_Cocoa.h>
-#include "MyEventHandler.h"
+#import <Cocoa/Cocoa.h>
+#import <DromeCore/IOContext_Cocoa.h>
+#import "../../demo/MyEventHandler.h"
 
-using namespace std;
-using namespace DromeCore;
-
-int
-main(int argc, char *argv[])
-{
-	bool result = false;
-
-	try {
-		DromeCore::File::init(argc, (const char **)argv);
-
-		// create and run MyEventHandler
-		MyEventHandler *handler = new MyEventHandler(new IOContext_Cocoa());
-		result = handler->run();
-
-		// cleanup
-		delete handler;
-	} catch(Exception ex) {
-		cout << "EXCEPTION: " << ex.toString() << endl;
-	}
-
-	return result ? 0 : 1;
+@interface DromeDemoAppDelegate : NSObject <NSApplicationDelegate> {
+	NSWindow *window;
+	NSOpenGLView *view;
+	DromeCore::IOContext_Cocoa *io;
+	MyEventHandler *handler;
+	NSTimer *timer;
 }
+
+@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSOpenGLView *view;
+
+@end

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2011 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,50 +23,12 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMECORE_IOCONTEXT_SDL_H__
-#define __DROMECORE_IOCONTEXT_SDL_H__
+#import <Cocoa/Cocoa.h>
+#import <DromeCore/File.h>
 
-#include <SDL/SDL.h>
-#include "IOContext.h"
-
-namespace DromeCore {
-
-class IOContext_SDL : public IOContext {
-	protected:
-		int m_windowWidth, m_windowHeight;
-		bool m_fullscreen;
-		string m_windowTitle;
-
-		bool m_initialized;
-		bool m_running;
-		bool m_grabInput;
-
-	protected:
-		SDL_Surface *setVideoMode();
-
-	public:
-		IOContext_SDL();
-
-		int getWindowWidth() const;
-		int getWindowHeight() const;
-		void setWindowDimensions(int width, int height);
-		bool getFullScreen() const;
-		void setFullScreen(bool value);
-		string getWindowTitle() const;
-		void setWindowTitle(const string &value);
-
-		bool init();
-		void cycle();
-		void shutdown();
-		void quit();
-
-		void *getProcAddress(const char *functionName) const;
-		void swapBuffers();
-		void checkInput();
-		void grabMousePointer();
-		void releaseMousePointer();
-};
-
-} // namespace DromeCore
-
-#endif /* __DROMECORE_IOCONTEXT_SDL_H__ */
+int main(int argc, char *argv[])
+{
+	DromeCore::File::init(argc, (const char **)argv);
+	
+	return NSApplicationMain(argc, (const char **)argv);
+}

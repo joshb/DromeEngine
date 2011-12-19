@@ -44,34 +44,28 @@ MyEventHandler::MyEventHandler(IOContext *io)
 	m_resolutionIndex = 0;
 	m_wireframe = false;
 	m_grabMouse = false;
-
+	
 	// create and initialize IOContext
 	m_io = io;
-	m_io->setEventHandler(this);
 	m_io->setWindowDimensions(RESOLUTIONS[m_resolutionIndex][0], RESOLUTIONS[m_resolutionIndex][1]);
 	m_io->setWindowTitle("Drome Engine Demo");
 	m_io->init();
-
+	
 	// create graphics driver
 	m_driver = GfxDriver::create();
 	m_driver->setViewportDimensions(m_io->getWindowWidth(), m_io->getWindowHeight());
 	m_driver->setProjectionMatrix(m_io->getWindowWidth(), m_io->getWindowHeight());
-
+	
 	// create scene
 	m_scene = new MyScene1(m_io, m_driver);
+	
+	m_io->setEventHandler(this);
 }
 
 MyEventHandler::~MyEventHandler()
 {
 	delete m_scene;
 	delete m_driver;
-	delete m_io;
-}
-
-bool
-MyEventHandler::run()
-{
-	return m_io->run();
 }
 
 void

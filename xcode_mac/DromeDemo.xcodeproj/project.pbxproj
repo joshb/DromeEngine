@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D1C1D63149C61A800D18BAB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D62149C61A800D18BAB /* Cocoa.framework */; };
+		0D1C1D6D149C61A800D18BAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C1D6B149C61A800D18BAB /* InfoPlist.strings */; };
+		0D1C1D6F149C61A800D18BAB /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D6E149C61A800D18BAB /* main.mm */; };
+		0D1C1D76149C61A800D18BAB /* DromeDemoAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */; };
+		0D1C1D79149C61A900D18BAB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C1D77149C61A900D18BAB /* MainMenu.xib */; };
+		0D1C1D8E149C6B2B00D18BAB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D8D149C6B2B00D18BAB /* OpenGL.framework */; };
+		0D1C1D95149C6F1300D18BAB /* libDromeGfx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D56149C615700D18BAB /* libDromeGfx.a */; };
+		0D1C1D96149C6F1300D18BAB /* libDromeGui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D58149C615700D18BAB /* libDromeGui.a */; };
+		0D1C1D97149C6F1300D18BAB /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D52149C615700D18BAB /* libDromeMath.a */; };
+		0D1C1DD4149C74E800D18BAB /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D54149C615700D18BAB /* libDromeCore.a */; };
+		0D1C1DD6149C750200D18BAB /* IOContext_Cocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DD5149C750200D18BAB /* IOContext_Cocoa.mm */; };
+		0D1C1DDA149C75B300D18BAB /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DD8149C75B300D18BAB /* Block.cpp */; };
+		0D1C1DF8149C75D500D18BAB /* MyEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */; };
+		0D1C1DF9149C75D500D18BAB /* MyScene1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DF6149C75D500D18BAB /* MyScene1.cpp */; };
+		0D57C080149FEE8A00D9DADB /* drome.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C07F149FEE8A00D9DADB /* drome.icns */; };
+		0D7AFBFF149D2DC900280FCF /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 0D7AFBFE149D2DC900280FCF /* Data */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D1C1D51149C615700D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D1C1C40149C5F5200D18BAB;
+			remoteInfo = DromeMath;
+		};
+		0D1C1D53149C615700D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D1C1C5D149C5F9F00D18BAB;
+			remoteInfo = DromeCore;
+		};
+		0D1C1D55149C615700D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D1C1C9D149C5FFD00D18BAB;
+			remoteInfo = DromeGfx;
+		};
+		0D1C1D57149C615700D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D1C1CF5149C609A00D18BAB;
+			remoteInfo = DromeGui;
+		};
+		0D1C1D7D149C624400D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D1C1C3F149C5F5200D18BAB;
+			remoteInfo = DromeMath;
+		};
+		0D1C1D81149C624400D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D1C1C9C149C5FFD00D18BAB;
+			remoteInfo = DromeGfx;
+		};
+		0D1C1D83149C624400D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D1C1CF4149C609A00D18BAB;
+			remoteInfo = DromeGui;
+		};
+		0D1C1DD2149C74E100D18BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D1C1DC1149C74B700D18BAB;
+			remoteInfo = DromeCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DromeEngine.xcodeproj; sourceTree = "<group>"; };
+		0D1C1D5E149C61A800D18BAB /* DromeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DromeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D1C1D62149C61A800D18BAB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D1C1D65149C61A800D18BAB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0D1C1D66149C61A800D18BAB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0D1C1D67149C61A800D18BAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0D1C1D6A149C61A800D18BAB /* DromeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DromeDemo-Info.plist"; sourceTree = "<group>"; };
+		0D1C1D6C149C61A800D18BAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D1C1D6E149C61A800D18BAB /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		0D1C1D70149C61A800D18BAB /* DromeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DromeDemo-Prefix.pch"; sourceTree = "<group>"; };
+		0D1C1D74149C61A800D18BAB /* DromeDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DromeDemoAppDelegate.h; sourceTree = "<group>"; };
+		0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DromeDemoAppDelegate.mm; sourceTree = "<group>"; };
+		0D1C1D78149C61A900D18BAB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0D1C1D8D149C6B2B00D18BAB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
+		0D1C1DD5149C750200D18BAB /* IOContext_Cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = IOContext_Cocoa.mm; path = ../../src/DromeCore/IOContext_Cocoa.mm; sourceTree = "<group>"; };
+		0D1C1DD8149C75B300D18BAB /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Block.cpp; path = ../demo/Block.cpp; sourceTree = "<group>"; };
+		0D1C1DD9149C75B300D18BAB /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = ../demo/Block.h; sourceTree = "<group>"; };
+		0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyEventHandler.cpp; path = ../demo/MyEventHandler.cpp; sourceTree = "<group>"; };
+		0D1C1DF5149C75D500D18BAB /* MyEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEventHandler.h; path = ../demo/MyEventHandler.h; sourceTree = "<group>"; };
+		0D1C1DF6149C75D500D18BAB /* MyScene1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyScene1.cpp; path = ../demo/MyScene1.cpp; sourceTree = "<group>"; };
+		0D1C1DF7149C75D500D18BAB /* MyScene1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScene1.h; path = ../demo/MyScene1.h; sourceTree = "<group>"; };
+		0D57C07F149FEE8A00D9DADB /* drome.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = drome.icns; sourceTree = SOURCE_ROOT; };
+		0D7AFBFE149D2DC900280FCF /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../demo/Data; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D1C1D5B149C61A800D18BAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1C1DD4149C74E800D18BAB /* libDromeCore.a in Frameworks */,
+				0D1C1D95149C6F1300D18BAB /* libDromeGfx.a in Frameworks */,
+				0D1C1D96149C6F1300D18BAB /* libDromeGui.a in Frameworks */,
+				0D1C1D97149C6F1300D18BAB /* libDromeMath.a in Frameworks */,
+				0D1C1D8E149C6B2B00D18BAB /* OpenGL.framework in Frameworks */,
+				0D1C1D63149C61A800D18BAB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D1C1D3B149C613900D18BAB = {
+			isa = PBXGroup;
+			children = (
+				0D1C1DD7149C757800D18BAB /* demo */,
+				0D1C1D8D149C6B2B00D18BAB /* OpenGL.framework */,
+				0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */,
+				0D1C1D68149C61A800D18BAB /* DromeDemo */,
+				0D1C1D61149C61A800D18BAB /* Frameworks */,
+				0D1C1D5F149C61A800D18BAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D1C1D48149C615700D18BAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D1C1D52149C615700D18BAB /* libDromeMath.a */,
+				0D1C1D56149C615700D18BAB /* libDromeGfx.a */,
+				0D1C1D58149C615700D18BAB /* libDromeGui.a */,
+				0D1C1D54149C615700D18BAB /* libDromeCore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D1C1D5F149C61A800D18BAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D1C1D5E149C61A800D18BAB /* DromeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D1C1D61149C61A800D18BAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D1C1D62149C61A800D18BAB /* Cocoa.framework */,
+				0D1C1D64149C61A800D18BAB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D1C1D64149C61A800D18BAB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D1C1D65149C61A800D18BAB /* AppKit.framework */,
+				0D1C1D66149C61A800D18BAB /* CoreData.framework */,
+				0D1C1D67149C61A800D18BAB /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0D1C1D68149C61A800D18BAB /* DromeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0D1C1DD5149C750200D18BAB /* IOContext_Cocoa.mm */,
+				0D1C1D74149C61A800D18BAB /* DromeDemoAppDelegate.h */,
+				0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */,
+				0D1C1D77149C61A900D18BAB /* MainMenu.xib */,
+				0D1C1D69149C61A800D18BAB /* Supporting Files */,
+			);
+			path = DromeDemo;
+			sourceTree = "<group>";
+		};
+		0D1C1D69149C61A800D18BAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C07F149FEE8A00D9DADB /* drome.icns */,
+				0D1C1D6A149C61A800D18BAB /* DromeDemo-Info.plist */,
+				0D1C1D6B149C61A800D18BAB /* InfoPlist.strings */,
+				0D1C1D6E149C61A800D18BAB /* main.mm */,
+				0D1C1D70149C61A800D18BAB /* DromeDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D1C1DD7149C757800D18BAB /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				0D7AFBFE149D2DC900280FCF /* Data */,
+				0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */,
+				0D1C1DF5149C75D500D18BAB /* MyEventHandler.h */,
+				0D1C1DF6149C75D500D18BAB /* MyScene1.cpp */,
+				0D1C1DF7149C75D500D18BAB /* MyScene1.h */,
+				0D1C1DD8149C75B300D18BAB /* Block.cpp */,
+				0D1C1DD9149C75B300D18BAB /* Block.h */,
+			);
+			name = demo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D1C1D5D149C61A800D18BAB /* DromeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D1C1D7A149C61A900D18BAB /* Build configuration list for PBXNativeTarget "DromeDemo" */;
+			buildPhases = (
+				0D1C1D5A149C61A800D18BAB /* Sources */,
+				0D1C1D5B149C61A800D18BAB /* Frameworks */,
+				0D1C1D5C149C61A800D18BAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D1C1DD3149C74E100D18BAB /* PBXTargetDependency */,
+				0D1C1D7E149C624400D18BAB /* PBXTargetDependency */,
+				0D1C1D82149C624400D18BAB /* PBXTargetDependency */,
+				0D1C1D84149C624400D18BAB /* PBXTargetDependency */,
+			);
+			name = DromeDemo;
+			productName = DromeDemo;
+			productReference = 0D1C1D5E149C61A800D18BAB /* DromeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D1C1D3D149C613900D18BAB /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 0D1C1D40149C613900D18BAB /* Build configuration list for PBXProject "DromeDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0D1C1D3B149C613900D18BAB;
+			productRefGroup = 0D1C1D5F149C61A800D18BAB /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0D1C1D48149C615700D18BAB /* Products */;
+					ProjectRef = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0D1C1D5D149C61A800D18BAB /* DromeDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0D1C1D52149C615700D18BAB /* libDromeMath.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDromeMath.a;
+			remoteRef = 0D1C1D51149C615700D18BAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D1C1D54149C615700D18BAB /* libDromeCore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDromeCore.a;
+			remoteRef = 0D1C1D53149C615700D18BAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D1C1D56149C615700D18BAB /* libDromeGfx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDromeGfx.a;
+			remoteRef = 0D1C1D55149C615700D18BAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D1C1D58149C615700D18BAB /* libDromeGui.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDromeGui.a;
+			remoteRef = 0D1C1D57149C615700D18BAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D1C1D5C149C61A800D18BAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1C1D6D149C61A800D18BAB /* InfoPlist.strings in Resources */,
+				0D1C1D79149C61A900D18BAB /* MainMenu.xib in Resources */,
+				0D7AFBFF149D2DC900280FCF /* Data in Resources */,
+				0D57C080149FEE8A00D9DADB /* drome.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D1C1D5A149C61A800D18BAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1C1D6F149C61A800D18BAB /* main.mm in Sources */,
+				0D1C1D76149C61A800D18BAB /* DromeDemoAppDelegate.mm in Sources */,
+				0D1C1DD6149C750200D18BAB /* IOContext_Cocoa.mm in Sources */,
+				0D1C1DDA149C75B300D18BAB /* Block.cpp in Sources */,
+				0D1C1DF8149C75D500D18BAB /* MyEventHandler.cpp in Sources */,
+				0D1C1DF9149C75D500D18BAB /* MyScene1.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D1C1D7E149C624400D18BAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DromeMath;
+			targetProxy = 0D1C1D7D149C624400D18BAB /* PBXContainerItemProxy */;
+		};
+		0D1C1D82149C624400D18BAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DromeGfx;
+			targetProxy = 0D1C1D81149C624400D18BAB /* PBXContainerItemProxy */;
+		};
+		0D1C1D84149C624400D18BAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DromeGui;
+			targetProxy = 0D1C1D83149C624400D18BAB /* PBXContainerItemProxy */;
+		};
+		0D1C1DD3149C74E100D18BAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DromeCore;
+			targetProxy = 0D1C1DD2149C74E100D18BAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D1C1D6B149C61A800D18BAB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1C1D6C149C61A800D18BAB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0D1C1D77149C61A900D18BAB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1C1D78149C61A900D18BAB /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D1C1D42149C613900D18BAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../include;
+			};
+			name = Debug;
+		};
+		0D1C1D43149C613900D18BAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../include;
+			};
+			name = Release;
+		};
+		0D1C1D7B149C61A900D18BAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DromeDemo/DromeDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DromeDemo/DromeDemo-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0D1C1D7C149C61A900D18BAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DromeDemo/DromeDemo-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DromeDemo/DromeDemo-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D1C1D40149C613900D18BAB /* Build configuration list for PBXProject "DromeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D1C1D42149C613900D18BAB /* Debug */,
+				0D1C1D43149C613900D18BAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D1C1D7A149C61A900D18BAB /* Build configuration list for PBXNativeTarget "DromeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D1C1D7B149C61A900D18BAB /* Debug */,
+				0D1C1D7C149C61A900D18BAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D1C1D3D149C613900D18BAB /* Project object */;
+}

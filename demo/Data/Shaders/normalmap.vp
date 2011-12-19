@@ -1,13 +1,13 @@
 uniform vec3 cameraPosition;
 uniform vec3 lightPosition[3];
 uniform vec3 lightColor[3];
-uniform mat4 shadowMatrix[3];
+//uniform mat4 shadowMatrix[3];
 uniform vec3 objectPosition;
 
 varying vec3 lightDirection[3];
 varying vec3 lightPositionOut[3];
 varying vec3 lightHalfAngle[3];
-varying vec4 shadowCoords[3];
+//varying vec4 shadowCoords[3];
 
 void
 main()
@@ -22,7 +22,7 @@ main()
 		lightDirection[i] = lightPositionOut[i] * tangentSpace;
 		lightHalfAngle[i] = cameraDirection + lightDirection[i];
 
-		shadowCoords[i] = shadowMatrix[i] * objectVertex;
+		//shadowCoords[i] = shadowMatrix[i] * objectVertex;
 	}
 
 	gl_TexCoord[0] = gl_MultiTexCoord0;

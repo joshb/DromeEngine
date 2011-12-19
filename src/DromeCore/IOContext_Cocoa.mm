@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2011 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,17 +23,19 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <mach-o/dyld.h>
 #include <DromeCore/IOContext_Cocoa.h>
 
 using namespace std;
 
 namespace DromeCore {
 
-IOContext_Cocoa::IOContext_Cocoa()
+IOContext_Cocoa::IOContext_Cocoa(NSWindow *window, NSOpenGLView *view)
 {
-	m_window = nil;
-	m_view = nil;
+	m_window = window;
+	((DromeNSWindow *)m_window).io = this;
+	
+	m_view = view;
+	((DromeNSOpenGLView *)m_view).io = this;
 
 	m_windowWidth = 640;
 	m_windowHeight = 480;
@@ -41,9 +43,6 @@ IOContext_Cocoa::IOContext_Cocoa()
 	m_windowTitle = "Drome Engine";
 
 	m_grabMousePointer = false;
-
-	// create autorelease pool
-	m_pool = [[NSAutoreleasePool alloc] init];
 }
 
 IOContext_Cocoa::~IOContext_Cocoa()
@@ -112,130 +111,25 @@ IOContext_Cocoa::setWindowTitle(const string &value)
 bool
 IOContext_Cocoa::init()
 {
-	[NSApplication sharedApplication];
-
-	// set application delegate
-	DromeAppDelegate *appDelegate = [DromeAppDelegate alloc];
-	appDelegate.io = this;
-	[NSApp setDelegate: appDelegate];
-
-	NSRect viewRect;
-	NSUInteger style;
-
-	if(false && m_fullscreen) {
-		viewRect = [[NSScreen mainScreen] frame];
-		style = NSBorderlessWindowMask;
-	} else {
-		viewRect = NSMakeRect(0, 0, m_windowWidth, m_windowHeight);
-		style = NSTitledWindowMask | NSClosableWindowMask |
-		        NSMiniaturizableWindowMask;
-	}
-
-	// create window
-	m_window = [NSWindow alloc];
-	[m_window initWithContentRect: viewRect
-	          styleMask: style
-	          backing: NSBackingStoreBuffered
-	          defer: YES];
-	[m_window setAcceptsMouseMovedEvents: YES];
-
-	// set window delegate
-	DromeWindowDelegate *windowDelegate = [DromeWindowDelegate alloc];
-	windowDelegate.io = this;
-	[m_window setDelegate: windowDelegate];
-
-	if(false && m_fullscreen) {
-		[m_window setLevel: NSMainMenuWindowLevel + 1];
-		[m_window setOpaque: YES];
-		[m_window setHidesOnDeactivate: YES];
-	} else {
-		[m_window center];
-	}
-
-	// create NSOpenGLContext
-	NSOpenGLPixelFormatAttribute attributes[] = {
-//		NSOpenGLPFAFullScreen,
-//		NSOpenGLPFAScreenMask,
-//		CGDisplayIDToOpenGLDisplayMask(kCGDirectMainDisplay),
-		NSOpenGLPFAColorSize, 24,
-		NSOpenGLPFADepthSize, 32,
-		NSOpenGLPFADoubleBuffer,
-		NSOpenGLPFAAccelerated,
-		0
-	};
-	NSOpenGLPixelFormat *pixelFormat = [NSOpenGLPixelFormat alloc];
-	[pixelFormat initWithAttributes: attributes];
-	NSOpenGLContext *glContext = [NSOpenGLContext alloc];
-	[glContext initWithFormat: pixelFormat
-	           shareContext: nil];
-	[pixelFormat release];
-
-
-	// create DromeGLView
-	//m_view = [[DromeGLView alloc] initWithFrame: viewRect
-	                              //pixelFormat: pixelFormat];
-	m_view = [DromeGLView alloc];
-	[m_view initWithFrame: viewRect
-	        pixelFormat: [NSOpenGLView defaultPixelFormat]];
-	m_view.io = this;
-	[m_view setOpenGLContext: glContext];
-	[m_window setContentView: m_view];
-
-	// set window title
-	[m_window setTitle:[[NSString alloc] initWithCString:m_windowTitle.c_str() encoding:NSASCIIStringEncoding]];
-
-	// show window
-	[m_window makeKeyAndOrderFront: nil];
-
-	[glContext clearDrawable];
-	[glContext setView: m_view];
-	[glContext makeCurrentContext];
-	[glContext release];
-
-	// create timer
-	m_timer = [NSTimer timerWithTimeInterval: (1.0f / 240.0f)
-	                   target: m_view
-	                   selector:@selector(timerFireMethod:)
-	                   userInfo:nil
-	                   repeats: YES];
-	[[NSRunLoop currentRunLoop] addTimer: m_timer forMode: NSDefaultRunLoopMode];
-
 	return true;
 }
 
 void
 IOContext_Cocoa::shutdown()
 {
-	if(m_view == nil)
-		return;
-
-	[m_timer invalidate];
-	[m_timer release];
-
-	[NSApp stop: nil];
-
-	[m_view release];
-	m_view = nil;
-
-	[m_window release];
-	m_window = nil;
+	if(m_window != nil)
+		[m_window close];
 }
 
 bool
 IOContext_Cocoa::run()
 {
-	[NSApp run];
 	return true;
 }
 
 void *
 IOContext_Cocoa::getProcAddress(const char *functionName) const
 {
-	string name = string("_") + functionName;
-
-	if(NSIsSymbolNameDefined(name.c_str()))
-		return NSAddressOfSymbol(NSLookupAndBindSymbol(name.c_str()));
-
 	return NULL;
 }
 
@@ -245,18 +139,25 @@ IOContext_Cocoa::swapBuffers()
 	[[m_view openGLContext] flushBuffer];
 }
 
+static void
+centerMouse(NSWindow *window)
+{
+	NSRect screenRect = [[window screen] frame];
+	
+	// warp mouse to center of window
+	NSRect rect = [window frame];
+	CGPoint point;
+	point.x = rect.origin.x + (rect.size.width / 2.0f);
+	point.y = screenRect.size.height - (rect.origin.y + (rect.size.height / 2.0f));
+	CGWarpMouseCursorPosition(point);
+}
+
 void
 IOContext_Cocoa::grabMousePointer()
 {
 	m_grabMousePointer = true;
 	CGDisplayHideCursor(kCGDirectMainDisplay);
-
-	// warp mouse to center of window
-	NSRect rect = [m_window frame];
-	CGPoint point;
-	point.x = rect.origin.x + rect.size.width / 2;
-	point.y = rect.origin.y + rect.size.height / 2;
-	CGWarpMouseCursorPosition(point);
+	centerMouse(m_window);
 }
 
 void
@@ -264,12 +165,6 @@ IOContext_Cocoa::releaseMousePointer()
 {
 	m_grabMousePointer = false;
 	CGDisplayShowCursor(kCGDirectMainDisplay);
-}
-
-void
-IOContext_Cocoa::cocoaTimerFireMethod(NSTimer *theTimer)
-{
-	cycle();
 }
 
 static Button
@@ -466,14 +361,8 @@ IOContext_Cocoa::cocoaScrollWheel(NSEvent *theEvent)
 void
 IOContext_Cocoa::cocoaMouseMoved(NSEvent *theEvent)
 {
-	if(m_grabMousePointer) {
-		// warp mouse to center of window
-		NSRect rect = [m_window frame];
-		CGPoint point;
-		point.x = rect.origin.x + rect.size.width / 2;
-		point.y = rect.origin.y + rect.size.height / 2;
-		CGWarpMouseCursorPosition(point);
-	}
+	if(m_grabMousePointer)
+		centerMouse(m_window);
 
 	if(!m_handler)
 		return;
@@ -482,122 +371,155 @@ IOContext_Cocoa::cocoaMouseMoved(NSEvent *theEvent)
 	m_handler->mouseMove((int)point.x, m_windowHeight - (int)point.y, (int)[theEvent deltaX], (int)[theEvent deltaY]);
 }
 
+void
+IOContext_Cocoa::cocoaReshape()
+{
+	if(!m_handler)
+		return;
+		
+	NSRect frame = [m_view frame];
+	m_handler->windowDimensionsChanged((int)frame.size.width, (int)frame.size.height);
+}
+
 } // namespace DromeCore
 
 /*
- * DromeAppDelegate implementation
+ * DromeNSWindow implementation
  */
-@implementation DromeAppDelegate
+@implementation DromeNSWindow
+
 @synthesize io;
 
-- (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+- (id)init
+{
+	if(self = [super init])
+		io = NULL;
+	
+	return self;
+}
+
+@end
+
+/*
+ * DromeNSOpenGLView implementation
+ */
+@implementation DromeNSOpenGLView
+
+@synthesize io;
+
+- (id)init
+{
+	if(self = [super init]) {
+		io = NULL;
+		trackingArea = nil;
+	}
+	
+	return self;
+}
+
+- (void)reshape
+{
+	if(io != NULL)
+		io->cocoaReshape();
+
+	// remove existing tracking area if necessary
+	if(trackingArea != nil) {
+		[self removeTrackingArea:trackingArea];
+		[trackingArea release];
+	}
+	
+	// create new tracking area
+	trackingArea = [[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingMouseMoved|NSTrackingActiveWhenFirstResponder owner:self userInfo:nil];
+	[self addTrackingArea:trackingArea];
+}
+
+- (BOOL)acceptsFirstResponder
 {
 	return YES;
 }
 
-- (NSApplicationTerminateReply) applicationShouldTerminate:(NSApplication *)app
+- (void)keyDown:(NSEvent *)theEvent
 {
-	io->shutdown();
-	return NSTerminateCancel;
-}
-@end
-
-/*
- * DromeWindowDelegate implementation
- */
-@implementation DromeWindowDelegate
-@synthesize io;
-
-- (BOOL) windowShouldClose:(id)sender
-{
-	io->shutdown();
-	return NO;
-}
-@end
-
-/*
- * DromeGLView implementation
- */
-@implementation DromeGLView
-@synthesize io;
-
-- (BOOL) acceptsFirstResponder
-{
-	return YES;
+	if(io != NULL)
+		io->cocoaKeyDown(theEvent);
 }
 
-- (void) timerFireMethod:(NSTimer *)theTimer
+- (void)keyUp:(NSEvent *)theEvent
 {
-	io->cocoaTimerFireMethod(theTimer);
+	if(io != NULL)
+		io->cocoaKeyUp(theEvent);
 }
 
-- (void) keyDown:(NSEvent *)theEvent
+- (void)flagsChanged:(NSEvent *)theEvent
 {
-	io->cocoaKeyDown(theEvent);
+	if(io != NULL)
+		io->cocoaKeyDown(theEvent);
 }
 
-- (void) keyUp:(NSEvent *)theEvent
+- (void)mouseDown:(NSEvent *)theEvent
 {
-	io->cocoaKeyUp(theEvent);
+	if(io != NULL)
+		io->cocoaMouseDown(theEvent);
 }
 
-- (void) flagsChanged:(NSEvent *)theEvent
+- (void)mouseUp:(NSEvent *)theEvent
 {
-	io->cocoaKeyDown(theEvent);
+	if(io != NULL)
+		io->cocoaMouseUp(theEvent);
 }
 
-- (void) mouseDown:(NSEvent *)theEvent
+- (void)rightMouseDown:(NSEvent *)theEvent
 {
-	io->cocoaMouseDown(theEvent);
+	if(io != NULL)
+		io->cocoaMouseDown(theEvent);
 }
 
-- (void) mouseUp:(NSEvent *)theEvent
+- (void)rightMouseUp:(NSEvent *)theEvent
 {
-	io->cocoaMouseUp(theEvent);
+	if(io != NULL)
+		io->cocoaMouseUp(theEvent);
 }
 
-- (void) rightMouseDown:(NSEvent *)theEvent
+- (void)otherMouseDown:(NSEvent *)theEvent
 {
-	io->cocoaMouseDown(theEvent);
+	if(io != NULL)
+		io->cocoaMouseDown(theEvent);
 }
 
-- (void) rightMouseUp:(NSEvent *)theEvent
+- (void)otherMouseUp:(NSEvent *)theEvent
 {
-	io->cocoaMouseUp(theEvent);
+	if(io != NULL)
+		io->cocoaMouseUp(theEvent);
 }
 
-- (void) otherMouseDown:(NSEvent *)theEvent
+- (void)scrollWheel:(NSEvent *)theEvent
 {
-	io->cocoaMouseDown(theEvent);
+	if(io != NULL)
+		io->cocoaScrollWheel(theEvent);
 }
 
-- (void) otherMouseUp:(NSEvent *)theEvent
+- (void)mouseDragged:(NSEvent *)theEvent
 {
-	io->cocoaMouseUp(theEvent);
+	if(io != NULL)
+		io->cocoaMouseMoved(theEvent);
 }
 
-- (void) scrollWheel:(NSEvent *)theEvent
+- (void)rightMouseDragged:(NSEvent *)theEvent
 {
-	io->cocoaScrollWheel(theEvent);
+	if(io != NULL)
+		io->cocoaMouseMoved(theEvent);
 }
 
-- (void) mouseDragged:(NSEvent *)theEvent
+- (void)otherMouseDragged:(NSEvent *)theEvent
 {
-	io->cocoaMouseMoved(theEvent);
+	if(io != NULL)
+		io->cocoaMouseMoved(theEvent);
 }
 
-- (void) rightMouseDragged:(NSEvent *)theEvent
+- (void)mouseMoved:(NSEvent *)theEvent
 {
-	io->cocoaMouseMoved(theEvent);
+	if(io != NULL)
+		io->cocoaMouseMoved(theEvent);
 }
 
-- (void) otherMouseDragged:(NSEvent *)theEvent
-{
-	io->cocoaMouseMoved(theEvent);
-}
-
-- (void) mouseMoved:(NSEvent *)theEvent
-{
-	io->cocoaMouseMoved(theEvent);
-}
 @end

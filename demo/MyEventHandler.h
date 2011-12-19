@@ -43,7 +43,6 @@ class MyEventHandler : public DromeCore::EventHandler
 		MyEventHandler(DromeCore::IOContext *io);
 		~MyEventHandler();
 
-		bool run();
 		void cycle(float secondsElapsed);
 
 		void windowDimensionsChanged(int width, int height);
