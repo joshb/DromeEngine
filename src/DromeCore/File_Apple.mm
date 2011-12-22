@@ -30,6 +30,8 @@ using namespace std;
 
 namespace DromeCore {
 
+string getAppleResourcesPath();
+
 string
 getAppleResourcesPath()
 {
