@@ -44,7 +44,7 @@ unsigned int
 randomUInt()
 {
 #ifndef _WIN32
-	return random();
+	return (unsigned int)random();
 #else
 	return rand();
 #endif /* _WIN32 */
@@ -66,7 +66,7 @@ strCaseCmp(const char *s1, const char *s2)
 #endif /* _WIN32 */
 }
 
-int
+long
 getTicks()
 {
 	static bool first_run = true;
@@ -84,8 +84,8 @@ getTicks()
 
 	return ((t.tv_sec - start.tv_sec) * 1000) + (t.tv_usec / 1000);
 #else
-	int start;
-	int t = GetTickCount();
+	long start;
+	long t = (long)GetTickCount();
 
 	if(first_run) {
 		start = t;

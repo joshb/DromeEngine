@@ -59,7 +59,7 @@ int strCaseCmp(const char *s1, const char *s2);
  *
  * @return 0 the first time the function is called, and the number of milliseconds that have passed since the first call on subsequent calls.
  */
-int getTicks();
+long getTicks();
 
 } // namespace DromeCore
 

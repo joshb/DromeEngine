@@ -107,7 +107,7 @@ IOContext::cycle()
 	if(m_handler == NULL)
 		return;
 
-	int ticks = getTicks();
+	long ticks = getTicks();
 	float secondsElapsed = (ticks - m_ticks) / 1000.0f;
 	m_ticks = ticks;
 

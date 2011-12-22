@@ -253,7 +253,7 @@ XmlElement::setContent(const char *content)
 unsigned int
 XmlElement::getNumAttributes() const
 {
-	return m_attributes.size();
+	return (unsigned int)m_attributes.size();
 }
 
 const XmlAttribute *
@@ -291,7 +291,7 @@ XmlElement::addAttribute(XmlAttribute *attribute)
 unsigned int
 XmlElement::getNumChildren() const
 {
-	return m_children.size();
+	return (unsigned int)m_children.size();
 }
 
 const XmlElement *
@@ -527,8 +527,8 @@ XmlTokenizer::processCharacter(char c)
 void
 XmlTokenizer::processData(const char *data)
 {
-	int len = strlen(data);
-	for(int i = 0; i < len; ++i)
+	size_t len = strlen(data);
+	for(size_t i = 0; i < len; ++i)
 		processCharacter(data[i]);
 }
 

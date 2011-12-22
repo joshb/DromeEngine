@@ -39,7 +39,7 @@ namespace DromeCore {
 class IOContext {
 	protected:
 		EventHandler *m_handler;
-		int m_ticks;
+		long m_ticks;
 
 	public:
 		IOContext();
