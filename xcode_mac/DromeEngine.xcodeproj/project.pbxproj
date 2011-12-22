@@ -493,6 +493,9 @@
 /* Begin PBXProject section */
 		0D1C1BFB149C5F0600D18BAB /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 0D1C1BFE149C5F0600D18BAB /* Build configuration list for PBXProject "DromeEngine" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -852,6 +855,7 @@
 				0D1C1DC5149C74B800D18BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

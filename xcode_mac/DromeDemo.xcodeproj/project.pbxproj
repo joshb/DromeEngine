@@ -244,6 +244,9 @@
 /* Begin PBXProject section */
 		0D1C1D3D149C613900D18BAB /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 0D1C1D40149C613900D18BAB /* Build configuration list for PBXProject "DromeDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
