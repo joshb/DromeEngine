@@ -65,15 +65,15 @@ CylinderMesh::CylinderMesh(unsigned int divisions)
 	}
 
 	// create command for rendering
-	Command *cmd = new Command(verts.size());
+	Command *cmd = new Command((unsigned int)verts.size());
 	for(unsigned int i = 0; i < cmd->numIndices; i++)
 		cmd->indices[i] = i;
 	m_commands.insert(m_commands.end(), cmd);
 
 	// create vertex buffers
-	m_vertices = VertexBuffer::create(&(verts[0]), verts.size());
-	m_texCoords = VertexBuffer::create(&(texCoords[0]), texCoords.size());
-	m_tangentSpace = VertexBuffer::create(&(tangentSpace[0]), tangentSpace.size());
+	m_vertices = VertexBuffer::create(&(verts[0]), (unsigned int)verts.size());
+	m_texCoords = VertexBuffer::create(&(texCoords[0]), (unsigned int)texCoords.size());
+	m_tangentSpace = VertexBuffer::create(&(tangentSpace[0]), (unsigned int)tangentSpace.size());
 }
 
 RefPtr <CylinderMesh>

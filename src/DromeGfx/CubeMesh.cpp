@@ -204,9 +204,9 @@ CubeMesh::CubeMesh(const Vector3 &scale, float sScale, float tScale)
 	}
 
 	// create vertex buffers
-	m_vertices = VertexBuffer::create(&(verts[0]), verts.size());
-	m_texCoords = VertexBuffer::create(&(texCoords[0]), texCoords.size());
-	m_tangentSpace = VertexBuffer::create(&(tangentSpace[0]), tangentSpace.size());
+	m_vertices = VertexBuffer::create(&(verts[0]), (unsigned int)verts.size());
+	m_texCoords = VertexBuffer::create(&(texCoords[0]), (unsigned int)texCoords.size());
+	m_tangentSpace = VertexBuffer::create(&(tangentSpace[0]), (unsigned int)tangentSpace.size());
 }
 
 RefPtr <CubeMesh>

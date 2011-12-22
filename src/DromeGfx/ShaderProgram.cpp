@@ -41,7 +41,7 @@ loadShaderFromFile(const char *filename)
 {
 	string source;
 	char tmp[512];
-	int length;
+	size_t length;
 	FILE *fp;
 
 	// open shader
@@ -82,7 +82,7 @@ compileShader(GLenum type, const char *shaderSource)
 	GLuint shader = glCreateShader(type);
 
 	// set shader source
-	int length = strlen(shaderSource);
+	GLint length = (GLint)strlen(shaderSource);
 	glShaderSource(shader, 1, &shaderSource, &length);
 
 	// compile the shader

@@ -58,9 +58,9 @@ PngImage::PngImage(const char *filename_arg)
 	// release the data provider
 	CGDataProviderRelease(dataProvider);
 
-	m_width = CGImageGetWidth(image);
-	m_height = CGImageGetHeight(image);
-	m_colorComponents = CGImageGetBitsPerPixel(image) / 8;
+	m_width = (unsigned int)CGImageGetWidth(image);
+	m_height = (unsigned int)CGImageGetHeight(image);
+	m_colorComponents = (unsigned int)CGImageGetBitsPerPixel(image) / 8;
 
 	// get image data
 	CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(image));
