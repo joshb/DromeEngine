@@ -73,6 +73,7 @@ PngImage::PngImage(const char *filename_arg)
 	CFDataGetBytes(imageData, range, (UInt8 *)m_data);
 
 	// release image
+	CFRelease(imageData);
 	CGImageRelease(image);
 #else
 	// open file

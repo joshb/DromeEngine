@@ -104,8 +104,11 @@ IOContext_Cocoa::setWindowTitle(const string &value)
 {
 	m_windowTitle = value;
 
-	if(m_window != nil)
-		[m_window setTitle:[[NSString alloc] initWithCString: m_windowTitle.c_str() encoding: NSASCIIStringEncoding]];
+	if(m_window != nil) {
+		NSString *title = [[NSString alloc] initWithCString:m_windowTitle.c_str() encoding:NSASCIIStringEncoding];
+		[m_window setTitle:title];
+		[title release];
+	}
 }
 
 bool
