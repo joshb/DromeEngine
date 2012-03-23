@@ -132,6 +132,25 @@ class Matrix4
 		 * @return A Matrix4 object representing the perspective matrix generated from the given parameters.
 		 */
 		static Matrix4 perspective(float fov, float aspect, float znear, float zfar);
+
+		/**
+		 * @param vector A vector to translate by.
+		 * @return A translation matrix that translates by the given vector.
+		 */
+		static Matrix4 translation(const Vector3 &vector);
+
+		/**
+		 * @param vector A vector to scale by.
+		 * @return A scaling matrix that scales by the given vector.
+		 */
+		static Matrix4 scaling(const Vector3 &vector);
+
+		/**
+		 * @param angle An angle (in radians) to rotate around the vector.
+		 * @param vector A vector to rotate around. This vector does not need to be normalized.
+		 * @return A rotation matrix that rotates by the given angle around the given vector.
+		 */
+		static Matrix4 rotation(float angle, const Vector3 &vector);
 };
 
 } // namespace DromeMath

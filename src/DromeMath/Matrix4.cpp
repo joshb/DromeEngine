@@ -216,4 +216,65 @@ Matrix4::perspective(float fov, float aspect, float znear, float zfar)
 	return m;
 }
 
+Matrix4
+Matrix4::translation(const Vector3 &vector)
+{
+	Matrix4 m;
+
+	m[12] = vector.x;
+	m[13] = vector.y;
+	m[14] = vector.z;
+
+	return m;
+}
+
+Matrix4
+Matrix4::scaling(const Vector3 &vector)
+{
+	Matrix4 m;
+
+	m[0] = vector.x;
+	m[5] = vector.y;
+	m[10] = vector.z;
+
+	return m;
+}
+
+Matrix4
+Matrix4::rotation(float angle, const Vector3 &vector)
+{
+	Matrix4 m;
+
+	float c = cosf(angle);
+	float ci = 1.0f - c;
+	float s = sinf(angle);
+	Vector3 v = vector.normalize();
+
+	float xy = v.x * v.y * ci;
+	float xz = v.x * v.z * ci;
+	float yz = v.y * v.z * ci;
+	float xs = v.x * s;
+	float ys = v.y * s;
+	float zs = v.z * s;
+
+	m[0] = v.x * v.x * ci + c;
+	m[1] = xy + zs;
+	m[2] = xz - ys;
+//	m[3] = 0.0f;
+	m[4] = xy - zs;
+	m[5] = v.y * v.y * ci + c;
+	m[6] = yz + xs;
+//	m[7] = 0.0f;
+	m[8] = xz + ys;
+	m[9] = yz - xs;
+	m[10] = v.z * v.z * ci + c;
+//	m[11] = 0.0f;
+//	m[12] = 0.0f;
+//	m[13] = 0.0f;
+//	m[14] = 0.0f;
+//	m[15] = 1.0f;
+
+	return m;
+}
+
 } // namespace DromeMath
