@@ -15,6 +15,7 @@ include_directories(include)
 
 if(APPLE)
 	add_definitions(-DAPPLE)
+	subdirs(include src doc utils)
+else(APPLE)
+	subdirs(include src demo doc utils)
 endif(APPLE)
-
-subdirs(include src demo doc utils)
