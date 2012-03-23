@@ -320,11 +320,7 @@ GfxDriverGL::enable2D()
 	glMatrixMode(GL_PROJECTION);
 	glPushMatrix();
 	glLoadIdentity();
-#ifdef GLES
-	glOrthof(0.0f, m_viewportWidth, m_viewportHeight, 0.0f, 0.0f, 1.0f);
-#else
-	glOrtho(0.0f, m_viewportWidth, m_viewportHeight, 0.0f, 0.0f, 1.0f);
-#endif /* GLES */
+	glLoadMatrixf(Matrix4::orthographic(0.0f, m_viewportWidth, m_viewportHeight, 0.0f).getData());
 	glDisable(GL_DEPTH_TEST);
 	glDepthMask(GL_FALSE);
 }

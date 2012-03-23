@@ -182,6 +182,25 @@ Matrix4::toString() const
 }
 
 Matrix4
+Matrix4::orthographic(float left, float right, float bottom, float top,
+                      float znear, float zfar)
+{
+	Matrix4 m;
+	float rl = right - left;
+	float tb = top - bottom;
+	float nf = znear - zfar;
+
+	m[0] = 2.0f / rl;
+	m[5] = 2.0f / tb;
+	m[10] = 2.0f / nf;
+	m[12] = -(right + left) / rl;
+	m[13] = -(top + bottom) / tb;
+	m[14] = (znear + zfar) / nf;
+
+	return m;
+}
+
+Matrix4
 Matrix4::perspective(float fov, float aspect, float znear, float zfar)
 {
 	Matrix4 m;

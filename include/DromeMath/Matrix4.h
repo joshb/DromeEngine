@@ -114,6 +114,17 @@ class Matrix4
 		std::string toString() const;
 
 		/**
+		 * @param left The left coordinate of the orthographic matrix.
+		 * @param right The right coordinate of the orthographic matrix.
+		 * @param bottom The bottom coordinate of the orthographic matrix.
+		 * @param top The top coordinate of the orthographic matrix.
+		 * @param znear The Z near plane coordinate of the orthographic matrix.
+		 * @param zfar The Z far plane coordinate of the orthographic matrix.
+		 * @return A Matrix4 object representing the orthographic matrix generated from the given parameters.
+		 */
+		static Matrix4 orthographic(float left = -1.0f, float right = 1.0f, float bottom = -1.0f, float top = -1.0f, float znear = -1.0f, float zfar = 1.0f);
+
+		/**
 		 * @param fov The field of view of the perspective matrix.
 		 * @param aspect The aspect ratio of the perspective matrix.
 		 * @param znear The distance to the near Z plane of the perspective matrix.
