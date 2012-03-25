@@ -28,9 +28,13 @@
 
 #include <cmath>
 
+#ifndef M_PI
+#define M_PI 3.1415926535898
+#endif
+
 namespace DromeMath {
 
-const float PI_OVER_180 = M_PI / 180.0f;
+const float PI_OVER_180 = (float)M_PI / 180.0f;
 
 /**
  * @param f An angle in degrees.
