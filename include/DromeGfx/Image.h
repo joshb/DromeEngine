@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -136,7 +136,7 @@ class Image : public DromeCore::RefClass {
 		int m_colorComponents;
 
 		Image();
-		Image(unsigned int width, unsigned int height, int colorComponents);
+		Image(unsigned int width, unsigned int height, int colorComponents, const uint8_t *data = NULL);
 		virtual ~Image();
 
 	public:
@@ -154,7 +154,7 @@ class Image : public DromeCore::RefClass {
 
 		static DromeCore::RefPtr <Image> create(const std::string &filename);
 		static DromeCore::RefPtr <Image> create(const char *filename);
-		static DromeCore::RefPtr <Image> create(unsigned int width, unsigned int height, int color_components);
+		static DromeCore::RefPtr <Image> create(unsigned int width, unsigned int height, int colorComponents, const uint8_t *data = NULL);
 };
 
 } // namespace DromeGfx

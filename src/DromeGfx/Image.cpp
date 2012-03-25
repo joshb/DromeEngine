@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,16 +48,20 @@ Image::Image()
 }
 
 Image::Image(unsigned int width, unsigned int height,
-             int colorComponents)
+             int colorComponents, const uint8_t *data)
 {
 	m_width = width;
 	m_height = height;
 	m_colorComponents = colorComponents;
 
 	m_data = new uint8_t[m_width * m_height * m_colorComponents];
-
-	for(unsigned int i = 0; i < m_width * m_height * m_colorComponents; ++i)
-		m_data[i] = 0;
+	if(data != NULL) {
+		for(unsigned int i = 0; i < m_width * m_height * m_colorComponents; ++i)
+			m_data[i] = data[i];
+	} else {
+		for(unsigned int i = 0; i < m_width * m_height * m_colorComponents; ++i)
+			m_data[i] = 0;
+	}
 }
 
 Image::~Image()
@@ -239,9 +243,10 @@ Image::create(const char *filename)
 }
 
 RefPtr <Image>
-Image::create(unsigned int width, unsigned int height, int color_components)
+Image::create(unsigned int width, unsigned int height,
+              int colorComponents, const uint8_t *data)
 {
-	return RefPtr <Image> (new Image(width, height, color_components));
+	return RefPtr <Image> (new Image(width, height, colorComponents, data));
 }
 
 } // namespace DromeGfx
