@@ -93,8 +93,8 @@ Matrix4::operator - (const Matrix4 &matrix) const
 Matrix4
 Matrix4::operator * (const Matrix4 &matrix) const
 {
-	const float *m1 = m_matrix;
-	const float *m2 = matrix.m_matrix;
+	const float *m1 = matrix.m_matrix;
+	const float *m2 = m_matrix;
 	float m[16];
 
 	m[ 0] = m1[ 0]*m2[ 0] + m1[ 1]*m2[ 4] + m1[ 2]*m2[ 8] + m1[ 3]*m2[12];

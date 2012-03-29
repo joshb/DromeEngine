@@ -115,7 +115,7 @@ Camera::update()
 
 	// update quaternion and matrix
 	m_orientation = Quaternion::fromRotation(Vector3(90.0f, m_yaw, m_roll));
-	m_matrix = translation * (m_orientation.toMatrix4() * pitch);
+	m_matrix = pitch * m_orientation.toMatrix4() * translation;
 }
 
 } // namespace DromeGfx
