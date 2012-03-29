@@ -28,13 +28,14 @@
 
 #include <DromeCore/Ref.h>
 #include <DromeCore/Image.h>
+#include "OpenGL.h"
 
 namespace DromeGL {
 
 class Texture : public DromeCore::RefClass
 {
 	protected:
-		unsigned int m_id;
+		GLuint m_id;
 		unsigned int m_width, m_height;
 
 		Texture();
@@ -42,7 +43,7 @@ class Texture : public DromeCore::RefClass
 		virtual ~Texture();
 
 	public:
-		unsigned int getId() const;
+		GLuint getId() const;
 		unsigned int getWidth() const;
 		unsigned int getHeight() const;
 

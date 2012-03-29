@@ -24,7 +24,6 @@
  */
 
 #include <DromeCore/Exception.h>
-#include <DromeGL/OpenGL.h>
 #include <DromeGL/Texture.h>
 
 using namespace DromeCore;
@@ -86,7 +85,7 @@ Texture::~Texture()
 	glDeleteTextures(1, &m_id);
 }
 
-unsigned int
+GLuint
 Texture::getId() const
 {
 	return m_id;
