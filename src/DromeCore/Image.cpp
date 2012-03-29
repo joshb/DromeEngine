@@ -29,14 +29,13 @@
 #include <DromeCore/File.h>
 #include <DromeCore/String.h>
 #include <DromeCore/Util.h>
-#include <DromeGfx/Image.h>
+#include <DromeCore/Image.h>
 #include "PcxImage.h"
 #include "PngImage.h"
 
 using namespace std;
-using namespace DromeCore;
 
-namespace DromeGfx {
+namespace DromeCore {
 
 /*
  * Image
@@ -249,4 +248,4 @@ Image::create(unsigned int width, unsigned int height,
 	return RefPtr <Image> (new Image(width, height, colorComponents, data));
 }
 
-} // namespace DromeGfx
+} // namespace DromeCore

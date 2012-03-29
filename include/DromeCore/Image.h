@@ -23,15 +23,15 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMEGFX_IMAGE_H__
-#define __DROMEGFX_IMAGE_H__
+#ifndef __DROMECORE_IMAGE_H__
+#define __DROMECORE_IMAGE_H__
 
 #include <string>
-#include <DromeCore/Endian.h>
-#include <DromeCore/Ref.h>
 #include <DromeMath/Vector3.h>
+#include "Endian.h"
+#include "Ref.h"
 
-namespace DromeGfx {
+namespace DromeCore {
 
 class Color {
 	public:
@@ -128,7 +128,7 @@ class Color {
 		}
 };
 
-class Image : public DromeCore::RefClass {
+class Image : public RefClass {
 	protected:
 		std::string m_filename;
 		uint8_t *m_data;
@@ -150,13 +150,13 @@ class Image : public DromeCore::RefClass {
 		void setPixel(unsigned int x, unsigned int y, Color c);
 		void copyFrom(DromeCore::RefPtr <Image> image);
 
-		DromeCore::RefPtr <Image> scale(unsigned int width, unsigned int height);
+		RefPtr <Image> scale(unsigned int width, unsigned int height);
 
-		static DromeCore::RefPtr <Image> create(const std::string &filename);
-		static DromeCore::RefPtr <Image> create(const char *filename);
-		static DromeCore::RefPtr <Image> create(unsigned int width, unsigned int height, int colorComponents, const uint8_t *data = NULL);
+		static RefPtr <Image> create(const std::string &filename);
+		static RefPtr <Image> create(const char *filename);
+		static RefPtr <Image> create(unsigned int width, unsigned int height, int colorComponents, const uint8_t *data = NULL);
 };
 
-} // namespace DromeGfx
+} // namespace DromeCore
 
-#endif /* __DROMEGFX_IMAGE_H__ */
+#endif /* __DROMECORE_IMAGE_H__ */

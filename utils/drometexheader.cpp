@@ -28,11 +28,10 @@
 #include <string>
 #include <DromeCore/Exception.h>
 #include <DromeCore/String.h>
-#include <DromeGfx/Image.h>
+#include <DromeCore/Image.h>
 
 using namespace std;
 using namespace DromeCore;
-using namespace DromeGfx;
 
 int
 main(int argc, char *argv[])

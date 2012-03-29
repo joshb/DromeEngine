@@ -26,13 +26,11 @@
 #include <cstdio>
 #include <cstring>
 #include <DromeCore/DromeCore>
-#include <DromeGfx/Image.h>
 #include <DromeMath/DromeMath>
 
 static float height_scale = 64.0f;
 
 using namespace DromeCore;
-using namespace DromeGfx;
 using namespace DromeMath;
 
 static uint8_t *

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -24,12 +24,12 @@
  */
 
 #include <DromeCore/Exception.h>
-#include <DromeGfx/OpenGL.h>
-#include <DromeGfx/Texture.h>
+#include <DromeGL/OpenGL.h>
+#include <DromeGL/Texture.h>
 
 using namespace DromeCore;
 
-namespace DromeGfx {
+namespace DromeGL {
 
 Texture::Texture()
 {
@@ -116,4 +116,4 @@ Texture::create(RefPtr <Image> image)
 	return RefPtr <Texture> (new Texture(image));
 }
 
-} // namespace DromeGfx
+} // namespace DromeGL

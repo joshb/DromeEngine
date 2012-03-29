@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,33 +23,22 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMEGFX_TEXTURE_H__
-#define __DROMEGFX_TEXTURE_H__
+#ifndef __DROMECORE_PNGIMAGE_H__
+#define __DROMECORE_PNGIMAGE_H__
 
-#include <DromeCore/Ref.h>
-#include "Image.h"
+#include <DromeCore/Image.h>
 
-namespace DromeGfx {
+namespace DromeCore {
 
-class Texture : public DromeCore::RefClass
+class PngImage : public Image
 {
 	protected:
-		unsigned int m_id;
-		unsigned int m_width, m_height;
-
-		Texture();
-		Texture(DromeCore::RefPtr <Image> image);
-		virtual ~Texture();
+		PngImage(const char *filename_arg);
 
 	public:
-		unsigned int getId() const;
-		unsigned int getWidth() const;
-		unsigned int getHeight() const;
-
-		static DromeCore::RefPtr <Texture> none();
-		static DromeCore::RefPtr <Texture> create(DromeCore::RefPtr <Image> image);
+		static RefPtr <PngImage> create(const char *filename);
 };
 
-} // namespace DromeGfx
+} // namespace DromeCore
 
-#endif /* __DROMEGFX_TEXTURE_H__ */
+#endif /* __DROMECORE_PNGIMAGE_H__ */

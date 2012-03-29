@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,22 +23,22 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMEGFX_PNGIMAGE_H__
-#define __DROMEGFX_PNGIMAGE_H__
+#ifndef __DROMEGL_OPENGL_H__
+#define __DROMEGL_OPENGL_H__
 
-#include <DromeGfx/Image.h>
+#define GL_GLEXT_PROTOTYPES
 
-namespace DromeGfx {
+#ifdef APPLE
+	#ifdef IOS
+		#define GLES
+		#include <OpenGLES/ES1/gl.h>
+		#include <OpenGLES/ES1/glext.h>
+	#else
+		#include <OpenGL/gl.h>
+		#include <OpenGL/glext.h>
+	#endif /* IOS */
+#else
+	#include <GL/glew.h>
+#endif /* APPLE */
 
-class PngImage : public Image
-{
-	protected:
-		PngImage(const char *filename_arg);
-
-	public:
-		static DromeCore::RefPtr <PngImage> create(const char *filename);
-};
-
-} // namespace DromeGfx
-
-#endif /* __DROMEGFX_PNGIMAGE_H__ */
+#endif /* __DROMEGL_OPENGL_H__ */

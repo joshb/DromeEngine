@@ -4,14 +4,12 @@ add_executable(drometexheader drometexheader.cpp)
 target_link_libraries(
 	dromenormal
 	DromeCore
-	DromeGfx
 	DromeMath
 )
 
 target_link_libraries(
 	drometexheader
 	DromeCore
-	DromeGfx
 	DromeMath
 )
 

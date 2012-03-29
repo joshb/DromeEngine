@@ -6,6 +6,9 @@ set(
 	EventHandler.cpp
 	Exception.cpp
 	File.cpp
+	Image.cpp
+	PcxImage.cpp
+	PngImage.cpp
 	String.cpp
 	Util.cpp
 	Xml.cpp
@@ -25,12 +28,17 @@ if(APPLE)
 	set(SRCS ${SRCS} File_Apple.mm)
 	add_definitions(-DCOCOA_FOUND)
 endif(APPLE)
+find_package(PNG)
 
 add_library(DromeCore STATIC ${SRCS})
 target_link_libraries(
 	DromeCore
 	DromeMath
 	${LIBS}
+	${PNG_LIBRARIES}
+)
+include_directories(
+	${PNG_INCLUDE_DIR}
 )
 
 install(

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,9 +30,8 @@
 #include "PcxImage.h"
 
 using namespace std;
-using namespace DromeCore;
 
-namespace DromeGfx {
+namespace DromeCore {
 
 struct pcx_header {
 	uint8_t manufacturer;
@@ -246,4 +245,4 @@ PcxImage::create(const char *filename)
 	return RefPtr <PcxImage> (new PcxImage(filename));
 }
 
-} // namespace DromeGfx
+} // namespace DromeCore

@@ -6,7 +6,8 @@ endif(WIN32)
 
 subdirs(
 	DromeCore
-	DromeGfx
+#	DromeGfx
+	DromeGL
 #	DromeGui
 	DromeMath
 )
