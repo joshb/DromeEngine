@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,14 +27,13 @@
 #include <cstring>
 #include <DromeCore/Exception.h>
 #include <DromeCore/File.h>
-#include <DromeGfx/OpenGL.h>
-#include <DromeGfx/ShaderProgram.h>
+#include <DromeGL/ShaderProgram.h>
 
 using namespace std;
 using namespace DromeCore;
 using namespace DromeMath;
 
-namespace DromeGfx {
+namespace DromeGL {
 
 static string
 loadShaderFromFile(const char *filename)
@@ -70,7 +69,7 @@ ShaderProgram::~ShaderProgram()
 	glDeleteProgram(m_id);
 }
 
-unsigned int
+GLuint
 ShaderProgram::getId() const
 {
 	return m_id;
@@ -105,7 +104,7 @@ compileShader(GLenum type, const char *shaderSource)
 }
 
 static void
-attachShader(unsigned int programId, GLenum type, const char *shaderSource)
+attachShader(GLuint programId, GLenum type, const char *shaderSource)
 {
 	// compile the shader
 	GLuint shader = compileShader(type, shaderSource);
@@ -116,32 +115,6 @@ attachShader(unsigned int programId, GLenum type, const char *shaderSource)
 	// call delete on the shader so that it will
 	// be deleted when detached from the program
 	glDeleteShader(shader);
-}
-
-void
-ShaderProgram::attachGeometryShader(PrimitiveType inputPrimitiveType,
-                                    PrimitiveType outputPrimitiveType,
-                                    int maxOutputVertices,
-                                    const char *shader)
-{
-	attachShader(m_id, GL_GEOMETRY_SHADER_ARB, shader);
-
-	// set input/output primitive types
-	glProgramParameteriEXT(m_id, GL_GEOMETRY_INPUT_TYPE_EXT, primitiveTypeToGL(inputPrimitiveType));
-	glProgramParameteriEXT(m_id, GL_GEOMETRY_OUTPUT_TYPE_EXT, primitiveTypeToGL(outputPrimitiveType));
-
-	// set maximum output vertices
-	glProgramParameteriEXT(m_id, GL_GEOMETRY_VERTICES_OUT_EXT, maxOutputVertices);
-}
-
-void
-ShaderProgram::attachGeometryShaderFromFile(PrimitiveType inputPrimitiveType,
-                                            PrimitiveType outputPrimitiveType,
-                                            int maxOutputVertices,
-                                            const char *shaderPath)
-{
-	string source = loadShaderFromFile(shaderPath);
-	attachGeometryShader(inputPrimitiveType, outputPrimitiveType, maxOutputVertices, source.c_str());
 }
 
 void
@@ -192,7 +165,7 @@ ShaderProgram::linkShaders()
 	}
 }
 
-int
+GLint
 ShaderProgram::getUniformVariableLocation(const char *name) const
 {
 	int location = glGetUniformLocation(m_id, name);

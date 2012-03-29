@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,29 +23,26 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMEGFX_SHADERPROGRAM_H__
-#define __DROMEGFX_SHADERPROGRAM_H__
+#ifndef __DROMEGL_SHADERPROGRAM_H__
+#define __DROMEGL_SHADERPROGRAM_H__
 
 #include <DromeCore/Ref.h>
 #include <DromeMath/Matrix4.h>
 #include <DromeMath/Vector3.h>
-#include "Types.h"
+#include "OpenGL.h"
 
-namespace DromeGfx {
+namespace DromeGL {
 
 class ShaderProgram : public DromeCore::RefClass
 {
 	protected:
-		unsigned int m_id;
+		GLuint m_id;
 
 		ShaderProgram();
 		virtual ~ShaderProgram();
 
 	public:
-		unsigned int getId() const;
-
-		void attachGeometryShader(PrimitiveType inputPrimitiveType, PrimitiveType outputPrimitiveType, int maxOutputVertices, const char *shader);
-		void attachGeometryShaderFromFile(PrimitiveType inputPrimitiveType, PrimitiveType outputPrimitiveType, int maxOutputVertices, const char *shaderPath);
+		GLuint getId() const;
 
 		void attachVertexShader(const char *shader);
 		void attachVertexShaderFromFile(const char *shaderPath);
@@ -55,7 +52,7 @@ class ShaderProgram : public DromeCore::RefClass
 
 		void linkShaders();
 
-		int getUniformVariableLocation(const char *name) const;
+		GLint getUniformVariableLocation(const char *name) const;
 		void setUniform(const char *name, int value);
 		void setUniform(const char *name, const DromeMath::Vector3 *values, int numValues);
 		void setUniform(const char *name, const DromeMath::Vector3 &value);
@@ -66,6 +63,6 @@ class ShaderProgram : public DromeCore::RefClass
 		static DromeCore::RefPtr <ShaderProgram> create();
 };
 
-} // namespace DromeGfx
+} // namespace DromeGL
 
-#endif /* __DROMEGFX_SHADERPROGRAM_H__ */
+#endif /* __DROMEGL_SHADERPROGRAM_H__ */

@@ -1,5 +1,6 @@
 set(
 	SRCS
+	ShaderProgram.cpp
 	Texture.cpp
 )
 
