@@ -2,6 +2,7 @@ set(
 	SRCS
 	ShaderProgram.cpp
 	Texture.cpp
+	VertexBuffer.cpp
 )
 
 find_package(OpenGL)

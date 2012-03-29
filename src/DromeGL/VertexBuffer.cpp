@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,32 +23,55 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMEGFX_VERTEXBUFFER_H__
-#define __DROMEGFX_VERTEXBUFFER_H__
+#include <DromeCore/Exception.h>
+#include <DromeGL/VertexBuffer.h>
 
-#include <DromeCore/Ref.h>
-#include <DromeMath/Vector3.h>
-#include <DromeMath/Matrix4.h>
+using namespace DromeCore;
+using namespace DromeMath;
 
-namespace DromeGfx {
+namespace DromeGL {
 
-class VertexBuffer : public DromeCore::RefClass
+VertexBuffer::VertexBuffer(const float *data, int size)
 {
-	protected:
-		unsigned int m_id;
+	glGenBuffers(1, &m_id);
+	glBindBuffer(GL_ARRAY_BUFFER, m_id);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * size, data, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
 
-		VertexBuffer(const float *data, int size);
-		virtual ~VertexBuffer();
+VertexBuffer::~VertexBuffer()
+{
+	glDeleteBuffers(1, &m_id);
+}
 
-	public:
-		unsigned int getId() const;
+GLuint
+VertexBuffer::getId() const
+{
+	return m_id;
+}
 
-		static DromeCore::RefPtr <VertexBuffer> none();
-		static DromeCore::RefPtr <VertexBuffer> create(const float *data, int size);
-		static DromeCore::RefPtr <VertexBuffer> create(const DromeMath::Vector3 *data, int size);
-		static DromeCore::RefPtr <VertexBuffer> create(const DromeMath::Matrix4 *data, int size);
-};
+RefPtr <VertexBuffer>
+VertexBuffer::none()
+{
+	return RefPtr <VertexBuffer> ();
+}
+
+RefPtr <VertexBuffer>
+VertexBuffer::create(const float *data, int size)
+{
+	return RefPtr <VertexBuffer> (new VertexBuffer(data, size));
+}
+
+RefPtr <VertexBuffer>
+VertexBuffer::create(const Vector3 *data, int size)
+{
+	return RefPtr <VertexBuffer> (new VertexBuffer((const float *)data, size * 3));
+}
+
+RefPtr <VertexBuffer>
+VertexBuffer::create(const Matrix4 *data, int size)
+{
+	return RefPtr <VertexBuffer> (new VertexBuffer((const float *)data, size * 16));
+}
 
 } // namespace DromeGfx
-
-#endif /* __DROMEGFX_VERTEXBUFFER_H__ */

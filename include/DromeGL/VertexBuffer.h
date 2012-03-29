@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,56 +23,33 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <DromeCore/Exception.h>
-#include <DromeGfx/OpenGL.h>
-#include <DromeGfx/VertexBuffer.h>
+#ifndef __DROMEGL_VERTEXBUFFER_H__
+#define __DROMEGL_VERTEXBUFFER_H__
 
-using namespace DromeCore;
-using namespace DromeMath;
+#include <DromeCore/Ref.h>
+#include <DromeMath/Vector3.h>
+#include <DromeMath/Matrix4.h>
+#include "OpenGL.h"
 
-namespace DromeGfx {
+namespace DromeGL {
 
-VertexBuffer::VertexBuffer(const float *data, int size)
+class VertexBuffer : public DromeCore::RefClass
 {
-	glGenBuffers(1, &m_id);
-	glBindBuffer(GL_ARRAY_BUFFER, m_id);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * size, data, GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-}
+	protected:
+		GLuint m_id;
 
-VertexBuffer::~VertexBuffer()
-{
-	glDeleteBuffers(1, &m_id);
-}
+		VertexBuffer(const float *data, int size);
+		virtual ~VertexBuffer();
 
-unsigned int
-VertexBuffer::getId() const
-{
-	return m_id;
-}
+	public:
+		GLuint getId() const;
 
-RefPtr <VertexBuffer>
-VertexBuffer::none()
-{
-	return RefPtr <VertexBuffer> ();
-}
+		static DromeCore::RefPtr <VertexBuffer> none();
+		static DromeCore::RefPtr <VertexBuffer> create(const float *data, int size);
+		static DromeCore::RefPtr <VertexBuffer> create(const DromeMath::Vector3 *data, int size);
+		static DromeCore::RefPtr <VertexBuffer> create(const DromeMath::Matrix4 *data, int size);
+};
 
-RefPtr <VertexBuffer>
-VertexBuffer::create(const float *data, int size)
-{
-	return RefPtr <VertexBuffer> (new VertexBuffer(data, size));
-}
+} // namespace DromeGL
 
-RefPtr <VertexBuffer>
-VertexBuffer::create(const Vector3 *data, int size)
-{
-	return RefPtr <VertexBuffer> (new VertexBuffer((const float *)data, size * 3));
-}
-
-RefPtr <VertexBuffer>
-VertexBuffer::create(const Matrix4 *data, int size)
-{
-	return RefPtr <VertexBuffer> (new VertexBuffer((const float *)data, size * 16));
-}
-
-} // namespace DromeGfx
+#endif /* __DROMEGL_VERTEXBUFFER_H__ */
