@@ -6,13 +6,12 @@ set(
 	EventHandler.cpp
 	Exception.cpp
 	File.cpp
-	IOContext.cpp
 	String.cpp
 	Util.cpp
 	Xml.cpp
 )
 
-# use Cocoa on Mac OS X, SDL elsewhere
+# use Cocoa on Mac OS X
 if(APPLE)
 	# link to Cocoa
 	find_library(COCOA_LIBRARY Cocoa)
@@ -23,19 +22,8 @@ if(APPLE)
 	include_directories(${COCOA_INCLUDE_DIR})
 
 	# build with Cocoa support
-	set(SRCS ${SRCS} File_Apple.mm IOContext_Cocoa.mm)
+	set(SRCS ${SRCS} File_Apple.mm)
 	add_definitions(-DCOCOA_FOUND)
-else(APPLE)
-	find_package(SDL)
-	if(SDL_FOUND)
-		# link to SDL and include path to SDL headers
-		set(LIBS ${LIBS} ${SDL_LIBRARY})
-		include_directories(${SDL_INCLUDE_DIR})
-
-		# build with SDL support
-		set(SRCS ${SRCS} IOContext_SDL.cpp)
-		add_definitions(-DSDL_FOUND)
-	endif(SDL_FOUND)
 endif(APPLE)
 
 add_library(DromeCore STATIC ${SRCS})
