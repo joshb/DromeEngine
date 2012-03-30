@@ -166,9 +166,9 @@ ShaderProgram::linkShaders()
 }
 
 GLint
-ShaderProgram::getUniformVariableLocation(const char *name) const
+ShaderProgram::getUniformLocation(const char *name) const
 {
-	int location = glGetUniformLocation(m_id, name);
+	GLint location = glGetUniformLocation(m_id, name);
 	if(location == -1)
 		throw Exception(string("ShaderProgram::getUniformVariableLocation(): Uniform variable '") + name + "' does not exist");
 
@@ -178,14 +178,14 @@ ShaderProgram::getUniformVariableLocation(const char *name) const
 void
 ShaderProgram::setUniform(const char *name, int value)
 {
-	glUniform1iARB(getUniformVariableLocation(name), value);
+	glUniform1iARB(getUniformLocation(name), value);
 }
 
 void
 ShaderProgram::setUniform(const char *name, const Vector3 *values,
                           int numValues)
 {
-	glUniform3fvARB(getUniformVariableLocation(name), numValues, (float *)values);
+	glUniform3fvARB(getUniformLocation(name), numValues, (float *)values);
 }
 
 void
@@ -198,7 +198,7 @@ void
 ShaderProgram::setUniform(const char *name, const Matrix4 *values,
                           int numValues)
 {
-	glUniformMatrix4fvARB(getUniformVariableLocation(name), numValues, GL_FALSE, (float *)values);
+	glUniformMatrix4fvARB(getUniformLocation(name), numValues, GL_FALSE, (float *)values);
 }
 
 void

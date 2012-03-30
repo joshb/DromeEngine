@@ -52,7 +52,7 @@ class ShaderProgram : public DromeCore::RefClass
 
 		void linkShaders();
 
-		GLint getUniformVariableLocation(const char *name) const;
+		GLint getUniformLocation(const char *name) const;
 		void setUniform(const char *name, int value);
 		void setUniform(const char *name, const DromeMath::Vector3 *values, int numValues);
 		void setUniform(const char *name, const DromeMath::Vector3 &value);
