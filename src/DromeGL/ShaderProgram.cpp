@@ -170,7 +170,7 @@ ShaderProgram::getUniformLocation(const char *name) const
 {
 	GLint location = glGetUniformLocation(m_id, name);
 	if(location == -1)
-		throw Exception(string("ShaderProgram::getUniformVariableLocation(): Uniform variable '") + name + "' does not exist");
+		throw Exception(string("ShaderProgram::getUniformLocation(): Uniform variable '") + name + "' does not exist");
 
 	return location;
 }
@@ -205,6 +205,16 @@ void
 ShaderProgram::setUniform(const char *name, const Matrix4 &value)
 {
 	setUniform(name, &value, 1);
+}
+
+GLint
+ShaderProgram::getAttribLocation(const char *name) const
+{
+	GLint location = glGetAttribLocation(m_id, name);
+	if(location == -1)
+		throw Exception(string("ShaderProgram::getAttribLocation(): Uniform variable '") + name + "' does not exist");
+
+	return location;
 }
 
 RefPtr <ShaderProgram>
