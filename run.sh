@@ -5,9 +5,6 @@ cd `dirname $0`
 
 # execute DromeDemo if the build was successful
 if [ $? -eq 0 ]; then
-	if [ -d demo/DromeDemo.app ]; then
-		./demo/DromeDemo.app/Contents/MacOS/DromeDemo
-	else
-		./demo/DromeDemo
-	fi
+	cd demo
+	../build/demo/DromeDemo
 fi

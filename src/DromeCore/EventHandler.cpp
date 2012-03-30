@@ -31,6 +31,11 @@ using namespace std;
 namespace DromeCore {
 
 void
+EventHandler::cycle(float /*secondsElapsed*/)
+{
+}
+
+void
 EventHandler::windowDimensionsChanged(int /*width*/, int /*height*/)
 {
 }

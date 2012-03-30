@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -24,29 +24,50 @@
  */
 
 #include <iostream>
-#include <DromeCore/IOContext_SDL.h>
-#include "MyEventHandler.h"
+#include <DromeCore/DromeCore>
+#include <DromeGL/DromeGL>
+#include <DromeGL/GLWindow_GLFW.h>
+#include <DromeMath/DromeMath>
 
 using namespace std;
 using namespace DromeCore;
+using namespace DromeGL;
+using namespace DromeMath;
+
+static GLWindow_GLFW *g_window;
+
+class MyEventHandler : public EventHandler
+{
+	public:
+		void
+		buttonPress(Button button)
+		{
+			switch(button) {
+				default:
+					break;
+
+				case BTN_ESCAPE:
+					g_window->close();
+					delete this;
+					break;
+			}
+		}
+};
 
 int
 main(int argc, char *argv[])
 {
-	bool result = false;
+	File::init(argc, (const char **)argv);
 
-	try {
-		File::init(argc, (const char **)argv);
+	// create and open window
+	g_window = new GLWindow_GLFW();
+	g_window->setEventHandler(new MyEventHandler());
+	g_window->open();
 
-		// create and run MyEventHandler
-		MyEventHandler *handler = new MyEventHandler(new IOContext_SDL());
-		result = handler->run();
-
-		// cleanup
-		delete handler;
-	} catch(Exception ex) {
-		cout << "EXCEPTION: " << ex.toString() << endl;
+	while(g_window->isOpen()) {
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		g_window->swapBuffers();
 	}
 
-	return result ? 0 : 1;
+	return 0;
 }

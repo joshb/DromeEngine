@@ -41,6 +41,8 @@ struct btn_info {
 	{ NAME, #NAME, ASCII, SHIFTASCII }
 
 static const btn_info btn_info_array[] = {
+	BTN_INFO ( BTN_NONE, -1, -1 ),
+
 	// mouse buttons
 	BTN_INFO( BTN_MOUSE1, -1, -1 ),
 	BTN_INFO( BTN_MOUSE2, -1, -1 ),
@@ -91,7 +93,8 @@ static const btn_info btn_info_array[] = {
 	BTN_INFO( BTN_RALT, -1, -1 ),
 	BTN_INFO( BTN_TAB, -1, -1 ),
 	BTN_INFO( BTN_CAPS_LOCK, -1, -1 ),
-	BTN_INFO( BTN_WINDOWS, -1, -1 ),
+	BTN_INFO( BTN_LCOMMAND, -1, -1 ),
+	BTN_INFO( BTN_RCOMMAND, -1, -1 ),
 	BTN_INFO( BTN_CONTEXT, -1, -1 ),
 	BTN_INFO( BTN_ENTER, -1, -1 ),
 	BTN_INFO( BTN_SPACE, ' ', ' ' ),
@@ -187,8 +190,6 @@ buttonName(Button button)
 		if(btn_info_array[i].button == button)
 			return btn_info_array[i].name;
 	}
-
-	return NULL;
 }
 
 // return ASCII value of given button, or -1 if not an ASCII key

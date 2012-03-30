@@ -45,7 +45,7 @@ class EventHandler {
 		 *
 		 * @param secondsElapsed The number of seconds that have elapsed since the last cycle.
 		 */
-		virtual void cycle(float secondsElapsed) = 0;
+		virtual void cycle(float secondsElapsed);
 
 		/**
 		 * Called when the application window's dimensions have changed.

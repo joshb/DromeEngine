@@ -1,5 +1,6 @@
 set(
 	SRCS
+	GLWindow_GLFW.cpp
 	ShaderProgram.cpp
 	Texture.cpp
 	VertexBuffer.cpp

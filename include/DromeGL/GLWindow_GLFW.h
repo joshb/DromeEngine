@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010-2012 Josh A. Beam
+ * Copyright (C) 2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,23 +23,49 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMEGL_OPENGL_H__
-#define __DROMEGL_OPENGL_H__
+#ifndef __DROMEGL_GLWINDOW_GLFW_H__
+#define __DROMEGL_GLWINDOW_GLFW_H__
 
-#define GL_GLEXT_PROTOTYPES
+#include <string>
+#include <DromeCore/EventHandler.h>
 
-#ifdef APPLE
-	#ifdef IOS
-		#define GLES
-		#include <OpenGLES/ES1/gl.h>
-		#include <OpenGLES/ES1/glext.h>
-	#else
-		#include <OpenGL/gl.h>
-		#include <OpenGL/glext.h>
-	#endif /* IOS */
-#else
-	#define GLEW
-	#include <GL/glew.h>
-#endif /* APPLE */
+namespace DromeGL {
 
-#endif /* __DROMEGL_OPENGL_H__ */
+class GLWindow_GLFW
+{
+	private:
+		int m_width, m_height;
+		bool m_fullscreen;
+		std::string m_title;
+		DromeCore::EventHandler *m_eventHandler;
+
+		bool m_grabMouse;
+		int m_lastMouseX, m_lastMouseY;
+		int m_lastMouseWheelPosition;
+
+	public:
+		GLWindow_GLFW();
+		virtual ~GLWindow_GLFW();
+
+		bool isOpen() const;
+
+		void setDimensions(int width, int height);
+		void setFullScreen(bool value);
+		void setTitle(const char *value);
+		void setEventHandler(DromeCore::EventHandler *value);
+		void setGrabMouse(bool value);
+
+		void windowSizeChanged(int width, int height);
+		void keyEvent(int key, int state);
+		void mouseButtonEvent(int button, int state);
+		void mouseWheelEvent(int position);
+		void mousePosEvent(int x, int y);
+
+		void open();
+		void close();
+		void swapBuffers();
+};
+
+} // namespace DromeGL
+
+#endif /* __DROMEGL_GLWINDOW_GLFW_H__ */
