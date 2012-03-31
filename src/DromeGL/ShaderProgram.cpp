@@ -120,7 +120,7 @@ attachShader(GLuint programId, GLenum type, const char *shaderSource)
 void
 ShaderProgram::attachVertexShader(const char *shader)
 {
-	attachShader(m_id, GL_VERTEX_SHADER_ARB, shader);
+	attachShader(m_id, GL_VERTEX_SHADER, shader);
 }
 
 void
@@ -133,7 +133,7 @@ ShaderProgram::attachVertexShaderFromFile(const char *shaderPath)
 void
 ShaderProgram::attachFragmentShader(const char *shader)
 {
-	attachShader(m_id, GL_FRAGMENT_SHADER_ARB, shader);
+	attachShader(m_id, GL_FRAGMENT_SHADER, shader);
 }
 
 void
@@ -178,14 +178,14 @@ ShaderProgram::getUniformLocation(const char *name) const
 void
 ShaderProgram::setUniform(const char *name, int value)
 {
-	glUniform1iARB(getUniformLocation(name), value);
+	glUniform1i(getUniformLocation(name), value);
 }
 
 void
 ShaderProgram::setUniform(const char *name, const Vector3 *values,
                           int numValues)
 {
-	glUniform3fvARB(getUniformLocation(name), numValues, (float *)values);
+	glUniform3fv(getUniformLocation(name), numValues, (float *)values);
 }
 
 void
@@ -198,7 +198,7 @@ void
 ShaderProgram::setUniform(const char *name, const Matrix4 *values,
                           int numValues)
 {
-	glUniformMatrix4fvARB(getUniformLocation(name), numValues, GL_FALSE, (float *)values);
+	glUniformMatrix4fv(getUniformLocation(name), numValues, GL_FALSE, (float *)values);
 }
 
 void

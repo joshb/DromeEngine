@@ -41,6 +41,31 @@ Texture::Texture()
 
 Texture::Texture(RefPtr <Image> image)
 {
+	// determine the texture format from the image
+	GLenum format;
+	switch(image->getNumComponents()) {
+		default:
+			throw Exception("Texture::Texture(): Unsupported number of color components");
+			break;
+/*
+		case 1:
+			format = GL_LUMINANCE;
+			break;
+		case 2:
+			format = GL_LUMINANCE_ALPHA;
+			break;
+*/
+		case 3:
+			format = GL_RGB;
+			break;
+		case 4:
+			format = GL_RGBA;
+			break;
+	}
+
+	m_width = image->getWidth();
+	m_height = image->getHeight();
+
 	// generate and bind texture
 	glGenTextures(1, &m_id);
 	glBindTexture(GL_TEXTURE_2D, m_id);
@@ -52,32 +77,8 @@ Texture::Texture(RefPtr <Image> image)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-	// determine the texture format from the image
-	GLint format;
-	switch(image->getNumComponents()) {
-		default:
-			glDeleteTextures(1, &m_id);
-			throw Exception("Texture::Texture(): Unsupported number of color components");
-			break;
-		case 1:
-			format = GL_LUMINANCE;
-			break;
-		case 2:
-			format = GL_LUMINANCE_ALPHA;
-			break;
-		case 3:
-			format = GL_RGB;
-			break;
-		case 4:
-			format = GL_RGBA;
-			break;
-	}
-
 	// create the texture using the image data
-	glTexImage2D(GL_TEXTURE_2D, 0, format, image->getWidth(), image->getHeight(), 0, format, GL_UNSIGNED_BYTE, image->getData());
-
-	m_width = image->getWidth();
-	m_height = image->getHeight();
+	glTexImage2D(GL_TEXTURE_2D, 0, (GLint)image->getNumComponents(), m_width, m_height, 0, format, GL_UNSIGNED_BYTE, image->getData());
 }
 
 Texture::~Texture()

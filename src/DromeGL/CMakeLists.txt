@@ -1,5 +1,6 @@
 set(
 	SRCS
+	Cube.cpp
 	GLWindow_GLFW.cpp
 	ShaderProgram.cpp
 	Texture.cpp
