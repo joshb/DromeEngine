@@ -1,6 +1,7 @@
 #include "OpenGL.h"
 #include "Cube.h"
 #include "ShaderProgram.h"
+#include "Sphere.h"
 #include "Square.h"
 #include "Texture.h"
 #include "VertexBuffer.h"

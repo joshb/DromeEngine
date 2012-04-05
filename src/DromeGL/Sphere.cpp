@@ -23,86 +23,89 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <DromeGL/Cube.h>
+#include <vector>
+#include <DromeMath/DromeMath>
+#include <DromeGL/Sphere.h>
 
+using namespace std;
 using namespace DromeCore;
 using namespace DromeMath;
 
 namespace DromeGL {
 
-Cube::Cube(RefPtr <ShaderProgram> program)
+const int numDivisions = 12;
+
+struct Vertex
+{
+	float x, y, z;
+};
+
+Sphere::Sphere(RefPtr <ShaderProgram> program)
 {
 	m_program = program;
 
-	float v[] = {
-		// -x
-		-1.0f, +1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,
-		-1.0f, +1.0f, +1.0f,	-1.0f, 0.0f, 0.0f,
-		-1.0f, +1.0f, +1.0f,	-1.0f, 0.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,
-		-1.0f, -1.0f, +1.0f,	-1.0f, 0.0f, 0.0f,
+	vector <Vertex> vertices;
+	for(int i = 0; i < (numDivisions / 2); ++i) {
+		float theta1 = (float)M_PI * (float)i / (float)(numDivisions / 2);
+		float c1 = cosf(theta1);
+		float s1 = sinf(theta1);
+		float theta2 = (float)M_PI * (float)(i+1) / (float)(numDivisions / 2);
+		float c2 = cosf(theta2);
+		float s2 = sinf(theta2);
 
-		// +x
-		+1.0f, +1.0f, +1.0f,	+1.0f, 0.0f, 0.0f,
-		+1.0f, -1.0f, +1.0f,	+1.0f, 0.0f, 0.0f,
-		+1.0f, +1.0f, -1.0f,	+1.0f, 0.0f, 0.0f,
-		+1.0f, +1.0f, -1.0f,	+1.0f, 0.0f, 0.0f,
-		+1.0f, -1.0f, +1.0f,	+1.0f, 0.0f, 0.0f,
-		+1.0f, -1.0f, -1.0f,	+1.0f, 0.0f, 0.0f,
+		for(int j = 0; j < numDivisions; ++j) {
+			float theta3 = (float)M_PI * 2.0f * (float)j / (float)numDivisions;
+			float c3 = cosf(theta3);
+			float s3 = -sinf(theta3);
+			float theta4 = (float)M_PI * 2.0f * (float)(j+1) / (float)numDivisions;
+			float c4 = cosf(theta4);
+			float s4 = -sinf(theta4);
 
-		// -y
-		-1.0f, -1.0f, +1.0f,	0.0f, -1.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	0.0f, -1.0f, 0.0f,
-		+1.0f, -1.0f, +1.0f,	0.0f, -1.0f, 0.0f,
-		+1.0f, -1.0f, +1.0f,	0.0f, -1.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	0.0f, -1.0f, 0.0f,
-		+1.0f, -1.0f, -1.0f,	0.0f, -1.0f, 0.0f,
+			Vertex vert;
+			vert.x = c3 * s1; vert.y = c1; vert.z = s3 * s1;
+			vertices.push_back(vert);
+			vert.x = c3 * s2; vert.y = c2; vert.z = s3 * s2;
+			vertices.push_back(vert);
+			vert.x = c4 * s1; vert.y = c1; vert.z = s4 * s1;
+			vertices.push_back(vert);
 
-		// +y
-		-1.0f, +1.0f, -1.0f,	0.0f, +1.0f, 0.0f,
-		-1.0f, +1.0f, +1.0f,	0.0f, +1.0f, 0.0f,
-		+1.0f, +1.0f, -1.0f,	0.0f, +1.0f, 0.0f,
-		+1.0f, +1.0f, -1.0f,	0.0f, +1.0f, 0.0f,
-		-1.0f, +1.0f, +1.0f,	0.0f, +1.0f, 0.0f,
-		+1.0f, +1.0f, +1.0f,	0.0f, +1.0f, 0.0f,
+			vert.x = c4 * s1; vert.y = c1; vert.z = s4 * s1;
+			vertices.push_back(vert);
+			vert.x = c3 * s2; vert.y = c2; vert.z = s3 * s2;
+			vertices.push_back(vert);
+			vert.x = c4 * s2; vert.y = c2; vert.z = s4 * s2;
+			vertices.push_back(vert);
+		}
+	}
 
-		// -z
-		+1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,
-		+1.0f, -1.0f, -1.0f,	0.0f, 0.0f, -1.0f,
-		-1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,
-		-1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,
-		+1.0f, -1.0f, -1.0f,	0.0f, 0.0f, -1.0f,
-		-1.0f, -1.0f, -1.0f,	0.0f, 0.0f, -1.0f,
-
-		// +z
-		-1.0f, +1.0f, +1.0f,	0.0f, 0.0f, +1.0f,
-		-1.0f, -1.0f, +1.0f,	0.0f, 0.0f, +1.0f,
-		+1.0f, +1.0f, +1.0f,	0.0f, 0.0f, +1.0f,
-		+1.0f, +1.0f, +1.0f,	0.0f, 0.0f, +1.0f,
-		-1.0f, -1.0f, +1.0f,	0.0f, 0.0f, +1.0f,
-		+1.0f, -1.0f, +1.0f,	0.0f, 0.0f, +1.0f
-	};
+	m_numVertices = (GLsizei)vertices.size();
+	float *v = new float[m_numVertices * 3];
+	for(unsigned int i = 0; i < vertices.size(); ++i) {
+		v[i*3+0] = vertices[i].x;
+		v[i*3+1] = vertices[i].y;
+		v[i*3+2] = vertices[i].z;
+	}
 
 	// create VAO and VBO
 	glGenVertexArrays(1, &m_vaoId);
 	glBindVertexArray(m_vaoId);
 	glGenBuffers(1, &m_vboId);
 	glBindBuffer(GL_ARRAY_BUFFER, m_vboId);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(v), v, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_numVertices * 3, v, GL_STATIC_DRAW);
+	delete [] v;
 
 	// set vertex position attribute
 	GLint location = m_program->getAttribLocation("vertexPosition");
 	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
+	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
 	// set vertex normal attribute
 	location = m_program->getAttribLocation("vertexNormal");
 	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (const GLvoid *)(sizeof(float)*3));
+	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, 0);
 }
 
-Cube::~Cube()
+Sphere::~Sphere()
 {
 	// delete VAO and VBO
 	glDeleteVertexArrays(1, &m_vaoId);
@@ -110,10 +113,10 @@ Cube::~Cube()
 }
 
 void
-Cube::render(GLsizei numInstances)
+Sphere::render(GLsizei numInstances)
 {
 	glBindVertexArray(m_vaoId);
-	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, numInstances);
+	glDrawArraysInstanced(GL_TRIANGLES, 0, m_numVertices, numInstances);
 }
 
 } // namespace DromeGL

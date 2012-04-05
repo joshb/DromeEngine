@@ -3,6 +3,7 @@ set(
 	Cube.cpp
 	GLWindow_GLFW.cpp
 	ShaderProgram.cpp
+	Sphere.cpp
 	Square.cpp
 	Texture.cpp
 	VertexBuffer.cpp
