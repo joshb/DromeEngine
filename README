@@ -4,7 +4,7 @@ Drome Engine is a 3D game engine that's written in C++ and
 uses OpenGL for graphics rendering.
 
 Drome Engine is distributed under a BSD-style license (see the
-"COPYING" file included with DromeXml for more information).
+"COPYING" file included with Drome Engine for more information).
 It is developed by Josh Beam (http://joshbeam.com/).
 
 FEATURES
@@ -26,8 +26,7 @@ PLATFORMS
 Drome Engine has been developed and tested on the following
 operating systems:
 
-    - Mac OS X
-    - Arch Linux
+    - Mac OS X 10.7 (Lion)
 
 REQUIREMENTS
 ------------
