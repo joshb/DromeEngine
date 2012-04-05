@@ -190,6 +190,8 @@ buttonName(Button button)
 		if(btn_info_array[i].button == button)
 			return btn_info_array[i].name;
 	}
+
+	return NULL;
 }
 
 // return ASCII value of given button, or -1 if not an ASCII key
