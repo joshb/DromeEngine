@@ -182,6 +182,12 @@ ShaderProgram::setUniform(const char *name, int value)
 }
 
 void
+ShaderProgram::setUniform(const char *name, float value)
+{
+	glUniform1f(getUniformLocation(name), value);
+}
+
+void
 ShaderProgram::setUniform(const char *name, const Vector3 *values,
                           int numValues)
 {

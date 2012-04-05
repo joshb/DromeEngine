@@ -41,6 +41,13 @@ class EventHandler {
 		virtual ~EventHandler() { }
 
 		/**
+		 * Called when the application may perform rendering.
+		 *
+		 * @return true if rendering was performed, false otherwise. If true is returned, the caller of this function should do a swap buffers operation to display what was rendered.
+		 */
+		virtual bool render();
+
+		/**
 		 * Called when the application may perform tasks such as rendering and logic.
 		 *
 		 * @param secondsElapsed The number of seconds that have elapsed since the last cycle.

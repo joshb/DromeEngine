@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,24 +23,28 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __BLOCK_H__
-#define __BLOCK_H__
+#ifndef __DROMEGL_CUBE_H__
+#define __DROMEGL_CUBE_H__
 
-#include <DromeMath/BoundingBox.h>
-#include <DromeGfx/Driver.h>
-#include <DromeGfx/Mesh.h>
+#include "OpenGL.h"
+#include "ShaderProgram.h"
 
-class Block : public DromeMath::BoundingBox
+namespace DromeGL {
+
+class Cube
 {
 	private:
-		DromeCore::RefPtr <DromeGfx::Mesh> m_mesh;
-		DromeCore::RefPtr <DromeGfx::Texture> m_texture;
-		DromeCore::RefPtr <DromeGfx::Texture> m_normalmap;
+		GLuint m_vaoId;
+		GLuint m_vboId;
+		DromeCore::RefPtr <ShaderProgram> m_program;
 
 	public:
-		Block(const DromeMath::Vector3 &position, const DromeMath::Vector3 &bounds, DromeCore::RefPtr <DromeGfx::Texture> texture, DromeCore::RefPtr <DromeGfx::Texture> normalmap);
+		Cube(DromeCore::RefPtr <ShaderProgram> program);
+		virtual ~Cube();
 
-		void render(DromeGfx::GfxDriver *driver);
+		void render(GLsizei numInstances = 1);
 };
 
-#endif /* __BLOCK_H__ */
+} // namespace DromeGL
+
+#endif /* __DROMEGL_CUBE_H__ */

@@ -54,6 +54,7 @@ class ShaderProgram : public DromeCore::RefClass
 
 		GLint getUniformLocation(const char *name) const;
 		void setUniform(const char *name, int value);
+		void setUniform(const char *name, float value);
 		void setUniform(const char *name, const DromeMath::Vector3 *values, int numValues);
 		void setUniform(const char *name, const DromeMath::Vector3 &value);
 		void setUniform(const char *name, const DromeMath::Matrix4 *values, int numValues);

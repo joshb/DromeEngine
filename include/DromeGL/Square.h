@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,32 +23,28 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __MYEVENTHANDLER_H__
-#define __MYEVENTHANDLER_H__
+#ifndef __DROMEGL_SQUARE_H__
+#define __DROMEGL_SQUARE_H__
 
-#include "MyScene1.h"
+#include "OpenGL.h"
+#include "ShaderProgram.h"
 
-class MyEventHandler : public DromeCore::EventHandler
+namespace DromeGL {
+
+class Square
 {
-	protected:
-		DromeCore::IOContext *m_io;
-		DromeGfx::GfxDriver *m_driver;
-		DromeCore::ButtonState m_buttonState;
-		DromeGfx::Scene *m_scene;
-
-		int m_resolutionIndex;
-		bool m_wireframe, m_grabMouse;
+	private:
+		GLuint m_vaoId;
+		GLuint m_vboId;
+		DromeCore::RefPtr <ShaderProgram> m_program;
 
 	public:
-		MyEventHandler(DromeCore::IOContext *io);
-		~MyEventHandler();
+		Square(DromeCore::RefPtr <ShaderProgram> program);
+		virtual ~Square();
 
-		void cycle(float secondsElapsed);
-
-		void windowDimensionsChanged(int width, int height);
-		void mouseMove(int x, int y, int xrel, int yrel);
-		void buttonPress(DromeCore::Button button);
-		void buttonRelease(DromeCore::Button button);
+		void render(GLsizei numInstances = 1);
 };
 
-#endif /* __MYEVENTHANDLER_H__ */
+} // namespace DromeGL
+
+#endif /* __DROMEGL_SQUARE_H__ */

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,28 +23,54 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <DromeGfx/CubeMesh.h>
-#include "Block.h"
+#include <DromeGL/Square.h>
 
 using namespace DromeCore;
-using namespace DromeGfx;
 using namespace DromeMath;
 
-Block::Block(const Vector3 &position, const Vector3 &bounds,
-             RefPtr <Texture> texture, RefPtr <Texture> normalmap)
-{
-	setPosition(position);
-	setBounds(bounds);
+namespace DromeGL {
 
-	m_mesh = CubeMesh::create(bounds);
-	m_texture = texture;
-	m_normalmap = normalmap;
+Square::Square(RefPtr <ShaderProgram> program)
+{
+	m_program = program;
+
+	float v[] = {
+		-1.0f, +1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
+		-1.0f, -1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
+		+1.0f, +1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
+		+1.0f, -1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
+	};
+
+	// create VAO and VBO
+	glGenVertexArrays(1, &m_vaoId);
+	glBindVertexArray(m_vaoId);
+	glGenBuffers(1, &m_vboId);
+	glBindBuffer(GL_ARRAY_BUFFER, m_vboId);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(v), v, GL_STATIC_DRAW);
+
+	// set vertex position attribute
+	GLint location = m_program->getAttribLocation("vertexPosition");
+	glEnableVertexAttribArray(location);
+	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
+
+	// set vertex normal attribute
+	location = m_program->getAttribLocation("vertexNormal");
+	glEnableVertexAttribArray(location);
+	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (const GLvoid *)(sizeof(float)*3));
+}
+
+Square::~Square()
+{
+	// delete VAO and VBO
+	glDeleteVertexArrays(1, &m_vaoId);
+	glDeleteBuffers(1, &m_vboId);
 }
 
 void
-Block::render(GfxDriver *driver)
+Square::render(GLsizei numInstances)
 {
-	driver->bindTexture(0, m_texture);
-	driver->bindTexture(1, m_normalmap);
-	m_mesh->render();
+	glBindVertexArray(m_vaoId);
+	glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 4, numInstances);
 }
+
+} // namespace DromeGL

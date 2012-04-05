@@ -54,6 +54,7 @@ GLWindow_GLFW::GLWindow_GLFW()
 	m_eventHandler = NULL;
 
 	m_grabMouse = false;
+	m_lastTime = 0.0f;
 
 #ifdef GLEW
 	// initialize GLEW
@@ -100,6 +101,18 @@ GLWindow_GLFW::setDimensions(int width, int height)
 	}
 }
 
+int
+GLWindow_GLFW::getWidth() const
+{
+	return m_width;
+}
+
+int
+GLWindow_GLFW::getHeight() const
+{
+	return m_height;
+}
+
 void
 GLWindow_GLFW::setFullScreen(bool value)
 {
@@ -114,6 +127,12 @@ GLWindow_GLFW::setFullScreen(bool value)
 	}
 }
 
+bool
+GLWindow_GLFW::getFullScreen() const
+{
+	return m_fullscreen;
+}
+
 void
 GLWindow_GLFW::setTitle(const char *value)
 {
@@ -126,6 +145,8 @@ void
 GLWindow_GLFW::setEventHandler(EventHandler *value)
 {
 	m_eventHandler = value;
+	if(m_eventHandler != NULL)
+		m_eventHandler->windowDimensionsChanged(m_width, m_height);
 }
 
 void
@@ -148,6 +169,12 @@ GLWindow_GLFW::setGrabMouse(bool value)
 	}
 }
 
+bool
+GLWindow_GLFW::getGrabMouse() const
+{
+	return m_grabMouse;
+}
+
 static void GLFWCALL
 windowSizeCallback(int width, int height)
 {
@@ -165,6 +192,12 @@ GLWindow_GLFW::windowSizeChanged(int width, int height)
 
 	if(m_eventHandler != NULL)
 		m_eventHandler->windowDimensionsChanged(width, height);
+}
+
+static int GLFWCALL
+windowCloseCallback()
+{
+	return GL_TRUE;
 }
 
 static Button
@@ -442,9 +475,12 @@ GLWindow_GLFW::open()
 	if(glfwOpenWindow((int)m_width, (int)m_height, 8, 8, 8, 8, 32, 0, fullscreen) == GL_FALSE)
 		throw Exception("GLWindow_GLFW::open(): glfwOpenWindow failed");
 
+	glfwEnable(GLFW_KEY_REPEAT);
+
 	// set window title and callbacks
 	glfwSetWindowTitle(m_title.c_str());
 	glfwSetWindowSizeCallback(windowSizeCallback);
+	glfwSetWindowCloseCallback(windowCloseCallback);
 	glfwSetKeyCallback(keyCallback);
 	glfwSetMouseButtonCallback(mouseButtonCallback);
 	glfwSetMouseWheelCallback(mouseWheelCallback);
@@ -463,6 +499,10 @@ GLWindow_GLFW::open()
 	// do some GL setup
 	glClearColor(0.25f, 0.25f, 0.5f, 1.0f);
 	glClearDepth(1.0f);
+	glEnable(GL_DEPTH_TEST);
+
+	glEnable(GL_CULL_FACE);
+	glFrontFace(GL_CCW);
 }
 
 void
@@ -470,6 +510,20 @@ GLWindow_GLFW::close()
 {
 	if(isOpen())
 		glfwCloseWindow();
+}
+
+void
+GLWindow_GLFW::cycle()
+{
+	double time = glfwGetTime();
+	float secondsElapsed = (float)(time - m_lastTime);
+	m_lastTime = time;
+
+	if(m_eventHandler != NULL) {
+		m_eventHandler->cycle(secondsElapsed);
+		if(m_eventHandler->render())
+			glfwSwapBuffers();
+	}
 }
 
 void

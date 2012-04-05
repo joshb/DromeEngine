@@ -43,6 +43,8 @@ class GLWindow_GLFW
 		int m_lastMouseX, m_lastMouseY;
 		int m_lastMouseWheelPosition;
 
+		double m_lastTime;
+
 	public:
 		GLWindow_GLFW();
 		virtual ~GLWindow_GLFW();
@@ -50,10 +52,17 @@ class GLWindow_GLFW
 		bool isOpen() const;
 
 		void setDimensions(int width, int height);
+		int getWidth() const;
+		int getHeight() const;
+
 		void setFullScreen(bool value);
+		bool getFullScreen() const;
+
 		void setTitle(const char *value);
 		void setEventHandler(DromeCore::EventHandler *value);
+
 		void setGrabMouse(bool value);
+		bool getGrabMouse() const;
 
 		void windowSizeChanged(int width, int height);
 		void keyEvent(int key, int state);
@@ -63,6 +72,7 @@ class GLWindow_GLFW
 
 		void open();
 		void close();
+		void cycle();
 		void swapBuffers();
 };
 

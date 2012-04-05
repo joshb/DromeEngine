@@ -30,6 +30,12 @@ using namespace std;
 
 namespace DromeCore {
 
+bool
+EventHandler::render()
+{
+	return false;
+}
+
 void
 EventHandler::cycle(float /*secondsElapsed*/)
 {
