@@ -47,6 +47,9 @@ class ShaderProgram : public DromeCore::RefClass
 		void attachVertexShader(const char *shader);
 		void attachVertexShaderFromFile(const char *shaderPath);
 
+		void attachGeometryShader(const char *shader);
+		void attachGeometryShaderFromFile(const char *shaderPath);
+
 		void attachFragmentShader(const char *shader);
 		void attachFragmentShaderFromFile(const char *shaderPath);
 

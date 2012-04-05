@@ -132,6 +132,19 @@ ShaderProgram::attachVertexShaderFromFile(const char *shaderPath)
 }
 
 void
+ShaderProgram::attachGeometryShader(const char *shader)
+{
+	attachShader(m_id, GL_GEOMETRY_SHADER, shader);
+}
+
+void
+ShaderProgram::attachGeometryShaderFromFile(const char *shaderPath)
+{
+	string source = loadShaderFromFile(shaderPath);
+	attachGeometryShader(source.c_str());
+}
+
+void
 ShaderProgram::attachFragmentShader(const char *shader)
 {
 	attachShader(m_id, GL_FRAGMENT_SHADER, shader);
