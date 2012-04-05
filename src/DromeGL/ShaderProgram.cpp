@@ -96,8 +96,9 @@ compileShader(GLenum type, const char *shaderSource)
 		char *log = new char[length];
 		glGetShaderInfoLog(shader, length, &length, log);
 
-		throw Exception(string("compileShader(): Shader compilation failed: ") + log);
+		Exception ex = Exception(string("compileShader(): Shader compilation failed: ") + log);
 		delete [] log;
+		throw ex;
 	}
 
 	return shader;
@@ -160,8 +161,9 @@ ShaderProgram::linkShaders()
 		char *log = new char[length];
 		glGetProgramInfoLog(m_id, length, &length, log);
 
-		throw Exception(string("ShaderProgram::linkShaders(): Program linking failed: ") + log);
+		Exception ex = Exception(string("ShaderProgram::linkShaders(): Program linking failed: ") + log);
 		delete [] log;
+		throw ex;
 	}
 }
 
