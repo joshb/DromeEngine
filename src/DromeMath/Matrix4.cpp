@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -117,14 +117,17 @@ Matrix4::operator * (const Matrix4 &matrix) const
 	return Matrix4(m);
 }
 
-Vector3
-Matrix4::operator * (const Vector3 &vector) const
+Vector4
+Matrix4::operator * (const Vector4 &v) const
 {
-	float x = m_matrix[0]*vector.x + m_matrix[1]*vector.y + m_matrix[2]*vector.z + m_matrix[3];
-	float y = m_matrix[4]*vector.x + m_matrix[5]*vector.y + m_matrix[6]*vector.z + m_matrix[7];
-	float z = m_matrix[8]*vector.x + m_matrix[9]*vector.y + m_matrix[10]*vector.z + m_matrix[11];
+	const float *m = m_matrix;
 
-	return Vector3(x, y, z);
+	float x = m[0]*v.x + m[4]*v.y + m[ 8]*v.z + m[12]*v.w;
+	float y = m[1]*v.x + m[5]*v.y + m[ 9]*v.z + m[13]*v.w;
+	float z = m[2]*v.x + m[6]*v.y + m[10]*v.z + m[14]*v.w;
+	float w = m[3]*v.x + m[7]*v.y + m[11]*v.z + m[15]*v.w;
+
+	return Vector4(x, y, z, w);
 }
 
 Matrix4

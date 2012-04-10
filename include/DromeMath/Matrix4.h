@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -28,6 +28,7 @@
 
 #include <string>
 #include "Vector3.h"
+#include "Vector4.h"
 
 namespace DromeMath {
 
@@ -87,10 +88,10 @@ class Matrix4
 		Matrix4 operator * (const Matrix4 &matrix) const;
 
 		/**
-		 * @param vector A vector multiply this matrix by.
-		 * @return A Vector3 object that is the result of multiplying this matrix by a vector.
+		 * @param vector A vector to multiply this matrix by.
+		 * @return A Vector4 object that is the result of multiplying this matrix by a vector.
 		 */
-		Vector3 operator * (const Vector3 &vector) const;
+		Vector4 operator * (const Vector4 &vector) const;
 
 		/**
 		 * @return A Matrix4 object that is the result of taking the transpose of this matrix.
