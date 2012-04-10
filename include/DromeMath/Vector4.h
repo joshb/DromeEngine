@@ -27,6 +27,7 @@
 #define __DROMEMATH_VECTOR4_H__
 
 #include <string>
+#include "Vector3.h"
 
 namespace DromeMath {
 
@@ -67,6 +68,14 @@ class Vector4
 		Vector4(float x_param = 0.0f, float y_param = 0.0f, float z_param = 0.0f, float w_param = 0.0f);
 
 		/**
+		 * Creates a new Vector4 object representing the vector with the given coordinates.
+		 *
+		 * @param v A Vector3 object containing the X, Y, and Z coordinates of the vector.
+		 * @param w_param The W coordinate of the vector.
+		 */
+		Vector4(const Vector3 &v, float w_param = 0.0f);
+
+		/**
 		 * Creates a new Vector4 object from a string representation of a vector.
 		 *
 		 * @param s The string representation of the vector.
@@ -79,6 +88,11 @@ class Vector4
 		 * @param s The string representation of the vector.
 		 */
 		Vector4(const std::string &s);
+
+		/**
+		 * @return A Vector3 object containing the X, Y, and Z coordinates of this vector.
+		 */
+		Vector3 xyz() const;
 
 		/**
 		 * Calculates the dot product of this vector with another vector, which is defined as the sum of each component of this vector multiplied by the corresponding component in the other vector.

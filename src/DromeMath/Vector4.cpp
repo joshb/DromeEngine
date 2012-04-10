@@ -39,6 +39,14 @@ Vector4::Vector4(float x_param, float y_param, float z_param, float w_param)
 	w = w_param;
 }
 
+Vector4::Vector4(const Vector3 &v, float w_param)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+	w = w_param;
+}
+
 Vector4::Vector4(const char *s)
 {
 	stringstream stream(s);
@@ -49,6 +57,12 @@ Vector4::Vector4(const string &s)
 {
 	stringstream stream(s);
 	stream >> x >> y >> z >> w;
+}
+
+Vector3
+Vector4::xyz() const
+{
+	return Vector3(x, y, z);
 }
 
 float
