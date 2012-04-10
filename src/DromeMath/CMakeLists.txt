@@ -8,6 +8,7 @@ set(
 	Rect2i.cpp
 	Vector2i.cpp
 	Vector3.cpp
+	Vector4.cpp
 )
 
 add_library(DromeMath STATIC ${SRCS})
