@@ -60,6 +60,8 @@ class ShaderProgram : public DromeCore::RefClass
 		void setUniform(const char *name, float value);
 		void setUniform(const char *name, const DromeMath::Vector3 *values, int numValues);
 		void setUniform(const char *name, const DromeMath::Vector3 &value);
+		void setUniform(const char *name, const DromeMath::Vector4 *values, int numValues);
+		void setUniform(const char *name, const DromeMath::Vector4 &value);
 		void setUniform(const char *name, const DromeMath::Matrix4 *values, int numValues);
 		void setUniform(const char *name, const DromeMath::Matrix4 &value);
 

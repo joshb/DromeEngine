@@ -216,6 +216,19 @@ ShaderProgram::setUniform(const char *name, const Vector3 &value)
 }
 
 void
+ShaderProgram::setUniform(const char *name, const Vector4 *values,
+                          int numValues)
+{
+	glUniform4fv(getUniformLocation(name), numValues, (float *)values);
+}
+
+void
+ShaderProgram::setUniform(const char *name, const Vector4 &value)
+{
+	setUniform(name, &value, 1);
+}
+
+void
 ShaderProgram::setUniform(const char *name, const Matrix4 *values,
                           int numValues)
 {
