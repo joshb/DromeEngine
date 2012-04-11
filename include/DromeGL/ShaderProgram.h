@@ -65,6 +65,7 @@ class ShaderProgram : public DromeCore::RefClass
 		void setUniform(const char *name, const DromeMath::Matrix4 *values, int numValues);
 		void setUniform(const char *name, const DromeMath::Matrix4 &value);
 
+		void bindAttribLocation(GLint location, const char *name);
 		GLint getAttribLocation(const char *name) const;
 
 		static DromeCore::RefPtr <ShaderProgram> none();

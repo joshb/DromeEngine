@@ -241,6 +241,12 @@ ShaderProgram::setUniform(const char *name, const Matrix4 &value)
 	setUniform(name, &value, 1);
 }
 
+void
+ShaderProgram::bindAttribLocation(GLint location, const char *name)
+{
+	glBindAttribLocation(m_id, location, name);
+}
+
 GLint
 ShaderProgram::getAttribLocation(const char *name) const
 {
