@@ -56,14 +56,6 @@ GLWindow_GLFW::GLWindow_GLFW()
 	m_grabMouse = false;
 	m_lastTime = 0.0f;
 
-#ifdef GLEW
-	// initialize GLEW
-	if(glewInit(NULL, NULL) != GLEW_OK) {
-		g_instance = NULL;
-		throw Exception("GLWindow_GLFW::GLWindow_GLFW(): glewInit failed");
-	}
-#endif
-
 	// initialize GLFW
 	if(glfwInit() == GL_FALSE) {
 		g_instance = NULL;
@@ -495,6 +487,15 @@ GLWindow_GLFW::open()
 		glfwDisable(GLFW_MOUSE_CURSOR);
 		glfwSetMousePos(m_lastMouseX, m_lastMouseY);
 	}
+
+#ifdef GLEW
+	// initialize GLEW
+	if(glewInit() != GLEW_OK) {
+		close();
+		g_instance = NULL;
+		throw Exception("GLWindow_GLFW::open(): glewInit failed");
+	}
+#endif
 
 	// do some GL setup
 	glClearColor(0.25f, 0.25f, 0.5f, 1.0f);
