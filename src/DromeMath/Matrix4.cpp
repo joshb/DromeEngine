@@ -24,6 +24,7 @@
  */
 
 #include <cmath>
+#include <cstring>
 #include <sstream>
 #include <DromeMath/Matrix4.h>
 
@@ -33,10 +34,14 @@ namespace DromeMath {
 
 Matrix4::Matrix4()
 {
-	for(int i = 0; i < 4; ++i) {
-		for(int j = 0; j < 4; ++j)
-			m_matrix[i*4+j] = (i == j) ? 1.0f : 0.0f;
-	}
+	const float identityData[] = {
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f
+	};
+
+	memcpy(m_matrix, identityData, sizeof(m_matrix));
 }
 
 Matrix4::Matrix4(const float matrix[16])
