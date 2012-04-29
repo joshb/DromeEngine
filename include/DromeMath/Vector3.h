@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -36,20 +36,41 @@ namespace DromeMath {
 class Vector3
 {
 	public:
-		/**
-		 * \brief The X component of the three-dimensional vector.
-		 */
-		float x;
+		union {
+			struct {
+				/**
+				 * \brief The X component of the vector.
+				 */
+				float x;
 
-		/**
-		 * \brief The Y component of the three-dimensional vector.
-		 */
-		float y;
+				/**
+				 * \brief The Y component of the vector.
+				 */
+				float y;
 
-		/**
-		 * \brief The Z component of the three-dimensional vector.
-		 */
-		float z;
+				/**
+				 * \brief The Z component of the vector.
+				 */
+				float z;
+			};
+
+			struct {
+				/**
+				 * \brief The red component of the color.
+				 */
+				float r;
+
+				/**
+				 * \brief The green component of the color.
+				 */
+				float g;
+
+				/**
+				 * \brief The blue component of the color.
+				 */
+				float b;
+			};
+		};
 		
 		/**
 		 * Creates a new Vector3 object representing the vector with the given coordinates.
@@ -200,6 +221,8 @@ class Vector3
 		 */
 		std::string toString() const;
 };
+
+typedef Vector3 Color3;
 
 } // namespace DromeMath
 

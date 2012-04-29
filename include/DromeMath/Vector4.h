@@ -32,30 +32,56 @@
 namespace DromeMath {
 
 /**
- * \brief Represents a four-dimensional vector.
+ * \brief Represents a four-dimensional vector or four-component color.
  */
 class Vector4
 {
 	public:
-		/**
-		 * \brief The X component of the vector.
-		 */
-		float x;
+		union {
+			struct {
+				/**
+				 * \brief The X component of the vector.
+				 */
+				float x;
 
-		/**
-		 * \brief The Y component of the vector.
-		 */
-		float y;
+				/**
+				 * \brief The Y component of the vector.
+				 */
+				float y;
 
-		/**
-		 * \brief The Z component of the vector.
-		 */
-		float z;
+				/**
+				 * \brief The Z component of the vector.
+				 */
+				float z;
 
-		/**
-		 * \brief The W component of the vector.
-		 */
-		float w;
+				/**
+				 * \brief The W component of the vector.
+				 */
+				float w;
+			};
+
+			struct {
+				/**
+				 * \brief The red component of the color.
+				 */
+				float r;
+
+				/**
+				 * \brief The green component of the color.
+				 */
+				float g;
+
+				/**
+				 * \brief The blue component of the color.
+				 */
+				float b;
+
+				/**
+				 * \brief The alpha component of the color.
+				 */
+				float a;
+			};
+		};
 		
 		/**
 		 * Creates a new Vector4 object representing the vector with the given coordinates.
@@ -93,6 +119,11 @@ class Vector4
 		 * @return A Vector3 object containing the X, Y, and Z coordinates of this vector.
 		 */
 		Vector3 xyz() const;
+
+		/**
+		 * @return A Color3 object containing the red, green, and blue components of this color.
+		 */
+		Color3 rgb() const;
 
 		/**
 		 * Calculates the dot product of this vector with another vector, which is defined as the sum of each component of this vector multiplied by the corresponding component in the other vector.
@@ -212,6 +243,8 @@ class Vector4
 		 */
 		std::string toString() const;
 };
+
+typedef Vector4 Color4;
 
 } // namespace DromeMath
 

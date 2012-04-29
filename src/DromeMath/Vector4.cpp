@@ -65,6 +65,12 @@ Vector4::xyz() const
 	return Vector3(x, y, z);
 }
 
+Color3
+Vector4::rgb() const
+{
+	return Color3(r, g, b);
+}
+
 float
 Vector4::dotProduct(const Vector4 &v) const
 {
