@@ -23,8 +23,6 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <cstdlib>
-#include <cstring>
 #include <DromeCore/Exception.h>
 #include <DromeCore/File.h>
 #include <DromeCore/String.h>
@@ -34,6 +32,7 @@
 #include "PngImage.h"
 
 using namespace std;
+using namespace DromeMath;
 
 namespace DromeCore {
 
@@ -99,7 +98,7 @@ Image::getNumComponents() const
 	return m_colorComponents;
 }
 
-Color
+Color4
 Image::getPixel(unsigned int x, unsigned int y) const
 {
 	if(!m_data)
@@ -108,34 +107,34 @@ Image::getPixel(unsigned int x, unsigned int y) const
 	if(x >= m_width || y >= m_height)
 		throw Exception(String("Image::getPixel(): Pixel ") + String(x) + "x" + String(y) + " is out of image bounds (" + String(m_width) + "x" + String(m_height) + ")");
 
-	Color pixel;
+	Color4 pixel;
 	int tmp;
 
 	switch(m_colorComponents) {
 		default:
 			break;
 		case 1:
-			pixel.r = pixel.g = pixel.b = m_data[(m_width * y) + x];
-			pixel.a = 255;
+			pixel.r = pixel.g = pixel.b = (float)m_data[(m_width * y) + x] / 255.0f;
+			pixel.a = 1.0f;
 			break;
 		case 2:
 			tmp = ((m_width * y) + x) * 2;
-			pixel.r = pixel.g = pixel.b = m_data[tmp + 0];
-			pixel.a = m_data[tmp + 1];
+			pixel.r = pixel.g = pixel.b = (float)m_data[tmp + 0] / 255.0f;
+			pixel.a = (float)m_data[tmp + 1] / 255.0f;
 			break;
 		case 3:
 			tmp = ((m_width * y) + x) * 3;
-			pixel.r = m_data[tmp + 0];
-			pixel.g = m_data[tmp + 1];
-			pixel.b = m_data[tmp + 2];
-			pixel.a = 255;
+			pixel.r = (float)m_data[tmp + 0] / 255.0f;
+			pixel.g = (float)m_data[tmp + 1] / 255.0f;
+			pixel.b = (float)m_data[tmp + 2] / 255.0f;
+			pixel.a = 1.0f;
 			break;
 		case 4:
 			tmp = ((m_width * y) + x) * 4;
-			pixel.r = m_data[tmp + 0];
-			pixel.g = m_data[tmp + 1];
-			pixel.b = m_data[tmp + 2];
-			pixel.a = m_data[tmp + 3];
+			pixel.r = (float)m_data[tmp + 0] / 255.0f;
+			pixel.g = (float)m_data[tmp + 1] / 255.0f;
+			pixel.b = (float)m_data[tmp + 2] / 255.0f;
+			pixel.a = (float)m_data[tmp + 3] / 255.0f;
 			break;
 	}
 
@@ -143,7 +142,7 @@ Image::getPixel(unsigned int x, unsigned int y) const
 }
 
 void
-Image::setPixel(unsigned int x, unsigned int y, Color c)
+Image::setPixel(unsigned int x, unsigned int y, Color4 c)
 {
 	if(!m_data)
 		throw Exception("Image::setPixel(): No image data available");
@@ -155,22 +154,22 @@ Image::setPixel(unsigned int x, unsigned int y, Color c)
 		default:
 			break;
 		case 1:
-			m_data[(m_width * y) + x] = c.r;
+			m_data[(m_width * y) + x] = (uint8_t)(c.r * 255.0f);
 			break;
 		case 2:
-			m_data[(m_width * 2 * y) + (x * 2) + 0] = c.r;
-			m_data[(m_width * 2 * y) + (x * 2) + 1] = c.a;
+			m_data[(m_width * 2 * y) + (x * 2) + 0] = (uint8_t)(c.r * 255.0f);
+			m_data[(m_width * 2 * y) + (x * 2) + 1] = (uint8_t)(c.a * 255.0f);
 			break;
 		case 3:
-			m_data[(m_width * 3 * y) + (x * 3) + 0] = c.r;
-			m_data[(m_width * 3 * y) + (x * 3) + 1] = c.g;
-			m_data[(m_width * 3 * y) + (x * 3) + 2] = c.b;
+			m_data[(m_width * 3 * y) + (x * 3) + 0] = (uint8_t)(c.r * 255.0f);
+			m_data[(m_width * 3 * y) + (x * 3) + 1] = (uint8_t)(c.g * 255.0f);
+			m_data[(m_width * 3 * y) + (x * 3) + 2] = (uint8_t)(c.b * 255.0f);
 			break;
 		case 4:
-			m_data[(m_width * 4 * y) + (x * 4) + 0] = c.r;
-			m_data[(m_width * 4 * y) + (x * 4) + 1] = c.g;
-			m_data[(m_width * 4 * y) + (x * 4) + 2] = c.b;
-			m_data[(m_width * 4 * y) + (x * 4) + 3] = c.a;
+			m_data[(m_width * 4 * y) + (x * 4) + 0] = (uint8_t)(c.r * 255.0f);
+			m_data[(m_width * 4 * y) + (x * 4) + 1] = (uint8_t)(c.g * 255.0f);
+			m_data[(m_width * 4 * y) + (x * 4) + 2] = (uint8_t)(c.b * 255.0f);
+			m_data[(m_width * 4 * y) + (x * 4) + 3] = (uint8_t)(c.a * 255.0f);
 			break;
 	}
 }

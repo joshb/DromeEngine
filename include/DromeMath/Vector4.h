@@ -116,6 +116,18 @@ class Vector4
 		Vector4(const std::string &s);
 
 		/**
+		 * @param i The index of the vector component to access.
+		 * @return A reference to the vector component at the given index.
+		 */
+		float &operator [] (int i);
+
+		/**
+		 * @param i The index of the vector component to access.
+		 * @return A reference to the vector component at the given index.
+		 */
+		float operator [] (int i) const;
+
+		/**
 		 * @return A Vector3 object containing the X, Y, and Z coordinates of this vector.
 		 */
 		Vector3 xyz() const;

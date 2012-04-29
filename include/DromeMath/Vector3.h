@@ -96,6 +96,18 @@ class Vector3
 		Vector3(const std::string &s);
 
 		/**
+		 * @param i The index of the vector component to access.
+		 * @return A reference to the vector component at the given index.
+		 */
+		float &operator [] (int i);
+
+		/**
+		 * @param i The index of the vector component to access.
+		 * @return A reference to the vector component at the given index.
+		 */
+		float operator [] (int i) const;
+
+		/**
 		 * Calculates the dot product of this vector with another vector, which is defined as the sum of each component of this vector multiplied by the corresponding component in the other vector.
 		 *
 		 * @param v The vector to take the dot product of with this vector.

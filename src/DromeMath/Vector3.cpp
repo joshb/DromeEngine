@@ -50,6 +50,34 @@ Vector3::Vector3(const string &s)
 	stream >> x >> y >> z;
 }
 
+float &
+Vector3::operator [] (int i)
+{
+	switch(i) {
+		default:
+		case 0:
+			return x;
+		case 1:
+			return y;
+		case 2:
+			return z;
+	}
+}
+
+float
+Vector3::operator [] (int i) const
+{
+	switch(i) {
+		default:
+		case 0:
+			return x;
+		case 1:
+			return y;
+		case 2:
+			return z;
+	}
+}
+
 float
 Vector3::dotProduct(const Vector3 &v) const
 {

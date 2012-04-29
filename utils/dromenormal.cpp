@@ -46,15 +46,15 @@ generate_normalmap(RefPtr <Image> bumpimg)
 
 			v1.x = 0.0f;
 			v1.y = 0.0f;
-			v1.z = bumpimg->getPixel(j, i).getFloatR() * height_scale;
+			v1.z = bumpimg->getPixel(j, i).r * height_scale;
 
 			v2.x = 1.0f;
 			v2.y = 0.0f;
-			v2.z = bumpimg->getPixel((j+1) % width, i).getFloatR() * height_scale;
+			v2.z = bumpimg->getPixel((j+1) % width, i).r * height_scale;
 
 			v3.x = 0.0f;
 			v3.y = -1.0f;
-			v3.z = bumpimg->getPixel(j, (i+1) % height).getFloatR() * height_scale;
+			v3.z = bumpimg->getPixel(j, (i+1) % height).r * height_scale;
 
 			// create normal
 			v2 -= v1;

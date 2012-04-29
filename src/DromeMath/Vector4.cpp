@@ -59,6 +59,38 @@ Vector4::Vector4(const string &s)
 	stream >> x >> y >> z >> w;
 }
 
+float &
+Vector4::operator [] (int i)
+{
+	switch(i) {
+		default:
+		case 0:
+			return x;
+		case 1:
+			return y;
+		case 2:
+			return z;
+		case 3:
+			return w;
+	}
+}
+
+float
+Vector4::operator [] (int i) const
+{
+	switch(i) {
+		default:
+		case 0:
+			return x;
+		case 1:
+			return y;
+		case 2:
+			return z;
+		case 3:
+			return w;
+	}
+}
+
 Vector3
 Vector4::xyz() const
 {
