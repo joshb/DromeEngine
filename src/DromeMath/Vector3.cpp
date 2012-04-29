@@ -23,9 +23,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <DromeMath/Vector3.h>
-#include <cmath>
 #include <sstream>
+#include <DromeMath/Vector3.h>
+#include <DromeMath/Util.h>
 
 using namespace std;
 

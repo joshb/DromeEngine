@@ -23,10 +23,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <cmath>
 #include <cstring>
 #include <sstream>
 #include <DromeMath/Matrix4.h>
+#include <DromeMath/Util.h>
 
 using namespace std;
 

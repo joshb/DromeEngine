@@ -23,7 +23,6 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <cmath>
 #include <DromeMath/Quaternion.h>
 #include <DromeMath/Util.h>
 
