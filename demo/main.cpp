@@ -51,7 +51,6 @@ class MyEventHandler : public EventHandler
 		RefPtr <ShaderProgram> m_program;
 		Cube *m_cube;
 
-		bool m_instanced;
 		int m_numCubesPerDimension;
 		float m_cubeSeparation;
 
@@ -72,7 +71,6 @@ class MyEventHandler : public EventHandler
 			glUseProgram(m_program->getId());
 			m_cube = new Cube(m_program);
 
-			m_instanced = true;
 			m_numCubesPerDimension = 1;
 			m_cubeSeparation = 3.0f;
 		}
@@ -90,22 +88,15 @@ class MyEventHandler : public EventHandler
 			glUseProgram(m_program->getId());
 			m_program->setUniform("modelviewMatrix", m_modelview);
 			m_program->setUniform("mvpMatrix", m_projection * m_modelview);
-			m_program->setUniform("numCubesPerDimension", m_instanced ? m_numCubesPerDimension : 1);
-			m_program->setUniform("cubeSeparation", m_cubeSeparation);
 
-			if(m_instanced) {
-				m_program->setUniform("instancePosition", Vector3(0.0f, 0.0f, 0.0f));
-				m_cube->render(m_numCubesPerDimension*m_numCubesPerDimension*m_numCubesPerDimension);
-			} else {
-				int npd = m_numCubesPerDimension;
-				for(int instanceID = 0; instanceID < (npd*npd*npd); ++instanceID) {
-					int z = (instanceID / (npd*npd)) - (npd / 2);
-					int y = ((instanceID % (npd*npd)) / npd) - (npd / 2);
-					int x = (instanceID % npd) - (npd / 2);
+			int npd = m_numCubesPerDimension;
+			for(int instanceID = 0; instanceID < (npd*npd*npd); ++instanceID) {
+				int z = (instanceID / (npd*npd)) - (npd / 2);
+				int y = ((instanceID % (npd*npd)) / npd) - (npd / 2);
+				int x = (instanceID % npd) - (npd / 2);
 
-					m_program->setUniform("instancePosition", Vector3((float)x, (float)y, (float)z) * m_cubeSeparation);
-					m_cube->render();
-				}
+				m_program->setUniform("instancePosition", Vector3((float)x, (float)y, (float)z) * m_cubeSeparation);
+				m_cube->render();
 			}
 
 			return true;
@@ -180,11 +171,6 @@ class MyEventHandler : public EventHandler
 				case BTN_EQUALS:
 					++m_numCubesPerDimension;
 					cout << "Number of cubes: " << (m_numCubesPerDimension*m_numCubesPerDimension*m_numCubesPerDimension) << endl;
-					break;
-
-				case BTN_I:
-					m_instanced = !m_instanced;
-					cout << "Instanced: " << (m_instanced ? "Yes" : "No") << endl;
 					break;
 			}
 		}

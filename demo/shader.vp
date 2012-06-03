@@ -3,8 +3,6 @@
 uniform mat4 modelviewMatrix;
 uniform mat4 mvpMatrix;
 
-uniform int numCubesPerDimension;
-uniform float cubeSeparation;
 uniform vec3 instancePosition;
 
 in vec3 vertexPosition;
@@ -15,17 +13,7 @@ out vec3 fragmentColor;
 vec3
 position(vec3 p)
 {
-	if(numCubesPerDimension == 1)
-		return p + instancePosition;
-
-	int npd = numCubesPerDimension;
-	int npds = npd*npd;
-	int npd2 = npd / 2;
-	vec3 v = vec3((gl_InstanceID / npds) - npd2,
-		((gl_InstanceID % npds) / npd) - npd2,
-		(gl_InstanceID % npd) - npd2);
-
-	return p + v * cubeSeparation;
+	return p + instancePosition;
 }
 
 void
