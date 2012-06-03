@@ -37,8 +37,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]
 		bounds]] autorelease];
     // Override point for customization after application launch.
+	NSString *nibName = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		? @"ViewController-iPad" : @"ViewController";
 	self.viewController = [[[ViewController alloc]
-		initWithNibName:@"ViewController" bundle:nil] autorelease];
+		initWithNibName:nibName bundle:nil] autorelease];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

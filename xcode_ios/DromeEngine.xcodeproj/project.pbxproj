@@ -52,6 +52,7 @@
 		0DB9B7EC157B034500B737EF /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7E8157AFE0800B737EF /* ViewController.xib */; };
 		0DB9B7F4157B068700B737EF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7F3157B068700B737EF /* AppDelegate.mm */; };
 		0DB9B7FB157B0EC100B737EF /* DromeGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FA157B0EC100B737EF /* DromeGLView.m */; };
+		0DB9B7FD157B186C00B737EF /* ViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		0DB9B7F3157B068700B737EF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		0DB9B7F9157B0EC100B737EF /* DromeGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DromeGLView.h; sourceTree = "<group>"; };
 		0DB9B7FA157B0EC100B737EF /* DromeGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DromeGLView.m; sourceTree = "<group>"; };
+		0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ViewController-iPad.xib"; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libDromeMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -243,6 +245,7 @@
 				0DB9B7E9157AFF1F00B737EF /* ViewController.h */,
 				0DB9B7EA157AFF1F00B737EF /* ViewController.m */,
 				0DB9B7E8157AFE0800B737EF /* ViewController.xib */,
+				0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */,
 				0D05EA61129B236A0000C6AB /* Classes */,
 				0D05EA6B129B236A0000C6AB /* main.mm */,
 				0D05EA5C129B22CB0000C6AB /* DromeDemo-Info.plist */,
@@ -521,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB9B7EC157B034500B737EF /* ViewController.xib in Resources */,
+				0DB9B7FD157B186C00B737EF /* ViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +623,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "DromeDemo-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -627,6 +632,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = DromeDemo;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -640,6 +646,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "DromeDemo-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -648,6 +655,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = DromeDemo;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				ZERO_LINK = NO;
 			};
 			name = Release;
