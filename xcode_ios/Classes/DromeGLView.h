@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Josh A. Beam
+ * Copyright (C) 2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,22 +23,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import <OpenGLES/EAGL.h>
-#import <OpenGLES/EAGLDrawable.h>
-
-#import <DromeGL/OpenGL.h>
-
-@interface ES1Renderer : NSObject
-{
-	@private
-		EAGLContext *context;
-		GLint backingWidth, backingHeight;
-		GLuint defaultFramebuffer, colorRenderbuffer;
-}
-
-- (void)render;
-- (BOOL)resizeFromLayer:(CAEAGLLayer *)layer;
+@interface DromeGLView : UIView
 
 @end

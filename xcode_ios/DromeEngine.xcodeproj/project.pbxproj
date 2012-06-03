@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D05EA6E129B236A0000C6AB /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D05EA65129B236A0000C6AB /* EAGLView.mm */; };
-		0D05EA6F129B236A0000C6AB /* ES1Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D05EA67129B236A0000C6AB /* ES1Renderer.mm */; };
 		0D05EA71129B236A0000C6AB /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D05EA6B129B236A0000C6AB /* main.mm */; };
 		0D05EA77129B23900000C6AB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EA76129B23900000C6AB /* OpenGLES.framework */; };
 		0D05EAE1129B23EF0000C6AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EAE0129B23EF0000C6AB /* UIKit.framework */; };
@@ -53,6 +51,7 @@
 		0DB9B7EB157AFF1F00B737EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7EA157AFF1F00B737EF /* ViewController.m */; };
 		0DB9B7EC157B034500B737EF /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7E8157AFE0800B737EF /* ViewController.xib */; };
 		0DB9B7F4157B068700B737EF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7F3157B068700B737EF /* AppDelegate.mm */; };
+		0DB9B7FB157B0EC100B737EF /* DromeGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FA157B0EC100B737EF /* DromeGLView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,10 +81,6 @@
 /* Begin PBXFileReference section */
 		0D05EA5A129B22CB0000C6AB /* DromeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DromeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D05EA5C129B22CB0000C6AB /* DromeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DromeDemo-Info.plist"; sourceTree = "<group>"; };
-		0D05EA64129B236A0000C6AB /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
-		0D05EA65129B236A0000C6AB /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
-		0D05EA66129B236A0000C6AB /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
-		0D05EA67129B236A0000C6AB /* ES1Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ES1Renderer.mm; sourceTree = "<group>"; };
 		0D05EA6B129B236A0000C6AB /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		0D05EA76129B23900000C6AB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0D05EAE0129B23EF0000C6AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -159,6 +154,8 @@
 		0DB9B7EA157AFF1F00B737EF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0DB9B7F2157B068700B737EF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0DB9B7F3157B068700B737EF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		0DB9B7F9157B0EC100B737EF /* DromeGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DromeGLView.h; sourceTree = "<group>"; };
+		0DB9B7FA157B0EC100B737EF /* DromeGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DromeGLView.m; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libDromeMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -256,12 +253,10 @@
 		0D05EA61129B236A0000C6AB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0DB9B7F9157B0EC100B737EF /* DromeGLView.h */,
+				0DB9B7FA157B0EC100B737EF /* DromeGLView.m */,
 				0DB9B7F2157B068700B737EF /* AppDelegate.h */,
 				0DB9B7F3157B068700B737EF /* AppDelegate.mm */,
-				0D05EA64129B236A0000C6AB /* EAGLView.h */,
-				0D05EA65129B236A0000C6AB /* EAGLView.mm */,
-				0D05EA66129B236A0000C6AB /* ES1Renderer.h */,
-				0D05EA67129B236A0000C6AB /* ES1Renderer.mm */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -536,11 +531,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D05EA6E129B236A0000C6AB /* EAGLView.mm in Sources */,
-				0D05EA6F129B236A0000C6AB /* ES1Renderer.mm in Sources */,
 				0D05EA71129B236A0000C6AB /* main.mm in Sources */,
 				0DB9B7EB157AFF1F00B737EF /* ViewController.m in Sources */,
 				0DB9B7F4157B068700B737EF /* AppDelegate.mm in Sources */,
+				0DB9B7FB157B0EC100B737EF /* DromeGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

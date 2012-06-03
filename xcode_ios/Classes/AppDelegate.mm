@@ -24,7 +24,6 @@
  */
 
 #import "AppDelegate.h"
-#import "EAGLView.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
