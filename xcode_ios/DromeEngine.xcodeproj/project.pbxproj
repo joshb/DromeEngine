@@ -53,6 +53,7 @@
 		0DB9B7F4157B068700B737EF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7F3157B068700B737EF /* AppDelegate.mm */; };
 		0DB9B7FB157B0EC100B737EF /* DromeGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FA157B0EC100B737EF /* DromeGLView.m */; };
 		0DB9B7FD157B186C00B737EF /* ViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */; };
+		0DB9B7FF157B1DC200B737EF /* dromeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FE157B1DC200B737EF /* dromeIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		0DB9B7F9157B0EC100B737EF /* DromeGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DromeGLView.h; sourceTree = "<group>"; };
 		0DB9B7FA157B0EC100B737EF /* DromeGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DromeGLView.m; sourceTree = "<group>"; };
 		0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ViewController-iPad.xib"; sourceTree = "<group>"; };
+		0DB9B7FE157B1DC200B737EF /* dromeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dromeIcon.png; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libDromeMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -242,6 +244,7 @@
 		0D05EA60129B23500000C6AB /* xcode_ios */ = {
 			isa = PBXGroup;
 			children = (
+				0DB9B7FE157B1DC200B737EF /* dromeIcon.png */,
 				0DB9B7E9157AFF1F00B737EF /* ViewController.h */,
 				0DB9B7EA157AFF1F00B737EF /* ViewController.m */,
 				0DB9B7E8157AFE0800B737EF /* ViewController.xib */,
@@ -525,6 +528,7 @@
 			files = (
 				0DB9B7EC157B034500B737EF /* ViewController.xib in Resources */,
 				0DB9B7FD157B186C00B737EF /* ViewController-iPad.xib in Resources */,
+				0DB9B7FF157B1DC200B737EF /* dromeIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
