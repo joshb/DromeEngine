@@ -24,45 +24,38 @@
  */
 
 #import <iostream>
-#import <DromeCore/Exception.h>
+#import <DromeCore/DromeCore>
+#import <DromeGL/DromeGL>
+#import <DromeMath/DromeMath>
 #import "ES1Renderer.h"
 
 using namespace std;
 using namespace DromeCore;
+using namespace DromeGL;
 using namespace DromeMath;
-using namespace DromeGfx;
-using namespace DromeGui;
 
 @implementation ES1Renderer
 
 - (id)init
 {
     if((self = [super init])) {
-		context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+		context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 		if(!context || ![EAGLContext setCurrentContext:context]) {
 			[self release];
 			return nil;
 		}
 
-		glGenFramebuffersOES(1, &defaultFramebuffer);
-		glGenRenderbuffersOES(1, &colorRenderbuffer);
-		glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
-		glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
-		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, colorRenderbuffer);
-
-		// setup driver/camera
-		driver = GfxDriver::create();
-		camera.setPosition(Vector3(0.0f, -4.0f, 0.0f));
-		camera.update();
-
-		// create cylinder
-		mesh = CylinderMesh::create(36);
-		texture = Texture::create(Image::create("texture.png"));
-
-		// create logo widget
-		logo = DromeGui::Picture::create(driver, Image::create("drome.png"));
-		logo->setWidth(logo->getWidth() / 2);
-		logo->setHeight(logo->getHeight() / 2);
+		// set up framebuffer and renderbuffer
+		glGenFramebuffers(1, &defaultFramebuffer);
+		glGenRenderbuffers(1, &colorRenderbuffer);
+		glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebuffer);
+		glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
+			GL_RENDERBUFFER, colorRenderbuffer);
+			
+		// set up other GL stuff
+		glClearColor(0.5f, 0.5f, 0.75f, 1.0f);
+		glClearDepthf(1.0f);
     }
 
     return self;
@@ -70,55 +63,38 @@ using namespace DromeGui;
 
 - (void)render
 {
-	driver->clearBuffers();
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	driver->setModelViewMatrix(camera.getMatrix());
-	driver->bindTexture(texture);
-	mesh->render();
-
-	// render GUI elements
-	driver->enable2D();
-	logo->render(driver);
-	driver->disable2D();
-
-	[context presentRenderbuffer:GL_RENDERBUFFER_OES];
+	[context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
 - (BOOL)resizeFromLayer:(CAEAGLLayer *)layer
 {
-	glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
-	[context renderbufferStorage:GL_RENDERBUFFER_OES fromDrawable:layer];
-	glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_WIDTH_OES, &backingWidth);
-	glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_HEIGHT_OES, &backingHeight);
+	glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
+	[context renderbufferStorage:GL_RENDERBUFFER fromDrawable:layer];
+	glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH,
+		&backingWidth);
+	glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT,
+		&backingHeight);
 
-    if(glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) != GL_FRAMEBUFFER_COMPLETE_OES) {
-		NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES));
+    if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+		NSLog(@"Failed to make complete framebuffer object %x",
+			glCheckFramebufferStatus(GL_FRAMEBUFFER));
 		return NO;
 	}
 
-	driver->setViewportDimensions(backingWidth, backingHeight);
-	driver->setProjectionMatrix(backingWidth, backingHeight);
-	logo->setY(backingHeight - logo->getHeight());
-
 	return YES;
-}
-
-- (void)moveCamera:(CGPoint)delta
-{
-	camera.rotateYaw(delta.x * -0.5f);
-	camera.rotatePitch(delta.y * -0.5f);
-	camera.update();
 }
 
 - (void)dealloc
 {
 	if(defaultFramebuffer) {
-		glDeleteFramebuffersOES(1, &defaultFramebuffer);
+		glDeleteFramebuffers(1, &defaultFramebuffer);
 		defaultFramebuffer = 0;
 	}
 
 	if(colorRenderbuffer) {
-		glDeleteRenderbuffersOES(1, &colorRenderbuffer);
+		glDeleteRenderbuffers(1, &colorRenderbuffer);
 		colorRenderbuffer = 0;
 	}
 

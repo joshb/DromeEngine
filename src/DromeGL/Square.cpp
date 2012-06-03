@@ -42,8 +42,13 @@ Square::Square(RefPtr <ShaderProgram> program)
 	};
 
 	// create VAO and VBO
+#ifdef GLES
+	glGenVertexArraysOES(1, &m_vaoId);
+	glBindVertexArrayOES(m_vaoId);
+#else
 	glGenVertexArrays(1, &m_vaoId);
 	glBindVertexArray(m_vaoId);
+#endif
 	glGenBuffers(1, &m_vboId);
 	glBindBuffer(GL_ARRAY_BUFFER, m_vboId);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(v), v, GL_STATIC_DRAW);
@@ -62,15 +67,23 @@ Square::Square(RefPtr <ShaderProgram> program)
 Square::~Square()
 {
 	// delete VAO and VBO
+#ifdef GLES
+	glDeleteVertexArraysOES(1, &m_vaoId);
+#else
 	glDeleteVertexArrays(1, &m_vaoId);
+#endif
 	glDeleteBuffers(1, &m_vboId);
 }
 
 void
-Square::render(GLsizei numInstances)
+Square::render()
 {
+#ifdef GLES
+	glBindVertexArrayOES(m_vaoId);
+#else
 	glBindVertexArray(m_vaoId);
-	glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 4, numInstances);
+#endif
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
 } // namespace DromeGL

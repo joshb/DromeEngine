@@ -131,6 +131,7 @@ ShaderProgram::attachVertexShaderFromFile(const char *shaderPath)
 	attachVertexShader(source.c_str());
 }
 
+#ifndef GLES
 void
 ShaderProgram::attachGeometryShader(const char *shader)
 {
@@ -143,6 +144,7 @@ ShaderProgram::attachGeometryShaderFromFile(const char *shaderPath)
 	string source = loadShaderFromFile(shaderPath);
 	attachGeometryShader(source.c_str());
 }
+#endif
 
 void
 ShaderProgram::attachFragmentShader(const char *shader)

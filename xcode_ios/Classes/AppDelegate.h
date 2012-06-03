@@ -25,18 +25,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class EAGLView;
+@class ViewController;
 
-@interface DromeDemoAppDelegate : NSObject <UIApplicationDelegate>
-{
-	UIDevice *device;
-    UIWindow *window;
-    EAGLView *glView;
-}
+@interface AppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet EAGLView *glView;
-
-- (void)deviceRotated:(NSObject *)object;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (strong, nonatomic) IBOutlet ViewController *viewController;
 
 @end

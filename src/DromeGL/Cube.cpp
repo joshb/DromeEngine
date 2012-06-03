@@ -85,8 +85,13 @@ Cube::Cube(RefPtr <ShaderProgram> program)
 	};
 
 	// create VAO and VBO
+#ifdef GLES
+	glGenVertexArraysOES(1, &m_vaoId);
+	glBindVertexArrayOES(m_vaoId);
+#else
 	glGenVertexArrays(1, &m_vaoId);
 	glBindVertexArray(m_vaoId);
+#endif
 	glGenBuffers(1, &m_vboId);
 	glBindBuffer(GL_ARRAY_BUFFER, m_vboId);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(v), v, GL_STATIC_DRAW);
@@ -105,15 +110,23 @@ Cube::Cube(RefPtr <ShaderProgram> program)
 Cube::~Cube()
 {
 	// delete VAO and VBO
+#ifdef GLES
+	glDeleteVertexArraysOES(1, &m_vaoId);
+#else
 	glDeleteVertexArrays(1, &m_vaoId);
+#endif
 	glDeleteBuffers(1, &m_vboId);
 }
 
 void
-Cube::render(GLsizei numInstances)
+Cube::render()
 {
+#ifdef GLES
+	glBindVertexArrayOES(m_vaoId);
+#else
 	glBindVertexArray(m_vaoId);
-	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, numInstances);
+#endif
+	glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
 } // namespace DromeGL

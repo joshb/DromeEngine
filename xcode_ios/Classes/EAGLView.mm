@@ -137,20 +137,6 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSEnumerator *enumerator = [touches objectEnumerator];
-	UITouch *touch;
-	
-	while((touch = [enumerator nextObject])) {
-		// move the camera
-		CGPoint location = [touch locationInView:self];
-		CGPoint prevLocation = [touch previousLocationInView:self];
-		
-		CGPoint locationDiff;
-		locationDiff.x = location.x - prevLocation.x;
-		locationDiff.y = location.y - prevLocation.y;
-		
-		[renderer moveCamera:locationDiff];
-	}
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

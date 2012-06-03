@@ -27,11 +27,8 @@
 
 #import <OpenGLES/EAGL.h>
 #import <OpenGLES/EAGLDrawable.h>
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES1/glext.h>
 
-#import <DromeGfx/DromeGfx>
-#import <DromeGui/DromeGui>
+#import <DromeGL/OpenGL.h>
 
 @interface ES1Renderer : NSObject
 {
@@ -39,17 +36,9 @@
 		EAGLContext *context;
 		GLint backingWidth, backingHeight;
 		GLuint defaultFramebuffer, colorRenderbuffer;
-
-		DromeGfx::GfxDriver *driver;
-		DromeGfx::Camera camera;
-		DromeCore::RefPtr <DromeGfx::Mesh> mesh;
-		DromeCore::RefPtr <DromeGfx::Texture> texture;
-	
-		DromeCore::RefPtr <DromeGui::Picture> logo;
 }
 
 - (void)render;
 - (BOOL)resizeFromLayer:(CAEAGLLayer *)layer;
-- (void)moveCamera:(CGPoint)delta;
 
 @end

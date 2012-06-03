@@ -23,52 +23,49 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <iostream>
-#import "DromeDemoAppDelegate.h"
+#import "AppDelegate.h"
 #import "EAGLView.h"
+#import "ViewController.h"
 
-using namespace std;
+@implementation AppDelegate
 
-@implementation DromeDemoAppDelegate
+@synthesize window = _window;
+@synthesize viewController = _viewController;
 
-@synthesize window;
-@synthesize glView;
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceRotated:) name:UIDeviceOrientationDidChangeNotification object:nil];
-	device = [UIDevice currentDevice];
-	[device beginGeneratingDeviceOrientationNotifications];
-	
-    [glView startAnimation];
+	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]
+		bounds]] autorelease];
+    // Override point for customization after application launch.
+	self.viewController = [[[ViewController alloc]
+		initWithNibName:@"ViewController" bundle:nil] autorelease];
+	self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    [glView stopAnimation];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    [glView startAnimation];
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    [glView stopAnimation];
-}
-
-- (void)deviceRotated:(NSObject *)object
-{
 }
 
 - (void)dealloc
 {
-    [window release];
-    [glView release];
-
+    [_window release];
+    [_viewController release];
     [super dealloc];
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+}
+
+- (void)deviceRotated:(NSObject *)object
+{
 }
 
 @end

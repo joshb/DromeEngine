@@ -26,13 +26,15 @@
 #import <UIKit/UIKit.h>
 #import <DromeCore/File.h>
 
+#import "AppDelegate.h"
+
 int
 main(int argc, char *argv[])
 {
 	DromeCore::File::init(0, (const char **)NULL);
 
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	int retVal = UIApplicationMain(argc, argv, nil, nil);
-	[pool release];
-	return retVal;
+	@autoreleasepool {
+		return UIApplicationMain(argc, argv, nil,
+			NSStringFromClass([AppDelegate class]));
+	}
 }

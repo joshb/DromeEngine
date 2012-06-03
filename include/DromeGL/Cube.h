@@ -42,7 +42,7 @@ class Cube
 		Cube(DromeCore::RefPtr <ShaderProgram> program);
 		virtual ~Cube();
 
-		void render(GLsizei numInstances = 1);
+		void render();
 };
 
 } // namespace DromeGL

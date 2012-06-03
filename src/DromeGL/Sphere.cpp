@@ -87,8 +87,13 @@ Sphere::Sphere(RefPtr <ShaderProgram> program)
 	}
 
 	// create VAO and VBO
+#ifdef GLES
+	glGenVertexArraysOES(1, &m_vaoId);
+	glBindVertexArrayOES(m_vaoId);
+#else
 	glGenVertexArrays(1, &m_vaoId);
 	glBindVertexArray(m_vaoId);
+#endif
 	glGenBuffers(1, &m_vboId);
 	glBindBuffer(GL_ARRAY_BUFFER, m_vboId);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_numVertices * 3, v, GL_STATIC_DRAW);
@@ -108,15 +113,23 @@ Sphere::Sphere(RefPtr <ShaderProgram> program)
 Sphere::~Sphere()
 {
 	// delete VAO and VBO
+#ifdef GLES
+	glDeleteVertexArraysOES(1, &m_vaoId);
+#else
 	glDeleteVertexArrays(1, &m_vaoId);
+#endif
 	glDeleteBuffers(1, &m_vboId);
 }
 
 void
-Sphere::render(GLsizei numInstances)
+Sphere::render()
 {
+#ifdef GLES
+	glBindVertexArrayOES(m_vaoId);
+#else
 	glBindVertexArray(m_vaoId);
-	glDrawArraysInstanced(GL_TRIANGLES, 0, m_numVertices, numInstances);
+#endif
+	glDrawArrays(GL_TRIANGLES, 0, m_numVertices);
 }
 
 } // namespace DromeGL

@@ -42,7 +42,7 @@ class Square
 		Square(DromeCore::RefPtr <ShaderProgram> program);
 		virtual ~Square();
 
-		void render(GLsizei numInstances = 1);
+		void render();
 };
 
 } // namespace DromeGL

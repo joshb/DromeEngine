@@ -44,7 +44,7 @@ class Sphere
 		Sphere(DromeCore::RefPtr <ShaderProgram> program);
 		virtual ~Sphere();
 
-		void render(GLsizei numInstances = 1);
+		void render();
 };
 
 } // namespace DromeGL
