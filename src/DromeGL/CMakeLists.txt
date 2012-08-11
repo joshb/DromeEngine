@@ -15,12 +15,15 @@ if(APPLE)
 	add_definitions(-DAPPLE)
 endif(APPLE)
 
+find_library(GLEW_LIBRARY NAMES GLEW libGLEW)
+
 add_library(DromeGL STATIC ${SRCS})
 target_link_libraries(
 	DromeGL
 	DromeCore
 	DromeMath
 	${OPENGL_gl_LIBRARY}
+	${GLEW_LIBRARY}
 )
 include_directories(
 	${OPENGL_INCLUDE_DIR}
