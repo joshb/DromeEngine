@@ -15,25 +15,6 @@
 		0D1C1C56149C5F8000D18BAB /* Rect2i.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C4E149C5F8000D18BAB /* Rect2i.cpp */; };
 		0D1C1C57149C5F8000D18BAB /* Vector2i.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C4F149C5F8000D18BAB /* Vector2i.cpp */; };
 		0D1C1C58149C5F8000D18BAB /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C50149C5F8000D18BAB /* Vector3.cpp */; };
-		0D1C1CDE149C602600D18BAB /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CCA149C602600D18BAB /* Camera.cpp */; };
-		0D1C1CDF149C602600D18BAB /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CCC149C602600D18BAB /* CubeMesh.cpp */; };
-		0D1C1CE0149C602600D18BAB /* CylinderMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CCD149C602600D18BAB /* CylinderMesh.cpp */; };
-		0D1C1CE1149C602600D18BAB /* Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CCE149C602600D18BAB /* Driver.cpp */; };
-		0D1C1CE2149C602600D18BAB /* DriverGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CCF149C602600D18BAB /* DriverGL.cpp */; };
-		0D1C1CE3149C602600D18BAB /* Framebuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD0149C602600D18BAB /* Framebuffer.cpp */; };
-		0D1C1CE4149C602600D18BAB /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD1149C602600D18BAB /* Image.cpp */; };
-		0D1C1CE5149C602600D18BAB /* Md2Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD2149C602600D18BAB /* Md2Mesh.cpp */; };
-		0D1C1CE6149C602600D18BAB /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD3149C602600D18BAB /* Mesh.cpp */; };
-		0D1C1CE7149C602600D18BAB /* ParticleEmitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD4149C602600D18BAB /* ParticleEmitter.cpp */; };
-		0D1C1CE8149C602600D18BAB /* PcxImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD5149C602600D18BAB /* PcxImage.cpp */; };
-		0D1C1CE9149C602600D18BAB /* PcxImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1C1CD6149C602600D18BAB /* PcxImage.h */; };
-		0D1C1CEA149C602600D18BAB /* PngImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD7149C602600D18BAB /* PngImage.cpp */; };
-		0D1C1CEB149C602600D18BAB /* PngImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1C1CD8149C602600D18BAB /* PngImage.h */; };
-		0D1C1CEC149C602600D18BAB /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CD9149C602600D18BAB /* ShaderProgram.cpp */; };
-		0D1C1CED149C602600D18BAB /* SphereMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CDA149C602600D18BAB /* SphereMesh.cpp */; };
-		0D1C1CEE149C602600D18BAB /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CDB149C602600D18BAB /* Texture.cpp */; };
-		0D1C1CEF149C602600D18BAB /* Types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CDC149C602600D18BAB /* Types.cpp */; };
-		0D1C1CF0149C602600D18BAB /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1CDD149C602600D18BAB /* VertexBuffer.cpp */; };
 		0D1C1D2C149C60BE00D18BAB /* CoreGraphicsFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D23149C60BE00D18BAB /* CoreGraphicsFont.cpp */; };
 		0D1C1D2D149C60BE00D18BAB /* CoreGraphicsFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1C1D24149C60BE00D18BAB /* CoreGraphicsFont.h */; };
 		0D1C1D2E149C60BE00D18BAB /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D25149C60BE00D18BAB /* Font.cpp */; };
@@ -53,6 +34,13 @@
 		0D1C1DCF149C74CE00D18BAB /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C89149C5FD300D18BAB /* String.cpp */; };
 		0D1C1DD0149C74CE00D18BAB /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C8A149C5FD300D18BAB /* Util.cpp */; };
 		0D1C1DD1149C74CE00D18BAB /* Xml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C8B149C5FD300D18BAB /* Xml.cpp */; };
+		0D9DC04515D70B7C001AE4D7 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */; };
+		0D9DC04615D70B7C001AE4D7 /* GLWindow_GLFW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC03F15D70B7C001AE4D7 /* GLWindow_GLFW.cpp */; };
+		0D9DC04715D70B7C001AE4D7 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */; };
+		0D9DC04815D70B7C001AE4D7 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */; };
+		0D9DC04915D70B7C001AE4D7 /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04215D70B7C001AE4D7 /* Square.cpp */; };
+		0D9DC04A15D70B7C001AE4D7 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04315D70B7C001AE4D7 /* Texture.cpp */; };
+		0D9DC04B15D70B7C001AE4D7 /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04415D70B7C001AE4D7 /* VertexBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,30 +51,10 @@
 		0D1C1C0C149C5F4200D18BAB /* EventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
 		0D1C1C0D149C5F4200D18BAB /* Exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		0D1C1C0E149C5F4200D18BAB /* File.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
-		0D1C1C0F149C5F4200D18BAB /* IOContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOContext.h; sourceTree = "<group>"; };
-		0D1C1C10149C5F4200D18BAB /* IOContext_Cocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOContext_Cocoa.h; sourceTree = "<group>"; };
 		0D1C1C12149C5F4200D18BAB /* Ref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ref.h; sourceTree = "<group>"; };
 		0D1C1C13149C5F4200D18BAB /* String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		0D1C1C14149C5F4200D18BAB /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		0D1C1C15149C5F4200D18BAB /* Xml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Xml.h; sourceTree = "<group>"; };
-		0D1C1C17149C5F4200D18BAB /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
-		0D1C1C18149C5F4200D18BAB /* CubeMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CubeMesh.h; sourceTree = "<group>"; };
-		0D1C1C19149C5F4200D18BAB /* CylinderMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderMesh.h; sourceTree = "<group>"; };
-		0D1C1C1A149C5F4200D18BAB /* Driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
-		0D1C1C1B149C5F4200D18BAB /* DriverGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DriverGL.h; sourceTree = "<group>"; };
-		0D1C1C1C149C5F4200D18BAB /* DromeGfx */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeGfx; sourceTree = "<group>"; };
-		0D1C1C1D149C5F4200D18BAB /* Framebuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Framebuffer.h; sourceTree = "<group>"; };
-		0D1C1C1E149C5F4200D18BAB /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		0D1C1C1F149C5F4200D18BAB /* Md2Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Md2Mesh.h; sourceTree = "<group>"; };
-		0D1C1C20149C5F4200D18BAB /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
-		0D1C1C21149C5F4200D18BAB /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
-		0D1C1C22149C5F4200D18BAB /* ParticleEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleEmitter.h; sourceTree = "<group>"; };
-		0D1C1C23149C5F4200D18BAB /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
-		0D1C1C24149C5F4200D18BAB /* ShaderProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
-		0D1C1C25149C5F4200D18BAB /* SphereMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SphereMesh.h; sourceTree = "<group>"; };
-		0D1C1C26149C5F4200D18BAB /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
-		0D1C1C27149C5F4200D18BAB /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
-		0D1C1C28149C5F4200D18BAB /* VertexBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexBuffer.h; sourceTree = "<group>"; };
 		0D1C1C2A149C5F4200D18BAB /* DromeGui */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeGui; sourceTree = "<group>"; };
 		0D1C1C2B149C5F4200D18BAB /* Font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
 		0D1C1C2C149C5F4200D18BAB /* Label.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
@@ -125,25 +93,6 @@
 		0D1C1C8A149C5FD300D18BAB /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		0D1C1C8B149C5FD300D18BAB /* Xml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xml.cpp; sourceTree = "<group>"; };
 		0D1C1C9D149C5FFD00D18BAB /* libDromeGfx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGfx.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D1C1CCA149C602600D18BAB /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
-		0D1C1CCC149C602600D18BAB /* CubeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeMesh.cpp; sourceTree = "<group>"; };
-		0D1C1CCD149C602600D18BAB /* CylinderMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CylinderMesh.cpp; sourceTree = "<group>"; };
-		0D1C1CCE149C602600D18BAB /* Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Driver.cpp; sourceTree = "<group>"; };
-		0D1C1CCF149C602600D18BAB /* DriverGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DriverGL.cpp; sourceTree = "<group>"; };
-		0D1C1CD0149C602600D18BAB /* Framebuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Framebuffer.cpp; sourceTree = "<group>"; };
-		0D1C1CD1149C602600D18BAB /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
-		0D1C1CD2149C602600D18BAB /* Md2Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Md2Mesh.cpp; sourceTree = "<group>"; };
-		0D1C1CD3149C602600D18BAB /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
-		0D1C1CD4149C602600D18BAB /* ParticleEmitter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleEmitter.cpp; sourceTree = "<group>"; };
-		0D1C1CD5149C602600D18BAB /* PcxImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PcxImage.cpp; sourceTree = "<group>"; };
-		0D1C1CD6149C602600D18BAB /* PcxImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcxImage.h; sourceTree = "<group>"; };
-		0D1C1CD7149C602600D18BAB /* PngImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PngImage.cpp; sourceTree = "<group>"; };
-		0D1C1CD8149C602600D18BAB /* PngImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PngImage.h; sourceTree = "<group>"; };
-		0D1C1CD9149C602600D18BAB /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
-		0D1C1CDA149C602600D18BAB /* SphereMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereMesh.cpp; sourceTree = "<group>"; };
-		0D1C1CDB149C602600D18BAB /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
-		0D1C1CDC149C602600D18BAB /* Types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Types.cpp; sourceTree = "<group>"; };
-		0D1C1CDD149C602600D18BAB /* VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexBuffer.cpp; sourceTree = "<group>"; };
 		0D1C1CF5149C609A00D18BAB /* libDromeGui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGui.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1C1D23149C60BE00D18BAB /* CoreGraphicsFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreGraphicsFont.cpp; sourceTree = "<group>"; };
 		0D1C1D24149C60BE00D18BAB /* CoreGraphicsFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsFont.h; sourceTree = "<group>"; };
@@ -153,6 +102,24 @@
 		0D1C1D28149C60BE00D18BAB /* PushButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PushButton.cpp; sourceTree = "<group>"; };
 		0D1C1D2B149C60BE00D18BAB /* Widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Widget.cpp; sourceTree = "<group>"; };
 		0D1C1DC2149C74B700D18BAB /* libDromeCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D9DC03015D709EC001AE4D7 /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		0D9DC03215D70A37001AE4D7 /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = DromeGL/Cube.h; sourceTree = "<group>"; };
+		0D9DC03315D70A37001AE4D7 /* DromeGL */ = {isa = PBXFileReference; lastKnownFileType = text; name = DromeGL; path = DromeGL/DromeGL; sourceTree = "<group>"; };
+		0D9DC03415D70A37001AE4D7 /* GLWindow_GLFW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GLWindow_GLFW.h; path = DromeGL/GLWindow_GLFW.h; sourceTree = "<group>"; };
+		0D9DC03515D70A37001AE4D7 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpenGL.h; path = DromeGL/OpenGL.h; sourceTree = "<group>"; };
+		0D9DC03615D70A37001AE4D7 /* ShaderProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShaderProgram.h; path = DromeGL/ShaderProgram.h; sourceTree = "<group>"; };
+		0D9DC03715D70A37001AE4D7 /* Sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sphere.h; path = DromeGL/Sphere.h; sourceTree = "<group>"; };
+		0D9DC03815D70A37001AE4D7 /* Square.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Square.h; path = DromeGL/Square.h; sourceTree = "<group>"; };
+		0D9DC03915D70A37001AE4D7 /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = DromeGL/Texture.h; sourceTree = "<group>"; };
+		0D9DC03A15D70A37001AE4D7 /* VertexBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VertexBuffer.h; path = DromeGL/VertexBuffer.h; sourceTree = "<group>"; };
+		0D9DC03B15D70AB6001AE4D7 /* Vector4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; };
+		0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
+		0D9DC03F15D70B7C001AE4D7 /* GLWindow_GLFW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLWindow_GLFW.cpp; sourceTree = "<group>"; };
+		0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
+		0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
+		0D9DC04215D70B7C001AE4D7 /* Square.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; };
+		0D9DC04315D70B7C001AE4D7 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		0D9DC04415D70B7C001AE4D7 /* VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexBuffer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +166,8 @@
 		0D1C1C05149C5F4200D18BAB /* include */ = {
 			isa = PBXGroup;
 			children = (
+				0D9DC03115D70A1D001AE4D7 /* DromeGL */,
 				0D1C1C07149C5F4200D18BAB /* DromeCore */,
-				0D1C1C16149C5F4200D18BAB /* DromeGfx */,
 				0D1C1C29149C5F4200D18BAB /* DromeGui */,
 				0D1C1C30149C5F4200D18BAB /* DromeMath */,
 			);
@@ -211,6 +178,7 @@
 		0D1C1C07149C5F4200D18BAB /* DromeCore */ = {
 			isa = PBXGroup;
 			children = (
+				0D9DC03015D709EC001AE4D7 /* Image.h */,
 				0D1C1C08149C5F4200D18BAB /* Button.h */,
 				0D1C1C09149C5F4200D18BAB /* ButtonState.h */,
 				0D1C1C0A149C5F4200D18BAB /* DromeCore */,
@@ -218,39 +186,12 @@
 				0D1C1C0C149C5F4200D18BAB /* EventHandler.h */,
 				0D1C1C0D149C5F4200D18BAB /* Exception.h */,
 				0D1C1C0E149C5F4200D18BAB /* File.h */,
-				0D1C1C0F149C5F4200D18BAB /* IOContext.h */,
-				0D1C1C10149C5F4200D18BAB /* IOContext_Cocoa.h */,
 				0D1C1C12149C5F4200D18BAB /* Ref.h */,
 				0D1C1C13149C5F4200D18BAB /* String.h */,
 				0D1C1C14149C5F4200D18BAB /* Util.h */,
 				0D1C1C15149C5F4200D18BAB /* Xml.h */,
 			);
 			path = DromeCore;
-			sourceTree = "<group>";
-		};
-		0D1C1C16149C5F4200D18BAB /* DromeGfx */ = {
-			isa = PBXGroup;
-			children = (
-				0D1C1C17149C5F4200D18BAB /* Camera.h */,
-				0D1C1C18149C5F4200D18BAB /* CubeMesh.h */,
-				0D1C1C19149C5F4200D18BAB /* CylinderMesh.h */,
-				0D1C1C1A149C5F4200D18BAB /* Driver.h */,
-				0D1C1C1B149C5F4200D18BAB /* DriverGL.h */,
-				0D1C1C1C149C5F4200D18BAB /* DromeGfx */,
-				0D1C1C1D149C5F4200D18BAB /* Framebuffer.h */,
-				0D1C1C1E149C5F4200D18BAB /* Image.h */,
-				0D1C1C1F149C5F4200D18BAB /* Md2Mesh.h */,
-				0D1C1C20149C5F4200D18BAB /* Mesh.h */,
-				0D1C1C21149C5F4200D18BAB /* OpenGL.h */,
-				0D1C1C22149C5F4200D18BAB /* ParticleEmitter.h */,
-				0D1C1C23149C5F4200D18BAB /* Scene.h */,
-				0D1C1C24149C5F4200D18BAB /* ShaderProgram.h */,
-				0D1C1C25149C5F4200D18BAB /* SphereMesh.h */,
-				0D1C1C26149C5F4200D18BAB /* Texture.h */,
-				0D1C1C27149C5F4200D18BAB /* Types.h */,
-				0D1C1C28149C5F4200D18BAB /* VertexBuffer.h */,
-			);
-			path = DromeGfx;
 			sourceTree = "<group>";
 		};
 		0D1C1C29149C5F4200D18BAB /* DromeGui */ = {
@@ -269,6 +210,7 @@
 		0D1C1C30149C5F4200D18BAB /* DromeMath */ = {
 			isa = PBXGroup;
 			children = (
+				0D9DC03B15D70AB6001AE4D7 /* Vector4.h */,
 				0D1C1C31149C5F4200D18BAB /* BoundingBox.h */,
 				0D1C1C32149C5F4200D18BAB /* BoundingSphere.h */,
 				0D1C1C33149C5F4200D18BAB /* DromeMath */,
@@ -297,8 +239,8 @@
 		0D1C1C46149C5F7300D18BAB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0D9DC03C15D70B7C001AE4D7 /* DromeGL */,
 				0D1C1D21149C60BE00D18BAB /* DromeGui */,
-				0D1C1CC9149C602600D18BAB /* DromeGfx */,
 				0D1C1C7D149C5FD300D18BAB /* DromeCore */,
 				0D1C1C47149C5F8000D18BAB /* DromeMath */,
 			);
@@ -341,33 +283,6 @@
 			path = ../src/DromeCore;
 			sourceTree = "<group>";
 		};
-		0D1C1CC9149C602600D18BAB /* DromeGfx */ = {
-			isa = PBXGroup;
-			children = (
-				0D1C1CCA149C602600D18BAB /* Camera.cpp */,
-				0D1C1CCC149C602600D18BAB /* CubeMesh.cpp */,
-				0D1C1CCD149C602600D18BAB /* CylinderMesh.cpp */,
-				0D1C1CCE149C602600D18BAB /* Driver.cpp */,
-				0D1C1CCF149C602600D18BAB /* DriverGL.cpp */,
-				0D1C1CD0149C602600D18BAB /* Framebuffer.cpp */,
-				0D1C1CD1149C602600D18BAB /* Image.cpp */,
-				0D1C1CD2149C602600D18BAB /* Md2Mesh.cpp */,
-				0D1C1CD3149C602600D18BAB /* Mesh.cpp */,
-				0D1C1CD4149C602600D18BAB /* ParticleEmitter.cpp */,
-				0D1C1CD5149C602600D18BAB /* PcxImage.cpp */,
-				0D1C1CD6149C602600D18BAB /* PcxImage.h */,
-				0D1C1CD7149C602600D18BAB /* PngImage.cpp */,
-				0D1C1CD8149C602600D18BAB /* PngImage.h */,
-				0D1C1CD9149C602600D18BAB /* ShaderProgram.cpp */,
-				0D1C1CDA149C602600D18BAB /* SphereMesh.cpp */,
-				0D1C1CDB149C602600D18BAB /* Texture.cpp */,
-				0D1C1CDC149C602600D18BAB /* Types.cpp */,
-				0D1C1CDD149C602600D18BAB /* VertexBuffer.cpp */,
-			);
-			name = DromeGfx;
-			path = ../src/DromeGfx;
-			sourceTree = "<group>";
-		};
 		0D1C1D21149C60BE00D18BAB /* DromeGui */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +296,37 @@
 			);
 			name = DromeGui;
 			path = ../src/DromeGui;
+			sourceTree = "<group>";
+		};
+		0D9DC03115D70A1D001AE4D7 /* DromeGL */ = {
+			isa = PBXGroup;
+			children = (
+				0D9DC03215D70A37001AE4D7 /* Cube.h */,
+				0D9DC03315D70A37001AE4D7 /* DromeGL */,
+				0D9DC03415D70A37001AE4D7 /* GLWindow_GLFW.h */,
+				0D9DC03515D70A37001AE4D7 /* OpenGL.h */,
+				0D9DC03615D70A37001AE4D7 /* ShaderProgram.h */,
+				0D9DC03715D70A37001AE4D7 /* Sphere.h */,
+				0D9DC03815D70A37001AE4D7 /* Square.h */,
+				0D9DC03915D70A37001AE4D7 /* Texture.h */,
+				0D9DC03A15D70A37001AE4D7 /* VertexBuffer.h */,
+			);
+			name = DromeGL;
+			sourceTree = "<group>";
+		};
+		0D9DC03C15D70B7C001AE4D7 /* DromeGL */ = {
+			isa = PBXGroup;
+			children = (
+				0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */,
+				0D9DC03F15D70B7C001AE4D7 /* GLWindow_GLFW.cpp */,
+				0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */,
+				0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */,
+				0D9DC04215D70B7C001AE4D7 /* Square.cpp */,
+				0D9DC04315D70B7C001AE4D7 /* Texture.cpp */,
+				0D9DC04415D70B7C001AE4D7 /* VertexBuffer.cpp */,
+			);
+			name = DromeGL;
+			path = ../src/DromeGL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,8 +343,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D1C1CE9149C602600D18BAB /* PcxImage.h in Headers */,
-				0D1C1CEB149C602600D18BAB /* PngImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,9 +381,9 @@
 			productReference = 0D1C1C40149C5F5200D18BAB /* libDromeMath.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		0D1C1C9C149C5FFD00D18BAB /* DromeGfx */ = {
+		0D1C1C9C149C5FFD00D18BAB /* DromeGL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D1C1C9E149C5FFD00D18BAB /* Build configuration list for PBXNativeTarget "DromeGfx" */;
+			buildConfigurationList = 0D1C1C9E149C5FFD00D18BAB /* Build configuration list for PBXNativeTarget "DromeGL" */;
 			buildPhases = (
 				0D1C1C99149C5FFD00D18BAB /* Sources */,
 				0D1C1C9A149C5FFD00D18BAB /* Frameworks */,
@@ -449,7 +393,7 @@
 			);
 			dependencies = (
 			);
-			name = DromeGfx;
+			name = DromeGL;
 			productName = DromeGfx;
 			productReference = 0D1C1C9D149C5FFD00D18BAB /* libDromeGfx.a */;
 			productType = "com.apple.product-type.library.static";
@@ -509,7 +453,7 @@
 			projectRoot = "";
 			targets = (
 				0D1C1C3F149C5F5200D18BAB /* DromeMath */,
-				0D1C1C9C149C5FFD00D18BAB /* DromeGfx */,
+				0D1C1C9C149C5FFD00D18BAB /* DromeGL */,
 				0D1C1CF4149C609A00D18BAB /* DromeGui */,
 				0D1C1DC1149C74B700D18BAB /* DromeCore */,
 			);
@@ -536,23 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D1C1CDE149C602600D18BAB /* Camera.cpp in Sources */,
-				0D1C1CDF149C602600D18BAB /* CubeMesh.cpp in Sources */,
-				0D1C1CE0149C602600D18BAB /* CylinderMesh.cpp in Sources */,
-				0D1C1CE1149C602600D18BAB /* Driver.cpp in Sources */,
-				0D1C1CE2149C602600D18BAB /* DriverGL.cpp in Sources */,
-				0D1C1CE3149C602600D18BAB /* Framebuffer.cpp in Sources */,
-				0D1C1CE4149C602600D18BAB /* Image.cpp in Sources */,
-				0D1C1CE5149C602600D18BAB /* Md2Mesh.cpp in Sources */,
-				0D1C1CE6149C602600D18BAB /* Mesh.cpp in Sources */,
-				0D1C1CE7149C602600D18BAB /* ParticleEmitter.cpp in Sources */,
-				0D1C1CE8149C602600D18BAB /* PcxImage.cpp in Sources */,
-				0D1C1CEA149C602600D18BAB /* PngImage.cpp in Sources */,
-				0D1C1CEC149C602600D18BAB /* ShaderProgram.cpp in Sources */,
-				0D1C1CED149C602600D18BAB /* SphereMesh.cpp in Sources */,
-				0D1C1CEE149C602600D18BAB /* Texture.cpp in Sources */,
-				0D1C1CEF149C602600D18BAB /* Types.cpp in Sources */,
-				0D1C1CF0149C602600D18BAB /* VertexBuffer.cpp in Sources */,
+				0D9DC04515D70B7C001AE4D7 /* Cube.cpp in Sources */,
+				0D9DC04615D70B7C001AE4D7 /* GLWindow_GLFW.cpp in Sources */,
+				0D9DC04715D70B7C001AE4D7 /* ShaderProgram.cpp in Sources */,
+				0D9DC04815D70B7C001AE4D7 /* Sphere.cpp in Sources */,
+				0D9DC04915D70B7C001AE4D7 /* Square.cpp in Sources */,
+				0D9DC04A15D70B7C001AE4D7 /* Texture.cpp in Sources */,
+				0D9DC04B15D70B7C001AE4D7 /* VertexBuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,7 +764,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D1C1C9E149C5FFD00D18BAB /* Build configuration list for PBXNativeTarget "DromeGfx" */ = {
+		0D1C1C9E149C5FFD00D18BAB /* Build configuration list for PBXNativeTarget "DromeGL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D1C1C9F149C5FFD00D18BAB /* Debug */,

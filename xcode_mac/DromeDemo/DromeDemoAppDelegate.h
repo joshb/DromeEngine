@@ -24,7 +24,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import <DromeCore/IOContext_Cocoa.h>
+#import <DromeGL/GLWindow_Cocoa.h>
 #import "../../demo/MyEventHandler.h"
 
 @interface DromeDemoAppDelegate : NSObject <NSApplicationDelegate> {

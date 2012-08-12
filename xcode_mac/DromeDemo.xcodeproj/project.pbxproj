@@ -17,7 +17,6 @@
 		0D1C1D96149C6F1300D18BAB /* libDromeGui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D58149C615700D18BAB /* libDromeGui.a */; };
 		0D1C1D97149C6F1300D18BAB /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D52149C615700D18BAB /* libDromeMath.a */; };
 		0D1C1DD4149C74E800D18BAB /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D54149C615700D18BAB /* libDromeCore.a */; };
-		0D1C1DD6149C750200D18BAB /* IOContext_Cocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DD5149C750200D18BAB /* IOContext_Cocoa.mm */; };
 		0D1C1DDA149C75B300D18BAB /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DD8149C75B300D18BAB /* Block.cpp */; };
 		0D1C1DF8149C75D500D18BAB /* MyEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */; };
 		0D1C1DF9149C75D500D18BAB /* MyScene1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DF6149C75D500D18BAB /* MyScene1.cpp */; };
@@ -99,7 +98,6 @@
 		0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DromeDemoAppDelegate.mm; sourceTree = "<group>"; };
 		0D1C1D78149C61A900D18BAB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0D1C1D8D149C6B2B00D18BAB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
-		0D1C1DD5149C750200D18BAB /* IOContext_Cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = IOContext_Cocoa.mm; path = ../../src/DromeCore/IOContext_Cocoa.mm; sourceTree = "<group>"; };
 		0D1C1DD8149C75B300D18BAB /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Block.cpp; path = ../demo/Block.cpp; sourceTree = "<group>"; };
 		0D1C1DD9149C75B300D18BAB /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = ../demo/Block.h; sourceTree = "<group>"; };
 		0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyEventHandler.cpp; path = ../demo/MyEventHandler.cpp; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 		0D1C1D68149C61A800D18BAB /* DromeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0D1C1DD5149C750200D18BAB /* IOContext_Cocoa.mm */,
 				0D1C1D74149C61A800D18BAB /* DromeDemoAppDelegate.h */,
 				0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */,
 				0D1C1D77149C61A900D18BAB /* MainMenu.xib */,
@@ -245,7 +242,7 @@
 		0D1C1D3D149C613900D18BAB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 0D1C1D40149C613900D18BAB /* Build configuration list for PBXProject "DromeDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -322,7 +319,6 @@
 			files = (
 				0D1C1D6F149C61A800D18BAB /* main.mm in Sources */,
 				0D1C1D76149C61A800D18BAB /* DromeDemoAppDelegate.mm in Sources */,
-				0D1C1DD6149C750200D18BAB /* IOContext_Cocoa.mm in Sources */,
 				0D1C1DDA149C75B300D18BAB /* Block.cpp in Sources */,
 				0D1C1DF8149C75D500D18BAB /* MyEventHandler.cpp in Sources */,
 				0D1C1DF9149C75D500D18BAB /* MyScene1.cpp in Sources */,
@@ -393,6 +389,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -424,6 +421,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
