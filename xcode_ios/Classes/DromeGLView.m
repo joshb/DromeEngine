@@ -77,7 +77,13 @@
 		self.context = [[[EAGLContext alloc]
 			initWithAPI:kEAGLRenderingAPIOpenGLES2] autorelease];
 		if(!self.context) {
-			NSLog(@"Failed to create ES context");
+			NSLog(@"Failed to create ES2 context; attempting to create ES1 context");
+            
+            self.context = [[[EAGLContext alloc]
+                             initWithAPI:kEAGLRenderingAPIOpenGLES1] autorelease];
+            if(!self.context) {
+                NSLog(@"Failed to create ES1 context");
+            }
 		}
 		
 		[self setupGL];
