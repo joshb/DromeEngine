@@ -7,17 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D05EA71129B236A0000C6AB /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D05EA6B129B236A0000C6AB /* main.mm */; };
-		0D05EA77129B23900000C6AB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EA76129B23900000C6AB /* OpenGLES.framework */; };
 		0D05EAE1129B23EF0000C6AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EAE0129B23EF0000C6AB /* UIKit.framework */; };
-		0D05EB36129B24040000C6AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EAE0129B23EF0000C6AB /* UIKit.framework */; };
-		0D05EB39129B240C0000C6AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		0D05EB3D129B24250000C6AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EB3C129B24250000C6AB /* QuartzCore.framework */; };
-		0D05EB3E129B24290000C6AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EB3C129B24250000C6AB /* QuartzCore.framework */; };
-		0D05EB6E129B25860000C6AB /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libDromeMath.a */; };
-		0D05EB6F129B25890000C6AB /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5196331299EDCE0065E656 /* libDromeCore.a */; };
-		0D05EB70129B258B0000C6AB /* libDromeGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D51964A1299EE180065E656 /* libDromeGL.a */; };
-		0D05EB75129B25A50000C6AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D51970E1299EF510065E656 /* CoreGraphics.framework */; };
 		0DB9B7AB157AF33F00B737EF /* BoundingBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A1157AF33F00B737EF /* BoundingBox.cpp */; };
 		0DB9B7AC157AF33F00B737EF /* BoundingSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A2157AF33F00B737EF /* BoundingSphere.cpp */; };
 		0DB9B7AD157AF33F00B737EF /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A4157AF33F00B737EF /* Matrix4.cpp */; };
@@ -48,42 +39,9 @@
 		0DB9B7E1157AF3FE00B737EF /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D2157AF3FE00B737EF /* String.cpp */; };
 		0DB9B7E2157AF3FE00B737EF /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D3157AF3FE00B737EF /* Util.cpp */; };
 		0DB9B7E3157AF3FE00B737EF /* Xml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D4157AF3FE00B737EF /* Xml.cpp */; };
-		0DB9B7EB157AFF1F00B737EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7EA157AFF1F00B737EF /* ViewController.m */; };
-		0DB9B7EC157B034500B737EF /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7E8157AFE0800B737EF /* ViewController.xib */; };
-		0DB9B7F4157B068700B737EF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7F3157B068700B737EF /* AppDelegate.mm */; };
-		0DB9B7FB157B0EC100B737EF /* DromeGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FA157B0EC100B737EF /* DromeGLView.m */; };
-		0DB9B7FD157B186C00B737EF /* ViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */; };
-		0DB9B7FF157B1DC200B737EF /* dromeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9B7FE157B1DC200B737EF /* dromeIcon.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0D05EDEC129C706D0000C6AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = DromeMath;
-		};
-		0D05EDEE129C70700000C6AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D5196321299EDCE0065E656;
-			remoteInfo = DromeCore;
-		};
-		0D05EDF0129C70730000C6AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D5196491299EE180065E656;
-			remoteInfo = DromeGfx;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		0D05EA5A129B22CB0000C6AB /* DromeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DromeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D05EA5C129B22CB0000C6AB /* DromeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DromeDemo-Info.plist"; sourceTree = "<group>"; };
-		0D05EA6B129B236A0000C6AB /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		0D05EA76129B23900000C6AB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0D05EAE0129B23EF0000C6AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0D05EB3C129B24250000C6AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -151,35 +109,11 @@
 		0DB9B7D2157AF3FE00B737EF /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
 		0DB9B7D3157AF3FE00B737EF /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		0DB9B7D4157AF3FE00B737EF /* Xml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xml.cpp; sourceTree = "<group>"; };
-		0DB9B7E8157AFE0800B737EF /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		0DB9B7E9157AFF1F00B737EF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0DB9B7EA157AFF1F00B737EF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0DB9B7F2157B068700B737EF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0DB9B7F3157B068700B737EF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		0DB9B7F9157B0EC100B737EF /* DromeGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DromeGLView.h; sourceTree = "<group>"; };
-		0DB9B7FA157B0EC100B737EF /* DromeGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DromeGLView.m; sourceTree = "<group>"; };
-		0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ViewController-iPad.xib"; sourceTree = "<group>"; };
-		0DB9B7FE157B1DC200B737EF /* dromeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dromeIcon.png; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libDromeMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D05EA58129B22CB0000C6AB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D05EB70129B258B0000C6AB /* libDromeGL.a in Frameworks */,
-				0D05EB6F129B25890000C6AB /* libDromeCore.a in Frameworks */,
-				0D05EB6E129B25860000C6AB /* libDromeMath.a in Frameworks */,
-				0D05EB3E129B24290000C6AB /* QuartzCore.framework in Frameworks */,
-				0D05EB39129B240C0000C6AB /* Foundation.framework in Frameworks */,
-				0D05EB36129B24040000C6AB /* UIKit.framework in Frameworks */,
-				0D05EA77129B23900000C6AB /* OpenGLES.framework in Frameworks */,
-				0D05EB75129B25A50000C6AB /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0D5196311299EDCE0065E656 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,7 +146,6 @@
 				D2AAC07E0554694100DB518D /* libDromeMath.a */,
 				0D5196331299EDCE0065E656 /* libDromeCore.a */,
 				0D51964A1299EE180065E656 /* libDromeGL.a */,
-				0D05EA5A129B22CB0000C6AB /* DromeDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,7 +155,6 @@
 			children = (
 				0DB9B766157AF2E300B737EF /* include */,
 				0DB9B765157AF2DB00B737EF /* src */,
-				0D05EA60129B23500000C6AB /* xcode_ios */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -239,32 +171,6 @@
 				0D05EB3C129B24250000C6AB /* QuartzCore.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0D05EA60129B23500000C6AB /* xcode_ios */ = {
-			isa = PBXGroup;
-			children = (
-				0DB9B7FE157B1DC200B737EF /* dromeIcon.png */,
-				0DB9B7E9157AFF1F00B737EF /* ViewController.h */,
-				0DB9B7EA157AFF1F00B737EF /* ViewController.m */,
-				0DB9B7E8157AFE0800B737EF /* ViewController.xib */,
-				0DB9B7FC157B186C00B737EF /* ViewController-iPad.xib */,
-				0D05EA61129B236A0000C6AB /* Classes */,
-				0D05EA6B129B236A0000C6AB /* main.mm */,
-				0D05EA5C129B22CB0000C6AB /* DromeDemo-Info.plist */,
-			);
-			name = xcode_ios;
-			sourceTree = "<group>";
-		};
-		0D05EA61129B236A0000C6AB /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0DB9B7F9157B0EC100B737EF /* DromeGLView.h */,
-				0DB9B7FA157B0EC100B737EF /* DromeGLView.m */,
-				0DB9B7F2157B068700B737EF /* AppDelegate.h */,
-				0DB9B7F3157B068700B737EF /* AppDelegate.mm */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		0DB9B765157AF2DB00B737EF /* src */ = {
@@ -425,26 +331,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0D05EA59129B22CB0000C6AB /* DromeDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0D05EA5F129B22CB0000C6AB /* Build configuration list for PBXNativeTarget "DromeDemo" */;
-			buildPhases = (
-				0D05EA56129B22CB0000C6AB /* Resources */,
-				0D05EA57129B22CB0000C6AB /* Sources */,
-				0D05EA58129B22CB0000C6AB /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0D05EDED129C706D0000C6AB /* PBXTargetDependency */,
-				0D05EDEF129C70700000C6AB /* PBXTargetDependency */,
-				0D05EDF1129C70730000C6AB /* PBXTargetDependency */,
-			);
-			name = DromeDemo;
-			productName = DromeDemo;
-			productReference = 0D05EA5A129B22CB0000C6AB /* DromeDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
 		0D5196321299EDCE0065E656 /* DromeCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D5196451299EE100065E656 /* Build configuration list for PBXNativeTarget "DromeCore" */;
@@ -519,36 +405,11 @@
 				D2AAC07D0554694100DB518D /* DromeMath */,
 				0D5196321299EDCE0065E656 /* DromeCore */,
 				0D5196491299EE180065E656 /* DromeGL */,
-				0D05EA59129B22CB0000C6AB /* DromeDemo */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		0D05EA56129B22CB0000C6AB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DB9B7EC157B034500B737EF /* ViewController.xib in Resources */,
-				0DB9B7FD157B186C00B737EF /* ViewController-iPad.xib in Resources */,
-				0DB9B7FF157B1DC200B737EF /* dromeIcon.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		0D05EA57129B22CB0000C6AB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D05EA71129B236A0000C6AB /* main.mm in Sources */,
-				0DB9B7EB157AFF1F00B737EF /* ViewController.m in Sources */,
-				0DB9B7F4157B068700B737EF /* AppDelegate.mm in Sources */,
-				0DB9B7FB157B0EC100B737EF /* DromeGLView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0D5196301299EDCE0065E656 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -600,70 +461,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		0D05EDED129C706D0000C6AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2AAC07D0554694100DB518D /* DromeMath */;
-			targetProxy = 0D05EDEC129C706D0000C6AB /* PBXContainerItemProxy */;
-		};
-		0D05EDEF129C70700000C6AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0D5196321299EDCE0065E656 /* DromeCore */;
-			targetProxy = 0D05EDEE129C70700000C6AB /* PBXContainerItemProxy */;
-		};
-		0D05EDF1129C70730000C6AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0D5196491299EE180065E656 /* DromeGL */;
-			targetProxy = 0D05EDF0129C70730000C6AB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		0D05EA5D129B22CB0000C6AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "DromeDemo-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
-				PRODUCT_NAME = DromeDemo;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0D05EA5E129B22CB0000C6AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "DromeDemo-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
-				PRODUCT_NAME = DromeDemo;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		0D5196341299EDCF0065E656 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -791,15 +589,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D05EA5F129B22CB0000C6AB /* Build configuration list for PBXNativeTarget "DromeDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0D05EA5D129B22CB0000C6AB /* Debug */,
-				0D05EA5E129B22CB0000C6AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0D5196451299EE100065E656 /* Build configuration list for PBXNativeTarget "DromeCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
