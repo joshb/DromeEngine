@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Josh A. Beam
+ * Copyright (C) 2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -24,11 +24,9 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import "DromeNSOpenGLView.h"
 
-@interface DromeDemoAppDelegate : NSObject <NSApplicationDelegate>
+@interface DromeNSOpenGLView : NSOpenGLView
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet DromeNSOpenGLView *view;
+- (void)flush;
 
 @end

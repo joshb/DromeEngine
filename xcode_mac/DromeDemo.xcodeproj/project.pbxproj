@@ -7,21 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D02B9B415DC86C000D8EF2A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D02B9B315DC86C000D8EF2A /* OpenGL.framework */; };
 		0D1C1D63149C61A800D18BAB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D62149C61A800D18BAB /* Cocoa.framework */; };
 		0D1C1D6D149C61A800D18BAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C1D6B149C61A800D18BAB /* InfoPlist.strings */; };
 		0D1C1D6F149C61A800D18BAB /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D6E149C61A800D18BAB /* main.mm */; };
 		0D1C1D76149C61A800D18BAB /* DromeDemoAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */; };
 		0D1C1D79149C61A900D18BAB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C1D77149C61A900D18BAB /* MainMenu.xib */; };
-		0D1C1D8E149C6B2B00D18BAB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D8D149C6B2B00D18BAB /* OpenGL.framework */; };
-		0D1C1D95149C6F1300D18BAB /* libDromeGfx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D56149C615700D18BAB /* libDromeGfx.a */; };
-		0D1C1D96149C6F1300D18BAB /* libDromeGui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D58149C615700D18BAB /* libDromeGui.a */; };
+		0D1C1D95149C6F1300D18BAB /* libDromeGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D56149C615700D18BAB /* libDromeGL.a */; };
 		0D1C1D97149C6F1300D18BAB /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D52149C615700D18BAB /* libDromeMath.a */; };
 		0D1C1DD4149C74E800D18BAB /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D54149C615700D18BAB /* libDromeCore.a */; };
-		0D1C1DDA149C75B300D18BAB /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DD8149C75B300D18BAB /* Block.cpp */; };
-		0D1C1DF8149C75D500D18BAB /* MyEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */; };
-		0D1C1DF9149C75D500D18BAB /* MyScene1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DF6149C75D500D18BAB /* MyScene1.cpp */; };
 		0D57C080149FEE8A00D9DADB /* drome.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C07F149FEE8A00D9DADB /* drome.icns */; };
-		0D7AFBFF149D2DC900280FCF /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 0D7AFBFE149D2DC900280FCF /* Data */; };
+		0DD05C4715DE032300C851AA /* DromeNSOpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DD05C4615DE032300C851AA /* DromeNSOpenGLView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,13 +42,6 @@
 			remoteGlobalIDString = 0D1C1C9D149C5FFD00D18BAB;
 			remoteInfo = DromeGfx;
 		};
-		0D1C1D57149C615700D18BAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D1C1CF5149C609A00D18BAB;
-			remoteInfo = DromeGui;
-		};
 		0D1C1D7D149C624400D18BAB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
@@ -67,13 +56,6 @@
 			remoteGlobalIDString = 0D1C1C9C149C5FFD00D18BAB;
 			remoteInfo = DromeGfx;
 		};
-		0D1C1D83149C624400D18BAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D1C1CF4149C609A00D18BAB;
-			remoteInfo = DromeGui;
-		};
 		0D1C1DD2149C74E100D18BAB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */;
@@ -84,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D02B9B315DC86C000D8EF2A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
 		0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DromeEngine.xcodeproj; sourceTree = "<group>"; };
 		0D1C1D5E149C61A800D18BAB /* DromeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DromeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1C1D62149C61A800D18BAB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -97,15 +80,9 @@
 		0D1C1D74149C61A800D18BAB /* DromeDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DromeDemoAppDelegate.h; sourceTree = "<group>"; };
 		0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DromeDemoAppDelegate.mm; sourceTree = "<group>"; };
 		0D1C1D78149C61A900D18BAB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		0D1C1D8D149C6B2B00D18BAB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
-		0D1C1DD8149C75B300D18BAB /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Block.cpp; path = ../demo/Block.cpp; sourceTree = "<group>"; };
-		0D1C1DD9149C75B300D18BAB /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = ../demo/Block.h; sourceTree = "<group>"; };
-		0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyEventHandler.cpp; path = ../demo/MyEventHandler.cpp; sourceTree = "<group>"; };
-		0D1C1DF5149C75D500D18BAB /* MyEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEventHandler.h; path = ../demo/MyEventHandler.h; sourceTree = "<group>"; };
-		0D1C1DF6149C75D500D18BAB /* MyScene1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyScene1.cpp; path = ../demo/MyScene1.cpp; sourceTree = "<group>"; };
-		0D1C1DF7149C75D500D18BAB /* MyScene1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScene1.h; path = ../demo/MyScene1.h; sourceTree = "<group>"; };
 		0D57C07F149FEE8A00D9DADB /* drome.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = drome.icns; sourceTree = SOURCE_ROOT; };
-		0D7AFBFE149D2DC900280FCF /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../demo/Data; sourceTree = "<group>"; };
+		0DD05C4515DE032300C851AA /* DromeNSOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DromeNSOpenGLView.h; sourceTree = "<group>"; };
+		0DD05C4615DE032300C851AA /* DromeNSOpenGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DromeNSOpenGLView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D02B9B415DC86C000D8EF2A /* OpenGL.framework in Frameworks */,
 				0D1C1DD4149C74E800D18BAB /* libDromeCore.a in Frameworks */,
-				0D1C1D95149C6F1300D18BAB /* libDromeGfx.a in Frameworks */,
-				0D1C1D96149C6F1300D18BAB /* libDromeGui.a in Frameworks */,
+				0D1C1D95149C6F1300D18BAB /* libDromeGL.a in Frameworks */,
 				0D1C1D97149C6F1300D18BAB /* libDromeMath.a in Frameworks */,
-				0D1C1D8E149C6B2B00D18BAB /* OpenGL.framework in Frameworks */,
 				0D1C1D63149C61A800D18BAB /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,8 +104,6 @@
 		0D1C1D3B149C613900D18BAB = {
 			isa = PBXGroup;
 			children = (
-				0D1C1DD7149C757800D18BAB /* demo */,
-				0D1C1D8D149C6B2B00D18BAB /* OpenGL.framework */,
 				0D1C1D47149C615700D18BAB /* DromeEngine.xcodeproj */,
 				0D1C1D68149C61A800D18BAB /* DromeDemo */,
 				0D1C1D61149C61A800D18BAB /* Frameworks */,
@@ -141,8 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1C1D52149C615700D18BAB /* libDromeMath.a */,
-				0D1C1D56149C615700D18BAB /* libDromeGfx.a */,
-				0D1C1D58149C615700D18BAB /* libDromeGui.a */,
+				0D1C1D56149C615700D18BAB /* libDromeGL.a */,
 				0D1C1D54149C615700D18BAB /* libDromeCore.a */,
 			);
 			name = Products;
@@ -159,20 +132,13 @@
 		0D1C1D61149C61A800D18BAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D1C1D62149C61A800D18BAB /* Cocoa.framework */,
-				0D1C1D64149C61A800D18BAB /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0D1C1D64149C61A800D18BAB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
+				0D02B9B315DC86C000D8EF2A /* OpenGL.framework */,
 				0D1C1D65149C61A800D18BAB /* AppKit.framework */,
 				0D1C1D66149C61A800D18BAB /* CoreData.framework */,
 				0D1C1D67149C61A800D18BAB /* Foundation.framework */,
+				0D1C1D62149C61A800D18BAB /* Cocoa.framework */,
 			);
-			name = "Other Frameworks";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0D1C1D68149C61A800D18BAB /* DromeDemo */ = {
@@ -182,6 +148,8 @@
 				0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */,
 				0D1C1D77149C61A900D18BAB /* MainMenu.xib */,
 				0D1C1D69149C61A800D18BAB /* Supporting Files */,
+				0DD05C4515DE032300C851AA /* DromeNSOpenGLView.h */,
+				0DD05C4615DE032300C851AA /* DromeNSOpenGLView.mm */,
 			);
 			path = DromeDemo;
 			sourceTree = "<group>";
@@ -196,20 +164,6 @@
 				0D1C1D70149C61A800D18BAB /* DromeDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0D1C1DD7149C757800D18BAB /* demo */ = {
-			isa = PBXGroup;
-			children = (
-				0D7AFBFE149D2DC900280FCF /* Data */,
-				0D1C1DF4149C75D500D18BAB /* MyEventHandler.cpp */,
-				0D1C1DF5149C75D500D18BAB /* MyEventHandler.h */,
-				0D1C1DF6149C75D500D18BAB /* MyScene1.cpp */,
-				0D1C1DF7149C75D500D18BAB /* MyScene1.h */,
-				0D1C1DD8149C75B300D18BAB /* Block.cpp */,
-				0D1C1DD9149C75B300D18BAB /* Block.h */,
-			);
-			name = demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +183,6 @@
 				0D1C1DD3149C74E100D18BAB /* PBXTargetDependency */,
 				0D1C1D7E149C624400D18BAB /* PBXTargetDependency */,
 				0D1C1D82149C624400D18BAB /* PBXTargetDependency */,
-				0D1C1D84149C624400D18BAB /* PBXTargetDependency */,
 			);
 			name = DromeDemo;
 			productName = DromeDemo;
@@ -282,18 +235,11 @@
 			remoteRef = 0D1C1D53149C615700D18BAB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0D1C1D56149C615700D18BAB /* libDromeGfx.a */ = {
+		0D1C1D56149C615700D18BAB /* libDromeGL.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libDromeGfx.a;
+			path = libDromeGL.a;
 			remoteRef = 0D1C1D55149C615700D18BAB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D1C1D58149C615700D18BAB /* libDromeGui.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDromeGui.a;
-			remoteRef = 0D1C1D57149C615700D18BAB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -305,7 +251,6 @@
 			files = (
 				0D1C1D6D149C61A800D18BAB /* InfoPlist.strings in Resources */,
 				0D1C1D79149C61A900D18BAB /* MainMenu.xib in Resources */,
-				0D7AFBFF149D2DC900280FCF /* Data in Resources */,
 				0D57C080149FEE8A00D9DADB /* drome.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,9 +264,7 @@
 			files = (
 				0D1C1D6F149C61A800D18BAB /* main.mm in Sources */,
 				0D1C1D76149C61A800D18BAB /* DromeDemoAppDelegate.mm in Sources */,
-				0D1C1DDA149C75B300D18BAB /* Block.cpp in Sources */,
-				0D1C1DF8149C75D500D18BAB /* MyEventHandler.cpp in Sources */,
-				0D1C1DF9149C75D500D18BAB /* MyScene1.cpp in Sources */,
+				0DD05C4715DE032300C851AA /* DromeNSOpenGLView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,11 +280,6 @@
 			isa = PBXTargetDependency;
 			name = DromeGfx;
 			targetProxy = 0D1C1D81149C624400D18BAB /* PBXContainerItemProxy */;
-		};
-		0D1C1D84149C624400D18BAB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DromeGui;
-			targetProxy = 0D1C1D83149C624400D18BAB /* PBXContainerItemProxy */;
 		};
 		0D1C1DD3149C74E100D18BAB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -373,6 +311,7 @@
 		0D1C1D42149C613900D18BAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = APPLE;
 				HEADER_SEARCH_PATHS = ../include;
 			};
 			name = Debug;
@@ -380,6 +319,7 @@
 		0D1C1D43149C613900D18BAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = APPLE;
 				HEADER_SEARCH_PATHS = ../include;
 			};
 			name = Release;
