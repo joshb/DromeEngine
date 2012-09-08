@@ -11,7 +11,6 @@ set(
 	PngImage.cpp
 	String.cpp
 	Util.cpp
-	Xml.cpp
 )
 
 # use Cocoa on Mac OS X
