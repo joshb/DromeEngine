@@ -24,8 +24,11 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import <DromeCore/EventHandler.h>
 
 @interface DromeNSOpenGLView : NSOpenGLView
+
+@property (nonatomic, assign) DromeCore::EventHandler *eventHandler;
 
 - (void)flush;
 

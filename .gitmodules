@@ -1,0 +1,3 @@
+[submodule "DromeXml"]
+	path = DromeXml
+	url = https://github.com/joshb/DromeXml.git

@@ -457,10 +457,12 @@ GLWindow_GLFW::open()
 	m_lastMouseWheelPosition = 0;
 
 	// set window hints to use OpenGL 3.2 core profile
+#if 0
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
 	glfwOpenWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#endif
 
 	// open the window
 	int fullscreen = m_fullscreen ? GLFW_FULLSCREEN : GLFW_WINDOW;

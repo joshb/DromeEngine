@@ -31,6 +31,8 @@ using namespace DromeCore;
 
 @implementation DromeNSOpenGLView
 
+@synthesize eventHandler = _eventHandler;
+
 - (void)awakeFromNib
 {
 	NSOpenGLPixelFormatAttribute attr[] = {
@@ -215,6 +217,10 @@ keyCodeToButton(unsigned short keyCode)
 - (void)flush
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+	if(self.eventHandler != NULL)
+		self.eventHandler->render();
+	
 	[[self openGLContext] flushBuffer];
 }
 

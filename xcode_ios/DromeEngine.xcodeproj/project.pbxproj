@@ -38,7 +38,6 @@
 		0DB9B7E0157AF3FE00B737EF /* PngImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB9B7D1157AF3FE00B737EF /* PngImage.h */; };
 		0DB9B7E1157AF3FE00B737EF /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D2157AF3FE00B737EF /* String.cpp */; };
 		0DB9B7E2157AF3FE00B737EF /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D3157AF3FE00B737EF /* Util.cpp */; };
-		0DB9B7E3157AF3FE00B737EF /* Xml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D4157AF3FE00B737EF /* Xml.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +77,6 @@
 		0DB9B786157AF30E00B737EF /* Ref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ref.h; sourceTree = "<group>"; };
 		0DB9B787157AF30E00B737EF /* String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		0DB9B788157AF30E00B737EF /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		0DB9B789157AF30E00B737EF /* Xml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Xml.h; sourceTree = "<group>"; };
 		0DB9B7A1157AF33F00B737EF /* BoundingBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoundingBox.cpp; sourceTree = "<group>"; };
 		0DB9B7A2157AF33F00B737EF /* BoundingSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoundingSphere.cpp; sourceTree = "<group>"; };
 		0DB9B7A4157AF33F00B737EF /* Matrix4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix4.cpp; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 		0DB9B7D1157AF3FE00B737EF /* PngImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PngImage.h; sourceTree = "<group>"; };
 		0DB9B7D2157AF3FE00B737EF /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
 		0DB9B7D3157AF3FE00B737EF /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
-		0DB9B7D4157AF3FE00B737EF /* Xml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xml.cpp; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libDromeMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -242,7 +239,6 @@
 				0DB9B786157AF30E00B737EF /* Ref.h */,
 				0DB9B787157AF30E00B737EF /* String.h */,
 				0DB9B788157AF30E00B737EF /* Util.h */,
-				0DB9B789157AF30E00B737EF /* Xml.h */,
 			);
 			name = DromeCore;
 			path = ../include/DromeCore;
@@ -296,7 +292,6 @@
 				0DB9B7D1157AF3FE00B737EF /* PngImage.h */,
 				0DB9B7D2157AF3FE00B737EF /* String.cpp */,
 				0DB9B7D3157AF3FE00B737EF /* Util.cpp */,
-				0DB9B7D4157AF3FE00B737EF /* Xml.cpp */,
 			);
 			name = DromeCore;
 			path = ../src/DromeCore;
@@ -426,7 +421,6 @@
 				0DB9B7DF157AF3FE00B737EF /* PngImage.cpp in Sources */,
 				0DB9B7E1157AF3FE00B737EF /* String.cpp in Sources */,
 				0DB9B7E2157AF3FE00B737EF /* Util.cpp in Sources */,
-				0DB9B7E3157AF3FE00B737EF /* Xml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

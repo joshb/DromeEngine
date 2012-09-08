@@ -30,7 +30,6 @@
 		0D1C1DCC149C74CE00D18BAB /* File_Apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C85149C5FD300D18BAB /* File_Apple.mm */; };
 		0D1C1DCF149C74CE00D18BAB /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C89149C5FD300D18BAB /* String.cpp */; };
 		0D1C1DD0149C74CE00D18BAB /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C8A149C5FD300D18BAB /* Util.cpp */; };
-		0D1C1DD1149C74CE00D18BAB /* Xml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C8B149C5FD300D18BAB /* Xml.cpp */; };
 		0D9DC04515D70B7C001AE4D7 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */; };
 		0D9DC04715D70B7C001AE4D7 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */; };
 		0D9DC04815D70B7C001AE4D7 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */; };
@@ -56,7 +55,6 @@
 		0D1C1C12149C5F4200D18BAB /* Ref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ref.h; sourceTree = "<group>"; };
 		0D1C1C13149C5F4200D18BAB /* String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		0D1C1C14149C5F4200D18BAB /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		0D1C1C15149C5F4200D18BAB /* Xml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Xml.h; sourceTree = "<group>"; };
 		0D1C1C31149C5F4200D18BAB /* BoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingBox.h; sourceTree = "<group>"; };
 		0D1C1C32149C5F4200D18BAB /* BoundingSphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingSphere.h; sourceTree = "<group>"; };
 		0D1C1C33149C5F4200D18BAB /* DromeMath */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeMath; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 		0D1C1C85149C5FD300D18BAB /* File_Apple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = File_Apple.mm; sourceTree = "<group>"; };
 		0D1C1C89149C5FD300D18BAB /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
 		0D1C1C8A149C5FD300D18BAB /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
-		0D1C1C8B149C5FD300D18BAB /* Xml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xml.cpp; sourceTree = "<group>"; };
 		0D1C1C9D149C5FFD00D18BAB /* libDromeGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1C1DC2149C74B700D18BAB /* libDromeCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9DC03015D709EC001AE4D7 /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -165,7 +162,6 @@
 				0D1C1C12149C5F4200D18BAB /* Ref.h */,
 				0D1C1C13149C5F4200D18BAB /* String.h */,
 				0D1C1C14149C5F4200D18BAB /* Util.h */,
-				0D1C1C15149C5F4200D18BAB /* Xml.h */,
 			);
 			path = DromeCore;
 			sourceTree = "<group>";
@@ -242,7 +238,6 @@
 				0D1C1C85149C5FD300D18BAB /* File_Apple.mm */,
 				0D1C1C89149C5FD300D18BAB /* String.cpp */,
 				0D1C1C8A149C5FD300D18BAB /* Util.cpp */,
-				0D1C1C8B149C5FD300D18BAB /* Xml.cpp */,
 			);
 			name = DromeCore;
 			path = ../src/DromeCore;
@@ -427,7 +422,6 @@
 				0D1C1DCC149C74CE00D18BAB /* File_Apple.mm in Sources */,
 				0D1C1DCF149C74CE00D18BAB /* String.cpp in Sources */,
 				0D1C1DD0149C74CE00D18BAB /* Util.cpp in Sources */,
-				0D1C1DD1149C74CE00D18BAB /* Xml.cpp in Sources */,
 				0D02B9BA15DC874C00D8EF2A /* Image.cpp in Sources */,
 				0D02B9BB15DC874C00D8EF2A /* PcxImage.cpp in Sources */,
 				0D02B9BD15DC874C00D8EF2A /* PngImage.cpp in Sources */,

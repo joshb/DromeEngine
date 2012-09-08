@@ -1,14 +1,14 @@
-#version 150
+#version 120
 
 uniform mat4 modelviewMatrix;
 uniform mat4 mvpMatrix;
 
 uniform vec3 instancePosition;
 
-in vec3 vertexPosition;
-in vec3 vertexNormal;
+attribute vec3 vertexPosition;
+attribute vec3 vertexNormal;
 
-out vec3 fragmentColor;
+varying vec3 fragmentColor;
 
 vec3
 position(vec3 p)
