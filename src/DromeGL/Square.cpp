@@ -23,6 +23,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <DromeCore/Exception.h>
 #include <DromeGL/Square.h>
 
 using namespace DromeCore;
@@ -35,10 +36,11 @@ Square::Square(RefPtr <ShaderProgram> program)
 	m_program = program;
 
 	float v[] = {
-		-1.0f, +1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
-		-1.0f, -1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
-		+1.0f, +1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
-		+1.0f, -1.0f, 0.0f,	0.0f, 0.0f, 1.0f,
+		// position         // normal         // texcoords
+		-1.0f, +1.0f, 0.0f,	0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		-1.0f, -1.0f, 0.0f,	0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+		+1.0f, +1.0f, 0.0f,	0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		+1.0f, -1.0f, 0.0f,	0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
 	};
 
 	// create VAO and VBO
@@ -56,12 +58,21 @@ Square::Square(RefPtr <ShaderProgram> program)
 	// set vertex position attribute
 	GLint location = m_program->getAttribLocation("vertexPosition");
 	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, 0);
+	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*8, 0);
 
 	// set vertex normal attribute
-	location = m_program->getAttribLocation("vertexNormal");
-	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (const GLvoid *)(sizeof(float)*3));
+	try {
+		location = m_program->getAttribLocation("vertexNormal");
+		glEnableVertexAttribArray(location);
+		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*8, (const GLvoid *)(sizeof(float)*3));
+	} catch(Exception) {}
+
+	// set vertex texture coordinates attribute
+	try {
+		location = m_program->getAttribLocation("vertexTexCoords");
+		glEnableVertexAttribArray(location);
+		glVertexAttribPointer(location, 2, GL_FLOAT, GL_FALSE, sizeof(float)*8, (const GLvoid *)(sizeof(float)*6));
+	} catch(Exception) {}
 }
 
 Square::~Square()
