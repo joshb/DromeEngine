@@ -33,14 +33,12 @@ using namespace DromeMath;
 
 namespace DromeGL {
 
-const int numDivisions = 12;
-
 struct Vertex
 {
 	float x, y, z;
 };
 
-Sphere::Sphere(RefPtr <ShaderProgram> program)
+Sphere::Sphere(RefPtr <ShaderProgram> program, int numDivisions)
 {
 	m_program = program;
 

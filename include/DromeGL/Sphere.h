@@ -41,7 +41,7 @@ class Sphere
 		GLsizei m_numVertices;
 
 	public:
-		Sphere(DromeCore::RefPtr <ShaderProgram> program);
+		Sphere(DromeCore::RefPtr <ShaderProgram> program, int numDivisions = 18);
 		virtual ~Sphere();
 
 		void render();
