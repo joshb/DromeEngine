@@ -27,6 +27,7 @@
 #define __DROMECORE_IMAGE_H__
 
 #include <string>
+#include <DromeMath/Rect2i.h>
 #include <DromeMath/Vector4.h>
 #include "Endian.h"
 #include "Ref.h"
@@ -53,8 +54,9 @@ class Image : public RefClass {
 
 		DromeMath::Color4 getPixel(unsigned int x, unsigned int y) const;
 		void setPixel(unsigned int x, unsigned int y, DromeMath::Color4 c);
-		void copyFrom(DromeCore::RefPtr <Image> image);
+		void copyFrom(DromeCore::RefPtr <Image> image, const DromeMath::Rect2i &srcBounds, const DromeMath::Rect2i &destBounds);
 
+		RefPtr <Image> crop(const DromeMath::Rect2i &bounds);
 		RefPtr <Image> scale(unsigned int width, unsigned int height);
 
 		static RefPtr <Image> create(const std::string &filename);

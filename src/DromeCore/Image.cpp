@@ -175,6 +175,32 @@ Image::setPixel(unsigned int x, unsigned int y, Color4 c)
 }
 
 RefPtr <Image>
+Image::crop(const Rect2i &bounds)
+{
+	// make sure the dimensions are valid
+	int width = bounds.getWidth();
+	int height = bounds.getHeight();
+	if(width <= 0 || height <= 0)
+		throw Exception("Image::crop(): Invalid width/height (both must be greater than 0)");
+
+	// make sure the bounds are valid
+	if(bounds.min.x < 0 || (unsigned int)bounds.max.x > m_width ||
+	   bounds.min.y < 0 || (unsigned int)bounds.max.y > m_height)
+		throw Exception("Image::crop(): Invalid bounds (must be entirely within image)");
+
+	// create the new image
+	RefPtr <Image> image = RefPtr <Image> (new Image(width, height, m_colorComponents));
+
+	// set the pixels of the new image
+	for(int y = 0; y < height; ++y) {
+		for(int x = 0; x < width; ++x)
+			image->setPixel(x, y, getPixel(bounds.min.x + x, bounds.min.y + y));
+	}
+
+	return image;
+}
+
+RefPtr <Image>
 Image::scale(unsigned int width, unsigned int height)
 {
 	// make sure the dimensions are valid
@@ -198,20 +224,35 @@ Image::scale(unsigned int width, unsigned int height)
 }
 
 void
-Image::copyFrom(RefPtr <Image> image)
+Image::copyFrom(RefPtr <Image> image,
+                const Rect2i &srcBounds, const Rect2i &destBounds)
 {
-	// get smallest dimensions
-	unsigned int w = image->getWidth();
-	unsigned int h = image->getHeight();
-	if(m_width < w)
-		w = m_width;
-	if(m_height < h)
-		h = m_height;
+	// make sure the destination dimensions are valid
+	int width = destBounds.getWidth();
+	int height = destBounds.getHeight();
+	if(width <= 0 || height <= 0)
+		throw Exception("Image::copyFrom(): Invalid width/height for destination bounds (both must be greater than 0)");
+
+	// make sure the destination bounds are valid
+	if(destBounds.min.x < 0 || (unsigned int)destBounds.max.x > m_width ||
+	   destBounds.min.y < 0 || (unsigned int)destBounds.max.y > m_height)
+		throw Exception("Image::copyFrom(): Invalid destination bounds (must be entirely within image)");
+
+	// crop the image if necessary
+	if(srcBounds.min.x != 0 || (unsigned int)srcBounds.max.x != image->getWidth() ||
+	   srcBounds.min.y != 0 || (unsigned int)srcBounds.max.y != image->getHeight())
+		image = image->crop(srcBounds);
+
+	// scale the image if necessary
+	if((unsigned int)width != image->getWidth() ||
+	   (unsigned int)height != image->getHeight())
+		image = image->scale((unsigned int)width, (unsigned int)height);
 
 	// copy pixels
-	for(unsigned int y = 0; y < h; ++y) {
-		for(unsigned int x = 0; x < w; ++x)
-			setPixel(x, y, image->getPixel(x, y));
+	for(int y = 0; y < height; ++y) {
+		for(int x = 0; x < width; ++x)
+			setPixel(destBounds.min.x + x, destBounds.min.y + y,
+			         image->getPixel(x, y));
 	}
 }
 
