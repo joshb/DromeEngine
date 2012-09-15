@@ -25,50 +25,27 @@
 
 #import "DromeDemoAppDelegate.h"
 
-using namespace DromeCore;
+@interface DromeDemoAppDelegate()
+
+@property (nonatomic, assign) NSTimer *timer;
+
+@end
 
 @implementation DromeDemoAppDelegate
 
-@synthesize window;
-@synthesize view;
-
-- (id)init
-{
-	if(self = [super init]) {
-		io = NULL;
-		handler = NULL;
-	}
-	
-	return self;
-}
+@synthesize window = _window;
+@synthesize view = _view;
+@synthesize timer = _timer;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// create IOContext and MyEventHandler instances
-	try {
-		io = new IOContext_Cocoa(window, view);
-		handler = new MyEventHandler(io);
-	} catch(Exception ex) {
-		printf("EXCEPTION: %s\n", ex.toString().c_str());
-		[window close];
-		return;
-	}
-	
 	// create timer to render the scene at 60fps
-    timer = [NSTimer timerWithTimeInterval: (1.0f / 60.0f)
+    self.timer = [NSTimer timerWithTimeInterval: (1.0f / 60.0f)
 		target: self
 		selector: @selector(timerFireMethod:)
 		userInfo: nil
 		repeats: YES];
-	[[NSRunLoop currentRunLoop] addTimer: timer forMode: NSDefaultRunLoopMode];
-}
-
-- (void)applicationWillTerminate:(NSNotification *)notification
-{
-	if(handler != NULL)
-		delete handler;
-	if(io != NULL)
-		delete io;
+	[[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
@@ -78,7 +55,7 @@ using namespace DromeCore;
 
 - (void)timerFireMethod:(NSTimer *)theTimer
 {
-	io->cycle();
+	[self.view flush];
 }
 
 @end

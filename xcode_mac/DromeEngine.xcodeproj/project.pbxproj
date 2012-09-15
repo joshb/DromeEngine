@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D02B9BA15DC874C00D8EF2A /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9B515DC874C00D8EF2A /* Image.cpp */; };
+		0D02B9BB15DC874C00D8EF2A /* PcxImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9B615DC874C00D8EF2A /* PcxImage.cpp */; };
+		0D02B9BC15DC874C00D8EF2A /* PcxImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D02B9B715DC874C00D8EF2A /* PcxImage.h */; };
+		0D02B9BD15DC874C00D8EF2A /* PngImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9B815DC874C00D8EF2A /* PngImage.cpp */; };
+		0D02B9BE15DC874C00D8EF2A /* PngImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D02B9B915DC874C00D8EF2A /* PngImage.h */; };
+		0D02B9C015DC879200D8EF2A /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9BF15DC879200D8EF2A /* Vector4.cpp */; };
 		0D1C1C51149C5F8000D18BAB /* BoundingBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C48149C5F8000D18BAB /* BoundingBox.cpp */; };
 		0D1C1C52149C5F8000D18BAB /* BoundingSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C49149C5F8000D18BAB /* BoundingSphere.cpp */; };
 		0D1C1C53149C5F8000D18BAB /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C4B149C5F8000D18BAB /* Matrix4.cpp */; };
@@ -15,13 +21,6 @@
 		0D1C1C56149C5F8000D18BAB /* Rect2i.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C4E149C5F8000D18BAB /* Rect2i.cpp */; };
 		0D1C1C57149C5F8000D18BAB /* Vector2i.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C4F149C5F8000D18BAB /* Vector2i.cpp */; };
 		0D1C1C58149C5F8000D18BAB /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C50149C5F8000D18BAB /* Vector3.cpp */; };
-		0D1C1D2C149C60BE00D18BAB /* CoreGraphicsFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D23149C60BE00D18BAB /* CoreGraphicsFont.cpp */; };
-		0D1C1D2D149C60BE00D18BAB /* CoreGraphicsFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1C1D24149C60BE00D18BAB /* CoreGraphicsFont.h */; };
-		0D1C1D2E149C60BE00D18BAB /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D25149C60BE00D18BAB /* Font.cpp */; };
-		0D1C1D2F149C60BE00D18BAB /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D26149C60BE00D18BAB /* Label.cpp */; };
-		0D1C1D30149C60BE00D18BAB /* Picture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D27149C60BE00D18BAB /* Picture.cpp */; };
-		0D1C1D31149C60BE00D18BAB /* PushButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D28149C60BE00D18BAB /* PushButton.cpp */; };
-		0D1C1D34149C60BE00D18BAB /* Widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D2B149C60BE00D18BAB /* Widget.cpp */; };
 		0D1C1DC6149C74CE00D18BAB /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C7E149C5FD300D18BAB /* Button.cpp */; };
 		0D1C1DC7149C74CE00D18BAB /* ButtonState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C7F149C5FD300D18BAB /* ButtonState.cpp */; };
 		0D1C1DC8149C74CE00D18BAB /* Endian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C81149C5FD300D18BAB /* Endian.cpp */; };
@@ -29,12 +28,9 @@
 		0D1C1DCA149C74CE00D18BAB /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C83149C5FD300D18BAB /* Exception.cpp */; };
 		0D1C1DCB149C74CE00D18BAB /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C84149C5FD300D18BAB /* File.cpp */; };
 		0D1C1DCC149C74CE00D18BAB /* File_Apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C85149C5FD300D18BAB /* File_Apple.mm */; };
-		0D1C1DCD149C74CE00D18BAB /* IOContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C86149C5FD300D18BAB /* IOContext.cpp */; };
-		0D1C1DCE149C74CE00D18BAB /* IOContext_Cocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C87149C5FD300D18BAB /* IOContext_Cocoa.mm */; };
 		0D1C1DCF149C74CE00D18BAB /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C89149C5FD300D18BAB /* String.cpp */; };
 		0D1C1DD0149C74CE00D18BAB /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C8A149C5FD300D18BAB /* Util.cpp */; };
 		0D9DC04515D70B7C001AE4D7 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */; };
-		0D9DC04615D70B7C001AE4D7 /* GLWindow_GLFW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC03F15D70B7C001AE4D7 /* GLWindow_GLFW.cpp */; };
 		0D9DC04715D70B7C001AE4D7 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */; };
 		0D9DC04815D70B7C001AE4D7 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */; };
 		0D9DC04915D70B7C001AE4D7 /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04215D70B7C001AE4D7 /* Square.cpp */; };
@@ -43,6 +39,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D02B9B515DC874C00D8EF2A /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
+		0D02B9B615DC874C00D8EF2A /* PcxImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PcxImage.cpp; sourceTree = "<group>"; };
+		0D02B9B715DC874C00D8EF2A /* PcxImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcxImage.h; sourceTree = "<group>"; };
+		0D02B9B815DC874C00D8EF2A /* PngImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PngImage.cpp; sourceTree = "<group>"; };
+		0D02B9B915DC874C00D8EF2A /* PngImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PngImage.h; sourceTree = "<group>"; };
+		0D02B9BF15DC879200D8EF2A /* Vector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector4.cpp; sourceTree = "<group>"; };
 		0D1C1C08149C5F4200D18BAB /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		0D1C1C09149C5F4200D18BAB /* ButtonState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonState.h; sourceTree = "<group>"; };
 		0D1C1C0A149C5F4200D18BAB /* DromeCore */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeCore; sourceTree = "<group>"; };
@@ -53,12 +55,6 @@
 		0D1C1C12149C5F4200D18BAB /* Ref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ref.h; sourceTree = "<group>"; };
 		0D1C1C13149C5F4200D18BAB /* String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		0D1C1C14149C5F4200D18BAB /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		0D1C1C2A149C5F4200D18BAB /* DromeGui */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeGui; sourceTree = "<group>"; };
-		0D1C1C2B149C5F4200D18BAB /* Font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
-		0D1C1C2C149C5F4200D18BAB /* Label.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
-		0D1C1C2D149C5F4200D18BAB /* Picture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
-		0D1C1C2E149C5F4200D18BAB /* PushButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushButton.h; sourceTree = "<group>"; };
-		0D1C1C2F149C5F4200D18BAB /* Widget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
 		0D1C1C31149C5F4200D18BAB /* BoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingBox.h; sourceTree = "<group>"; };
 		0D1C1C32149C5F4200D18BAB /* BoundingSphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingSphere.h; sourceTree = "<group>"; };
 		0D1C1C33149C5F4200D18BAB /* DromeMath */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeMath; sourceTree = "<group>"; };
@@ -85,24 +81,13 @@
 		0D1C1C83149C5FD300D18BAB /* Exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Exception.cpp; sourceTree = "<group>"; };
 		0D1C1C84149C5FD300D18BAB /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
 		0D1C1C85149C5FD300D18BAB /* File_Apple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = File_Apple.mm; sourceTree = "<group>"; };
-		0D1C1C86149C5FD300D18BAB /* IOContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOContext.cpp; sourceTree = "<group>"; };
-		0D1C1C87149C5FD300D18BAB /* IOContext_Cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOContext_Cocoa.mm; sourceTree = "<group>"; };
 		0D1C1C89149C5FD300D18BAB /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
 		0D1C1C8A149C5FD300D18BAB /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
-		0D1C1C9D149C5FFD00D18BAB /* libDromeGfx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGfx.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D1C1CF5149C609A00D18BAB /* libDromeGui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGui.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D1C1D23149C60BE00D18BAB /* CoreGraphicsFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreGraphicsFont.cpp; sourceTree = "<group>"; };
-		0D1C1D24149C60BE00D18BAB /* CoreGraphicsFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsFont.h; sourceTree = "<group>"; };
-		0D1C1D25149C60BE00D18BAB /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
-		0D1C1D26149C60BE00D18BAB /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
-		0D1C1D27149C60BE00D18BAB /* Picture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Picture.cpp; sourceTree = "<group>"; };
-		0D1C1D28149C60BE00D18BAB /* PushButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PushButton.cpp; sourceTree = "<group>"; };
-		0D1C1D2B149C60BE00D18BAB /* Widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Widget.cpp; sourceTree = "<group>"; };
+		0D1C1C9D149C5FFD00D18BAB /* libDromeGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1C1DC2149C74B700D18BAB /* libDromeCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9DC03015D709EC001AE4D7 /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		0D9DC03215D70A37001AE4D7 /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = DromeGL/Cube.h; sourceTree = "<group>"; };
 		0D9DC03315D70A37001AE4D7 /* DromeGL */ = {isa = PBXFileReference; lastKnownFileType = text; name = DromeGL; path = DromeGL/DromeGL; sourceTree = "<group>"; };
-		0D9DC03415D70A37001AE4D7 /* GLWindow_GLFW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GLWindow_GLFW.h; path = DromeGL/GLWindow_GLFW.h; sourceTree = "<group>"; };
 		0D9DC03515D70A37001AE4D7 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpenGL.h; path = DromeGL/OpenGL.h; sourceTree = "<group>"; };
 		0D9DC03615D70A37001AE4D7 /* ShaderProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShaderProgram.h; path = DromeGL/ShaderProgram.h; sourceTree = "<group>"; };
 		0D9DC03715D70A37001AE4D7 /* Sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sphere.h; path = DromeGL/Sphere.h; sourceTree = "<group>"; };
@@ -111,7 +96,6 @@
 		0D9DC03A15D70A37001AE4D7 /* VertexBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VertexBuffer.h; path = DromeGL/VertexBuffer.h; sourceTree = "<group>"; };
 		0D9DC03B15D70AB6001AE4D7 /* Vector4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; };
 		0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
-		0D9DC03F15D70B7C001AE4D7 /* GLWindow_GLFW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLWindow_GLFW.cpp; sourceTree = "<group>"; };
 		0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
 		0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
 		0D9DC04215D70B7C001AE4D7 /* Square.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; };
@@ -128,13 +112,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0D1C1C9A149C5FFD00D18BAB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0D1C1CF2149C609A00D18BAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -165,7 +142,6 @@
 			children = (
 				0D9DC03115D70A1D001AE4D7 /* DromeGL */,
 				0D1C1C07149C5F4200D18BAB /* DromeCore */,
-				0D1C1C29149C5F4200D18BAB /* DromeGui */,
 				0D1C1C30149C5F4200D18BAB /* DromeMath */,
 			);
 			name = include;
@@ -190,19 +166,6 @@
 			path = DromeCore;
 			sourceTree = "<group>";
 		};
-		0D1C1C29149C5F4200D18BAB /* DromeGui */ = {
-			isa = PBXGroup;
-			children = (
-				0D1C1C2A149C5F4200D18BAB /* DromeGui */,
-				0D1C1C2B149C5F4200D18BAB /* Font.h */,
-				0D1C1C2C149C5F4200D18BAB /* Label.h */,
-				0D1C1C2D149C5F4200D18BAB /* Picture.h */,
-				0D1C1C2E149C5F4200D18BAB /* PushButton.h */,
-				0D1C1C2F149C5F4200D18BAB /* Widget.h */,
-			);
-			path = DromeGui;
-			sourceTree = "<group>";
-		};
 		0D1C1C30149C5F4200D18BAB /* DromeMath */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,8 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1C1C40149C5F5200D18BAB /* libDromeMath.a */,
-				0D1C1C9D149C5FFD00D18BAB /* libDromeGfx.a */,
-				0D1C1CF5149C609A00D18BAB /* libDromeGui.a */,
+				0D1C1C9D149C5FFD00D18BAB /* libDromeGL.a */,
 				0D1C1DC2149C74B700D18BAB /* libDromeCore.a */,
 			);
 			name = Products;
@@ -236,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				0D9DC03C15D70B7C001AE4D7 /* DromeGL */,
-				0D1C1D21149C60BE00D18BAB /* DromeGui */,
 				0D1C1C7D149C5FD300D18BAB /* DromeCore */,
 				0D1C1C47149C5F8000D18BAB /* DromeMath */,
 			);
@@ -246,6 +207,7 @@
 		0D1C1C47149C5F8000D18BAB /* DromeMath */ = {
 			isa = PBXGroup;
 			children = (
+				0D02B9BF15DC879200D8EF2A /* Vector4.cpp */,
 				0D1C1C48149C5F8000D18BAB /* BoundingBox.cpp */,
 				0D1C1C49149C5F8000D18BAB /* BoundingSphere.cpp */,
 				0D1C1C4B149C5F8000D18BAB /* Matrix4.cpp */,
@@ -262,6 +224,11 @@
 		0D1C1C7D149C5FD300D18BAB /* DromeCore */ = {
 			isa = PBXGroup;
 			children = (
+				0D02B9B515DC874C00D8EF2A /* Image.cpp */,
+				0D02B9B615DC874C00D8EF2A /* PcxImage.cpp */,
+				0D02B9B715DC874C00D8EF2A /* PcxImage.h */,
+				0D02B9B815DC874C00D8EF2A /* PngImage.cpp */,
+				0D02B9B915DC874C00D8EF2A /* PngImage.h */,
 				0D1C1C7E149C5FD300D18BAB /* Button.cpp */,
 				0D1C1C7F149C5FD300D18BAB /* ButtonState.cpp */,
 				0D1C1C81149C5FD300D18BAB /* Endian.cpp */,
@@ -269,8 +236,6 @@
 				0D1C1C83149C5FD300D18BAB /* Exception.cpp */,
 				0D1C1C84149C5FD300D18BAB /* File.cpp */,
 				0D1C1C85149C5FD300D18BAB /* File_Apple.mm */,
-				0D1C1C86149C5FD300D18BAB /* IOContext.cpp */,
-				0D1C1C87149C5FD300D18BAB /* IOContext_Cocoa.mm */,
 				0D1C1C89149C5FD300D18BAB /* String.cpp */,
 				0D1C1C8A149C5FD300D18BAB /* Util.cpp */,
 			);
@@ -278,27 +243,11 @@
 			path = ../src/DromeCore;
 			sourceTree = "<group>";
 		};
-		0D1C1D21149C60BE00D18BAB /* DromeGui */ = {
-			isa = PBXGroup;
-			children = (
-				0D1C1D23149C60BE00D18BAB /* CoreGraphicsFont.cpp */,
-				0D1C1D24149C60BE00D18BAB /* CoreGraphicsFont.h */,
-				0D1C1D25149C60BE00D18BAB /* Font.cpp */,
-				0D1C1D26149C60BE00D18BAB /* Label.cpp */,
-				0D1C1D27149C60BE00D18BAB /* Picture.cpp */,
-				0D1C1D28149C60BE00D18BAB /* PushButton.cpp */,
-				0D1C1D2B149C60BE00D18BAB /* Widget.cpp */,
-			);
-			name = DromeGui;
-			path = ../src/DromeGui;
-			sourceTree = "<group>";
-		};
 		0D9DC03115D70A1D001AE4D7 /* DromeGL */ = {
 			isa = PBXGroup;
 			children = (
 				0D9DC03215D70A37001AE4D7 /* Cube.h */,
 				0D9DC03315D70A37001AE4D7 /* DromeGL */,
-				0D9DC03415D70A37001AE4D7 /* GLWindow_GLFW.h */,
 				0D9DC03515D70A37001AE4D7 /* OpenGL.h */,
 				0D9DC03615D70A37001AE4D7 /* ShaderProgram.h */,
 				0D9DC03715D70A37001AE4D7 /* Sphere.h */,
@@ -313,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */,
-				0D9DC03F15D70B7C001AE4D7 /* GLWindow_GLFW.cpp */,
 				0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */,
 				0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */,
 				0D9DC04215D70B7C001AE4D7 /* Square.cpp */,
@@ -341,18 +289,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0D1C1CF3149C609A00D18BAB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D1C1D2D149C60BE00D18BAB /* CoreGraphicsFont.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0D1C1DC0149C74B700D18BAB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D02B9BC15DC874C00D8EF2A /* PcxImage.h in Headers */,
+				0D02B9BE15DC874C00D8EF2A /* PngImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,24 +332,7 @@
 			);
 			name = DromeGL;
 			productName = DromeGfx;
-			productReference = 0D1C1C9D149C5FFD00D18BAB /* libDromeGfx.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		0D1C1CF4149C609A00D18BAB /* DromeGui */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0D1C1CF6149C609A00D18BAB /* Build configuration list for PBXNativeTarget "DromeGui" */;
-			buildPhases = (
-				0D1C1CF1149C609A00D18BAB /* Sources */,
-				0D1C1CF2149C609A00D18BAB /* Frameworks */,
-				0D1C1CF3149C609A00D18BAB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DromeGui;
-			productName = DromeGui;
-			productReference = 0D1C1CF5149C609A00D18BAB /* libDromeGui.a */;
+			productReference = 0D1C1C9D149C5FFD00D18BAB /* libDromeGL.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		0D1C1DC1149C74B700D18BAB /* DromeCore */ = {
@@ -433,7 +358,7 @@
 		0D1C1BFB149C5F0600D18BAB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 0D1C1BFE149C5F0600D18BAB /* Build configuration list for PBXProject "DromeEngine" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -449,7 +374,6 @@
 			targets = (
 				0D1C1C3F149C5F5200D18BAB /* DromeMath */,
 				0D1C1C9C149C5FFD00D18BAB /* DromeGL */,
-				0D1C1CF4149C609A00D18BAB /* DromeGui */,
 				0D1C1DC1149C74B700D18BAB /* DromeCore */,
 			);
 		};
@@ -468,6 +392,7 @@
 				0D1C1C56149C5F8000D18BAB /* Rect2i.cpp in Sources */,
 				0D1C1C57149C5F8000D18BAB /* Vector2i.cpp in Sources */,
 				0D1C1C58149C5F8000D18BAB /* Vector3.cpp in Sources */,
+				0D02B9C015DC879200D8EF2A /* Vector4.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,25 +401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D9DC04515D70B7C001AE4D7 /* Cube.cpp in Sources */,
-				0D9DC04615D70B7C001AE4D7 /* GLWindow_GLFW.cpp in Sources */,
 				0D9DC04715D70B7C001AE4D7 /* ShaderProgram.cpp in Sources */,
 				0D9DC04815D70B7C001AE4D7 /* Sphere.cpp in Sources */,
 				0D9DC04915D70B7C001AE4D7 /* Square.cpp in Sources */,
 				0D9DC04A15D70B7C001AE4D7 /* Texture.cpp in Sources */,
 				0D9DC04B15D70B7C001AE4D7 /* VertexBuffer.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0D1C1CF1149C609A00D18BAB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D1C1D2C149C60BE00D18BAB /* CoreGraphicsFont.cpp in Sources */,
-				0D1C1D2E149C60BE00D18BAB /* Font.cpp in Sources */,
-				0D1C1D2F149C60BE00D18BAB /* Label.cpp in Sources */,
-				0D1C1D30149C60BE00D18BAB /* Picture.cpp in Sources */,
-				0D1C1D31149C60BE00D18BAB /* PushButton.cpp in Sources */,
-				0D1C1D34149C60BE00D18BAB /* Widget.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,10 +420,11 @@
 				0D1C1DCA149C74CE00D18BAB /* Exception.cpp in Sources */,
 				0D1C1DCB149C74CE00D18BAB /* File.cpp in Sources */,
 				0D1C1DCC149C74CE00D18BAB /* File_Apple.mm in Sources */,
-				0D1C1DCD149C74CE00D18BAB /* IOContext.cpp in Sources */,
-				0D1C1DCE149C74CE00D18BAB /* IOContext_Cocoa.mm in Sources */,
 				0D1C1DCF149C74CE00D18BAB /* String.cpp in Sources */,
 				0D1C1DD0149C74CE00D18BAB /* Util.cpp in Sources */,
+				0D02B9BA15DC874C00D8EF2A /* Image.cpp in Sources */,
+				0D02B9BB15DC874C00D8EF2A /* PcxImage.cpp in Sources */,
+				0D02B9BD15DC874C00D8EF2A /* PngImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +452,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -569,6 +482,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = lib;
@@ -591,6 +505,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -620,57 +535,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		0D1C1CF7149C609A00D18BAB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COPY_PHASE_STRIP = NO;
-				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		0D1C1CF8149C609A00D18BAB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = lib;
@@ -693,6 +558,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -721,6 +587,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = lib;
@@ -763,15 +630,6 @@
 			buildConfigurations = (
 				0D1C1C9F149C5FFD00D18BAB /* Debug */,
 				0D1C1CA0149C5FFD00D18BAB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0D1C1CF6149C609A00D18BAB /* Build configuration list for PBXNativeTarget "DromeGui" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0D1C1CF7149C609A00D18BAB /* Debug */,
-				0D1C1CF8149C609A00D18BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
