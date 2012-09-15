@@ -31,6 +31,16 @@
 #include "PcxImage.h"
 #include "PngImage.h"
 
+#ifdef APPLE
+	#ifdef IOS
+		#include <CoreGraphics/CoreGraphics.h>
+	#else
+		#include <ApplicationServices/ApplicationServices.h>
+	#endif /* IOS */
+#else
+	#include <png.h>
+#endif /* APPLE */
+
 using namespace std;
 using namespace DromeMath;
 
@@ -254,6 +264,85 @@ Image::copyFrom(RefPtr <Image> image,
 			setPixel(destBounds.min.x + x, destBounds.min.y + y,
 			         image->getPixel(x, y));
 	}
+}
+
+void
+Image::save(const char *filename)
+{
+	// determine the PNG color type based
+	// on the number of color components
+	int colorType;
+	switch(m_colorComponents) {
+		default:
+			throw Exception("Image::save(): Invalid number of color components");
+
+		case 1:
+			colorType = PNG_COLOR_TYPE_GRAY;
+			break;
+
+		case 2:
+			colorType = PNG_COLOR_TYPE_GRAY_ALPHA;
+			break;
+
+		case 3:
+			colorType = PNG_COLOR_TYPE_RGB;
+			break;
+
+		case 4:
+			colorType = PNG_COLOR_TYPE_RGB_ALPHA;
+			break;
+	}
+
+	// open the destination file for writing
+	FILE *fp = fopen(filename, "wb");
+	if(!fp)
+		throw Exception(string("Image::save(): Unable to open ") + filename + " for writing");
+
+	// create the PNG write struct
+	png_structp png = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+	if(!png) {
+		fclose(fp);
+		throw Exception("Image::save(): png_create_write_struct failed");
+	}
+
+	// create the PNG info struct
+	png_infop info = png_create_info_struct(png);
+	if(!info) {
+		png_destroy_write_struct(&png, NULL);
+		fclose(fp);
+		throw Exception("Image::save(): png_create_info_struct failed");
+    }
+
+	if(setjmp(png_jmpbuf(png))) {
+		png_destroy_write_struct(&png, &info);
+		fclose(fp);
+		throw Exception("Image::save(): setjmp failed");
+	}
+
+	// set the PNG IHDR
+	png_init_io(png, fp);
+	png_set_IHDR(png, info, m_width, m_height, 8, colorType, PNG_INTERLACE_NONE, PNG_COMPRESSION_TYPE_DEFAULT, PNG_FILTER_TYPE_DEFAULT);
+
+	// create an array of row pointers
+	png_bytepp rows = new png_bytep[m_height];
+	for(unsigned int i = 0; i < m_height; ++i)
+		rows[i] = m_data + (m_width * m_colorComponents * i);
+
+	// set the rows and write the PNG
+    png_set_rows(png, info, rows);
+    png_write_png(png, info, PNG_TRANSFORM_IDENTITY, NULL);
+
+	// close the file
+    png_destroy_write_struct(&png, &info);
+    fclose(fp);
+
+    delete [] rows;
+}
+
+void
+Image::save(const string &filename)
+{
+	save(filename.c_str());
 }
 
 RefPtr <Image>

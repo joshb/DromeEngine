@@ -58,6 +58,8 @@ class Image : public RefClass {
 
 		RefPtr <Image> crop(const DromeMath::Rect2i &bounds);
 		RefPtr <Image> scale(unsigned int width, unsigned int height);
+		void save(const char *filename);
+		void save(const std::string &filename);
 
 		static RefPtr <Image> create(const std::string &filename);
 		static RefPtr <Image> create(const char *filename);
