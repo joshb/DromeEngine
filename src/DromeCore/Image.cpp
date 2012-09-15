@@ -260,9 +260,14 @@ Image::copyFrom(RefPtr <Image> image,
 
 	// copy pixels
 	for(int y = 0; y < height; ++y) {
-		for(int x = 0; x < width; ++x)
-			setPixel(destBounds.min.x + x, destBounds.min.y + y,
-			         image->getPixel(x, y));
+		for(int x = 0; x < width; ++x) {
+			Color4 destPixel = getPixel(destBounds.min.x + x, destBounds.min.y + y);
+			Color4 srcPixel = image->getPixel(x, y);
+
+			Color4 pixel = (destPixel * (1.0f - srcPixel.a)) + (srcPixel * srcPixel.a);
+			pixel.a = destPixel.a;
+			setPixel(destBounds.min.x + x, destBounds.min.y + y, pixel);
+		}
 	}
 }
 

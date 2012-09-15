@@ -57,7 +57,8 @@ Font::drawChar(RefPtr <Image> image, uint32_t c, const Vector2i &position,
 	Rect2i dest = Rect2i(p, p + src.getDimensions());
 
 	// copy character to destination image
-	image->copyFrom(charImage, src, dest);
+	if(src.getWidth() != 0 && src.getHeight() != 0)
+		image->copyFrom(charImage, src, dest);
 
 	// return destination position for next character to be drawn
 	return position + Vector2i(getCharAdvance(c), 0);
