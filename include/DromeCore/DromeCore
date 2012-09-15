@@ -3,6 +3,7 @@
 #include "Endian.h"
 #include "Exception.h"
 #include "File.h"
+#include "Font.h"
 #include "Image.h"
 #include "Ref.h"
 #include "String.h"

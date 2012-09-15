@@ -6,6 +6,8 @@ set(
 	EventHandler.cpp
 	Exception.cpp
 	File.cpp
+	Font.cpp
+	FreeTypeFont.cpp
 	Image.cpp
 	PcxImage.cpp
 	PngImage.cpp
@@ -26,6 +28,10 @@ if(APPLE)
 	# build with Cocoa support
 	set(SRCS ${SRCS} File_Apple.mm)
 	add_definitions(-DCOCOA_FOUND)
+else(APPLE)
+	find_package(Freetype)
+	set(INCLUDE_DIRS ${INCLUDE_DIRS} ${FREETYPE_INCLUDE_DIRS})
+	set(LIBS ${LIBS} ${FREETYPE_LIBRARIES})
 endif(APPLE)
 find_package(PNG)
 
@@ -37,6 +43,7 @@ target_link_libraries(
 	${PNG_LIBRARIES}
 )
 include_directories(
+	${INCLUDE_DIRS}
 	${PNG_INCLUDE_DIR}
 )
 
