@@ -274,6 +274,9 @@ Image::copyFrom(RefPtr <Image> image,
 void
 Image::save(const char *filename)
 {
+#ifdef APPLE
+    throw Exception("Image::save(): PNG image saving unsupported on this platform");
+#else
 	// determine the PNG color type based
 	// on the number of color components
 	int colorType;
@@ -342,6 +345,7 @@ Image::save(const char *filename)
     fclose(fp);
 
     delete [] rows;
+#endif
 }
 
 void
