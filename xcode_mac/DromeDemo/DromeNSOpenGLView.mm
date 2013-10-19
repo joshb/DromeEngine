@@ -31,8 +31,6 @@ using namespace DromeCore;
 
 @implementation DromeNSOpenGLView
 
-@synthesize eventHandler = _eventHandler;
-
 - (void)awakeFromNib
 {
 	NSOpenGLPixelFormatAttribute attr[] = {

@@ -33,10 +33,6 @@
 
 @implementation DromeDemoAppDelegate
 
-@synthesize window = _window;
-@synthesize view = _view;
-@synthesize timer = _timer;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// create timer to render the scene at 60fps
