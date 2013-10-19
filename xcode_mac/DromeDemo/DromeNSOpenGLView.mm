@@ -48,11 +48,9 @@ using namespace DromeCore;
 		initWithAttributes:attr];
 	NSOpenGLContext *context = [[NSOpenGLContext alloc] initWithFormat:format
 		shareContext:nil];
-	[format release];
 
 	[self setOpenGLContext:context];
-	[context release];
-	[[self openGLContext] makeCurrentContext];
+	[self.openGLContext makeCurrentContext];
 }
 
 - (void)prepareOpenGL

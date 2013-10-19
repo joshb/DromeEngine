@@ -35,14 +35,8 @@ string getAppleResourcesPath();
 string
 getAppleResourcesPath()
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-
-	string path = [resourcePath UTF8String];
-
-	[pool release];
-
-	return path;
+	return resourcePath.UTF8String;
 }
 
 } // namespace DromeCore

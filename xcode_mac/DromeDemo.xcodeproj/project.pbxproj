@@ -311,6 +311,7 @@
 		0D1C1D42149C613900D18BAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = APPLE;
 				HEADER_SEARCH_PATHS = ../include;
 				ONLY_ACTIVE_ARCH = YES;
@@ -320,6 +321,7 @@
 		0D1C1D43149C613900D18BAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = APPLE;
 				HEADER_SEARCH_PATHS = ../include;
 			};
