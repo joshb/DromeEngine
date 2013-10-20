@@ -29,6 +29,13 @@
 
 using namespace DromeCore;
 
+@interface DromeNSOpenGLView()
+{
+    NSTrackingArea *_trackingArea;
+}
+
+@end
+
 @implementation DromeNSOpenGLView
 
 - (void)awakeFromNib
@@ -63,6 +70,14 @@ using namespace DromeCore;
 
 	// set viewport
 	glViewport(0, 0, (GLsizei)frame.size.width, (GLsizei)frame.size.height);
+    
+    // remove existing tracking area if necessary
+	if(_trackingArea != nil)
+		[self removeTrackingArea:_trackingArea];
+	
+	// create new tracking area
+	_trackingArea = [[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingMouseMoved|NSTrackingActiveWhenFirstResponder owner:self userInfo:nil];
+	[self addTrackingArea:_trackingArea];
 }
 
 - (BOOL)acceptsFirstResponder
@@ -197,17 +212,75 @@ keyCodeToButton(unsigned short keyCode)
 
 - (void)keyDown:(NSEvent *)theEvent
 {
-	printf("%02x\n", [theEvent keyCode]);
-	
-	switch([theEvent keyCode]) {
-		default:
-			break;
-	}
+    NSLog(@"keyDown: %s", buttonName(keyCodeToButton(theEvent.keyCode)));
+}
+
+- (void)keyUp:(NSEvent *)theEvent
+{
+    NSLog(@"keyUp: %s", buttonName(keyCodeToButton(theEvent.keyCode)));
 }
 
 - (void)flagsChanged:(NSEvent *)theEvent
 {
-	printf("%02x\n", [theEvent keyCode]);
+    NSLog(@"flagsChanged: %s", buttonName(keyCodeToButton(theEvent.keyCode)));
+}
+
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    NSLog(@"mouseDown");
+}
+
+- (void)mouseUp:(NSEvent *)theEvent
+{
+    NSLog(@"mouseUp");
+}
+
+- (void)rightMouseDown:(NSEvent *)theEvent
+{
+    NSLog(@"rightMouseDown");
+}
+
+- (void)rightMouseUp:(NSEvent *)theEvent
+{
+    NSLog(@"rightMouseUp");
+}
+
+- (void)otherMouseDown:(NSEvent *)theEvent
+{
+    NSLog(@"otherMouseDown");
+}
+
+- (void)otherMouseUp:(NSEvent *)theEvent
+{
+    NSLog(@"otherMouseUp");
+}
+
+- (void)mouseMoved:(NSEvent *)theEvent
+{
+    NSPoint point = theEvent.locationInWindow;
+    point.y = self.bounds.size.height - point.y;
+    NSLog(@"mouseMoved: %f %f", point.x, point.y);
+}
+
+- (void)mouseDragged:(NSEvent *)theEvent
+{
+    NSPoint point = theEvent.locationInWindow;
+    point.y = self.bounds.size.height - point.y;
+    NSLog(@"mouseDragged: %f %f", point.x, point.y);
+}
+
+- (void)rightMouseDragged:(NSEvent *)theEvent
+{
+    NSPoint point = theEvent.locationInWindow;
+    point.y = self.bounds.size.height - point.y;
+    NSLog(@"rightMouseDragged: %f %f", point.x, point.y);
+}
+
+- (void)otherMouseDragged:(NSEvent *)theEvent
+{
+    NSPoint point = theEvent.locationInWindow;
+    point.y = self.bounds.size.height - point.y;
+    NSLog(@"otherMouseDragged: %f %f", point.x, point.y);
 }
 
 - (void)flush
