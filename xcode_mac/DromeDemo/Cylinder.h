@@ -24,12 +24,11 @@
  */
 
 #import <Foundation/Foundation.h>
-
-@class ShaderProgram;
+#import <DromeGL/ShaderProgram.h>
 
 @interface Cylinder : NSObject
 
-- (id)initWithProgram:(ShaderProgram *)program andNumberOfDivisions:(unsigned int)divisions;
+- (id)initWithProgram:(DromeCore::RefPtr <DromeGL::ShaderProgram>)program andNumberOfDivisions:(unsigned int)divisions;
 - (void)render;
 
 @end

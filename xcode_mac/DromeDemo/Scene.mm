@@ -28,8 +28,9 @@
 #include <OpenGL/gl3.h>
 #import "Scene.h"
 #import "Cylinder.h"
-#import "ShaderProgram.h"
 
+using namespace DromeCore;
+using namespace DromeGL;
 using namespace DromeMath;
 
 @interface Scene()
@@ -37,7 +38,7 @@ using namespace DromeMath;
 	Texture *_normalmap;
     Cylinder *_cylinder;
 
-	ShaderProgram *_program;
+	RefPtr <ShaderProgram> _program;
 	GLint _programProjectionMatrixLocation;
 	GLint _programModelviewMatrixLocation;
 	GLint _programCameraPositionLocation;
@@ -73,17 +74,17 @@ using namespace DromeMath;
 	_normalmap = [[Texture alloc] initFromFile:@"normalmap.png"];
 
 	// create the program, attach shaders, and link the program */
-    _program = [[ShaderProgram alloc] init];
-	[_program attachShaderWithType:GL_VERTEX_SHADER fromFile:@"shader.vp"];
-	[_program attachShaderWithType:GL_FRAGMENT_SHADER fromFile:@"shader.fp"];
-    [_program linkProgram];
+    _program = ShaderProgram::create();
+    _program->attachVertexShaderFromFile("shader.vp");
+    _program->attachFragmentShaderFromFile("shader.fp");
+    _program->linkShaders();
 
 	// get uniform locations
-	_programProjectionMatrixLocation = [_program getLocationOfUniformWithName:@"projectionMatrix"];
-	_programModelviewMatrixLocation = [_program getLocationOfUniformWithName:@"modelviewMatrix"];
-	_programCameraPositionLocation = [_program getLocationOfUniformWithName:@"cameraPosition"];
-	_programLightPositionLocation = [_program getLocationOfUniformWithName:@"lightPosition"];
-	_programLightColorLocation = [_program getLocationOfUniformWithName:@"lightColor"];
+	_programProjectionMatrixLocation = _program->getUniformLocation("projectionMatrix");
+	_programModelviewMatrixLocation = _program->getUniformLocation("modelviewMatrix");
+	_programCameraPositionLocation = _program->getUniformLocation("cameraPosition");
+	_programLightPositionLocation = _program->getUniformLocation("lightPosition");
+	_programLightColorLocation = _program->getUniformLocation("lightColor");
 
 	// set up red/green/blue lights
 	_lightColor[0] = 1.0f; _lightColor[1] = 0.0f; _lightColor[2] = 0.0f;
@@ -106,7 +107,7 @@ using namespace DromeMath;
     DromeMath::Matrix4 modelviewMatrix = rotationMatrix * translationMatrix;
 
 	// enable the program and set uniform variables
-	[_program useProgram];
+    glUseProgram(_program->getId());
 	glUniformMatrix4fv(_programProjectionMatrixLocation, 1, GL_FALSE, projectionMatrix.getData());
 	glUniformMatrix4fv(_programModelviewMatrixLocation, 1, GL_FALSE, modelviewMatrix.getData());
 	glUniform3fv(_programCameraPositionLocation, 1, _cameraPosition);

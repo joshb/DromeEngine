@@ -25,7 +25,9 @@
 
 #import <OpenGL/gl3.h>
 #import "Cylinder.h"
-#import "ShaderProgram.h"
+
+using namespace DromeCore;
+using namespace DromeGL;
 
 @interface Cylinder()
 {
@@ -38,7 +40,7 @@
 
 @implementation Cylinder
 
-- (id)initWithProgram:(ShaderProgram *)program andNumberOfDivisions:(unsigned int)divisions
+- (id)initWithProgram:(RefPtr <ShaderProgram>)program andNumberOfDivisions:(unsigned int)divisions
 {
     if((self = [super init])) {
         unsigned int i, size, tcSize;
@@ -49,11 +51,11 @@
         tcSize = _numVertices * 2;
         
         // generate vertex data
-        p = malloc(sizeof(float) * size);
-        tc = malloc(sizeof(float) * tcSize);
-        t = malloc(sizeof(float) * size);
-        b = malloc(sizeof(float) * size);
-        n = malloc(sizeof(float) * size);
+        p = (float *)malloc(sizeof(float) * size);
+        tc = (float *)malloc(sizeof(float) * tcSize);
+        t = (float *)malloc(sizeof(float) * size);
+        b = (float *)malloc(sizeof(float) * size);
+        n = (float *)malloc(sizeof(float) * size);
         for(i = 0; i <= divisions; ++i) {
             float r1 = ((M_PI * 2.0f) / (float)divisions) * (float)i;
             float r2 = r1 + M_PI / 2.0f;
@@ -106,11 +108,11 @@
         }
         
         // get the program's vertex data locations
-        GLint programVertexPositionLocation = [program getLocationOfAttributeWithName:@"vertexPosition"];
-        GLint programVertexTexCoordsLocation = [program getLocationOfAttributeWithName:@"vertexTexCoords"];
-        GLint programVertexTangentLocation = [program getLocationOfAttributeWithName:@"vertexTangent"];
-        GLint programVertexBitangentLocation = [program getLocationOfAttributeWithName:@"vertexBitangent"];
-        GLint programVertexNormalLocation = [program getLocationOfAttributeWithName:@"vertexNormal"];
+        GLint programVertexPositionLocation = program->getAttribLocation("vertexPosition");
+        GLint programVertexTexCoordsLocation = program->getAttribLocation("vertexTexCoords");
+        GLint programVertexTangentLocation = program->getAttribLocation("vertexTangent");
+        GLint programVertexBitangentLocation = program->getAttribLocation("vertexBitangent");
+        GLint programVertexNormalLocation = program->getAttribLocation("vertexNormal");
         
         // create vertex array
         glGenVertexArrays(1, &_vertexArrayId);
