@@ -29,7 +29,8 @@
 #import "Scene.h"
 #import "Cylinder.h"
 #import "ShaderProgram.h"
-#import "Matrix4.h"
+
+using namespace DromeMath;
 
 @interface Scene()
 {
@@ -98,16 +99,16 @@
 	[self cycle];
 }
 
-- (void)renderWithProjectionMatrix:(Matrix4 *)projectionMatrix
+- (void)renderWithProjectionMatrix:(const DromeMath::Matrix4 &)projectionMatrix
 {
-    Matrix4 *translationMatrix = [Matrix4 translationMatrixWithX:-_cameraPosition[0] y:-_cameraPosition[1] z:-_cameraPosition[2]];
-    Matrix4 *rotationMatrix = [Matrix4 rotationMatrixWithAngle:_cameraRotation x:0.0f y:-1.0f z:0.0f];
-    Matrix4 *modelviewMatrix = [rotationMatrix multiplyWithMatrix:translationMatrix];
+    DromeMath::Matrix4 translationMatrix = DromeMath::Matrix4::translation(Vector3(-_cameraPosition[0], -_cameraPosition[1], -_cameraPosition[2]));
+    DromeMath::Matrix4 rotationMatrix = DromeMath::Matrix4::rotation(_cameraRotation, Vector3(0.0f, -1.0f, 0.0f));
+    DromeMath::Matrix4 modelviewMatrix = rotationMatrix * translationMatrix;
 
 	// enable the program and set uniform variables
 	[_program useProgram];
-	glUniformMatrix4fv(_programProjectionMatrixLocation, 1, GL_FALSE, projectionMatrix.data);
-	glUniformMatrix4fv(_programModelviewMatrixLocation, 1, GL_FALSE, modelviewMatrix.data);
+	glUniformMatrix4fv(_programProjectionMatrixLocation, 1, GL_FALSE, projectionMatrix.getData());
+	glUniformMatrix4fv(_programModelviewMatrixLocation, 1, GL_FALSE, modelviewMatrix.getData());
 	glUniform3fv(_programCameraPositionLocation, 1, _cameraPosition);
 	glUniform3fv(_programLightPositionLocation, NUM_LIGHTS, _lightPosition);
 	glUniform3fv(_programLightColorLocation, NUM_LIGHTS, _lightColor);

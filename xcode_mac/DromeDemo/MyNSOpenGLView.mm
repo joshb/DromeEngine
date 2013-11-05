@@ -23,13 +23,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#import <DromeMath/Matrix4.h>
 #import "MyNSOpenGLView.h"
-#import "Matrix4.h"
 #import <OpenGL/gl3.h>
 
 @interface MyNSOpenGLView()
 {
-	Matrix4 *_projectionMatrix;
+    DromeMath::Matrix4 _projectionMatrix;
     NSTrackingArea *_trackingArea;
 }
 
@@ -37,7 +37,7 @@
 
 @implementation MyNSOpenGLView
 
-- (Matrix4 *)projectionMatrix
+- (DromeMath::Matrix4)projectionMatrix
 {
 	return _projectionMatrix;
 }
@@ -70,7 +70,7 @@
 	glViewport(0, 0, (GLsizei)frame.size.width, (GLsizei)frame.size.height);
 	
     // create projection matrix
-    _projectionMatrix = [Matrix4 perspectiveMatrixWithFieldOfView:((float)M_PI / 4.0f) aspect:((float)frame.size.width / (float)frame.size.height) near:0.1f far:200.0f];
+    _projectionMatrix = DromeMath::Matrix4::perspective((float)M_PI / 4.0f, (float)frame.size.width / (float)frame.size.height, 0.1f, 200.0f);
     
     // remove existing tracking area if necessary
     if(_trackingArea != nil)

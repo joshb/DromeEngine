@@ -23,13 +23,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#import <DromeMath/Matrix4.h>
 #import <AppKit/AppKit.h>
 
 @class Matrix4;
 
 @interface MyNSOpenGLView : NSOpenGLView
 
-@property (readonly) Matrix4 *projectionMatrix;
+@property (readonly) DromeMath::Matrix4 projectionMatrix;
 
 - (void)flush;
 

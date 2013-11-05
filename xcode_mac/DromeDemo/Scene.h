@@ -23,16 +23,15 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#import <DromeMath/Matrix4.h>
 #import <Foundation/Foundation.h>
 #import "Texture.h"
 
 #define NUM_LIGHTS 3
 
-@class Matrix4;
-
 @interface Scene : NSObject
 
-- (void)renderWithProjectionMatrix:(Matrix4 *)projectionMatrix;
+- (void)renderWithProjectionMatrix:(const DromeMath::Matrix4 &)projectionMatrix;
 - (void)cycle;
 
 @end
