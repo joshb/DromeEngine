@@ -26,6 +26,7 @@
 #include <vector>
 #include <DromeMath/DromeMath>
 #include <DromeGL/Sphere.h>
+#include <DromeCore/Exception.h>
 
 using namespace std;
 using namespace DromeCore;
@@ -103,9 +104,13 @@ Sphere::Sphere(RefPtr <ShaderProgram> program, int numDivisions)
 	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
 	// set vertex normal attribute
-	location = m_program->getAttribLocation("vertexNormal");
-	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, 0);
+	try {
+        location = m_program->getAttribLocation("vertexNormal");
+        glEnableVertexAttribArray(location);
+        glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    } catch(Exception ex) {
+        
+    }
 }
 
 Sphere::~Sphere()

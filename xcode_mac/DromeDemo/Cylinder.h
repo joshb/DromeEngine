@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Josh A. Beam
+ * Copyright (C) 2013 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,35 +23,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "DromeDemoAppDelegate.h"
+#import <Foundation/Foundation.h>
 
-@interface DromeDemoAppDelegate()
+@class ShaderProgram;
 
-@property (nonatomic, assign) NSTimer *timer;
+@interface Cylinder : NSObject
 
-@end
-
-@implementation DromeDemoAppDelegate
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-	// create timer to render the scene at 60fps
-    self.timer = [NSTimer timerWithTimeInterval: (1.0f / 60.0f)
-		target: self
-		selector: @selector(timerFireMethod:)
-		userInfo: nil
-		repeats: YES];
-	[[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
-}
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
-{
-	return YES;
-}
-
-- (void)timerFireMethod:(NSTimer *)theTimer
-{
-	[self.view flush];
-}
+- (id)initWithProgram:(ShaderProgram *)program andNumberOfDivisions:(unsigned int)divisions;
+- (void)render;
 
 @end

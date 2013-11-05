@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Josh A. Beam
+ * Copyright (C) 2011-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,17 +23,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Cocoa/Cocoa.h>
-#import <DromeCore/File.h>
-#import <DromeCore/Exception.h>
+#import <AppKit/AppKit.h>
 
-int main(int argc, char *argv[])
-{
-    try {
-        DromeCore::File::init(argc, (const char **)argv);
-        return NSApplicationMain(argc, (const char **)argv);
-    } catch(DromeCore::Exception ex) {
-        NSLog(@"%s", ex.toString().c_str());
-        return 1;
-    }
-}
+@class Matrix4;
+
+@interface MyNSOpenGLView : NSOpenGLView
+
+@property (readonly) Matrix4 *projectionMatrix;
+
+- (void)flush;
+
+@end

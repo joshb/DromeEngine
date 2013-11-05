@@ -11,13 +11,22 @@
 		0D1C1D63149C61A800D18BAB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D62149C61A800D18BAB /* Cocoa.framework */; };
 		0D1C1D6D149C61A800D18BAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C1D6B149C61A800D18BAB /* InfoPlist.strings */; };
 		0D1C1D6F149C61A800D18BAB /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D6E149C61A800D18BAB /* main.mm */; };
-		0D1C1D76149C61A800D18BAB /* DromeDemoAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */; };
-		0D1C1D79149C61A900D18BAB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C1D77149C61A900D18BAB /* MainMenu.xib */; };
 		0D1C1D95149C6F1300D18BAB /* libDromeGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D56149C615700D18BAB /* libDromeGL.a */; };
 		0D1C1D97149C6F1300D18BAB /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D52149C615700D18BAB /* libDromeMath.a */; };
 		0D1C1DD4149C74E800D18BAB /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D54149C615700D18BAB /* libDromeCore.a */; };
+		0D29DFAE182968E10005BB9C /* CocoaOpenGLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFAD182968E10005BB9C /* CocoaOpenGLAppDelegate.m */; };
+		0D29DFB1182968EC0005BB9C /* MyNSOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB0182968EC0005BB9C /* MyNSOpenGLView.m */; };
+		0D29DFBC1829691E0005BB9C /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB31829691E0005BB9C /* Scene.m */; };
+		0D29DFBD1829691E0005BB9C /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB51829691E0005BB9C /* Texture.m */; };
+		0D29DFBE1829691E0005BB9C /* Cylinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB71829691E0005BB9C /* Cylinder.m */; };
+		0D29DFBF1829691E0005BB9C /* ShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB91829691E0005BB9C /* ShaderProgram.m */; };
+		0D29DFC01829691E0005BB9C /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFBB1829691E0005BB9C /* Matrix4.m */; };
+		0D29DFC51829692B0005BB9C /* normalmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC11829692B0005BB9C /* normalmap.png */; };
+		0D29DFC61829692B0005BB9C /* shader.fp in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC21829692B0005BB9C /* shader.fp */; };
+		0D29DFC71829692B0005BB9C /* shader.vp in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC31829692B0005BB9C /* shader.vp */; };
+		0D29DFC81829692B0005BB9C /* shader.c in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFC41829692B0005BB9C /* shader.c */; };
+		0D29DFCA182969F70005BB9C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC9182969F70005BB9C /* MainMenu.xib */; };
 		0D57C080149FEE8A00D9DADB /* drome.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C07F149FEE8A00D9DADB /* drome.icns */; };
-		0DD05C4715DE032300C851AA /* DromeNSOpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DD05C4615DE032300C851AA /* DromeNSOpenGLView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,12 +86,26 @@
 		0D1C1D6C149C61A800D18BAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D1C1D6E149C61A800D18BAB /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		0D1C1D70149C61A800D18BAB /* DromeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DromeDemo-Prefix.pch"; sourceTree = "<group>"; };
-		0D1C1D74149C61A800D18BAB /* DromeDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DromeDemoAppDelegate.h; sourceTree = "<group>"; };
-		0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DromeDemoAppDelegate.mm; sourceTree = "<group>"; };
-		0D1C1D78149C61A900D18BAB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0D29DFAC182968E00005BB9C /* CocoaOpenGLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaOpenGLAppDelegate.h; sourceTree = "<group>"; };
+		0D29DFAD182968E10005BB9C /* CocoaOpenGLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaOpenGLAppDelegate.m; sourceTree = "<group>"; };
+		0D29DFAF182968EC0005BB9C /* MyNSOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNSOpenGLView.h; sourceTree = "<group>"; };
+		0D29DFB0182968EC0005BB9C /* MyNSOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNSOpenGLView.m; sourceTree = "<group>"; };
+		0D29DFB21829691E0005BB9C /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		0D29DFB31829691E0005BB9C /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
+		0D29DFB41829691E0005BB9C /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		0D29DFB51829691E0005BB9C /* Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture.m; sourceTree = "<group>"; };
+		0D29DFB61829691E0005BB9C /* Cylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cylinder.h; sourceTree = "<group>"; };
+		0D29DFB71829691E0005BB9C /* Cylinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cylinder.m; sourceTree = "<group>"; };
+		0D29DFB81829691E0005BB9C /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
+		0D29DFB91829691E0005BB9C /* ShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShaderProgram.m; sourceTree = "<group>"; };
+		0D29DFBA1829691E0005BB9C /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
+		0D29DFBB1829691E0005BB9C /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
+		0D29DFC11829692B0005BB9C /* normalmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalmap.png; sourceTree = "<group>"; };
+		0D29DFC21829692B0005BB9C /* shader.fp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.fp; sourceTree = "<group>"; };
+		0D29DFC31829692B0005BB9C /* shader.vp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.vp; sourceTree = "<group>"; };
+		0D29DFC41829692B0005BB9C /* shader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shader.c; sourceTree = "<group>"; };
+		0D29DFC9182969F70005BB9C /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		0D57C07F149FEE8A00D9DADB /* drome.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = drome.icns; sourceTree = SOURCE_ROOT; };
-		0DD05C4515DE032300C851AA /* DromeNSOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DromeNSOpenGLView.h; sourceTree = "<group>"; };
-		0DD05C4615DE032300C851AA /* DromeNSOpenGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DromeNSOpenGLView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,12 +167,12 @@
 		0D1C1D68149C61A800D18BAB /* DromeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0D1C1D74149C61A800D18BAB /* DromeDemoAppDelegate.h */,
-				0D1C1D75149C61A800D18BAB /* DromeDemoAppDelegate.mm */,
-				0D1C1D77149C61A900D18BAB /* MainMenu.xib */,
+				0D29DFAC182968E00005BB9C /* CocoaOpenGLAppDelegate.h */,
+				0D29DFAD182968E10005BB9C /* CocoaOpenGLAppDelegate.m */,
+				0D29DFAF182968EC0005BB9C /* MyNSOpenGLView.h */,
+				0D29DFB0182968EC0005BB9C /* MyNSOpenGLView.m */,
+				0D29DFC9182969F70005BB9C /* MainMenu.xib */,
 				0D1C1D69149C61A800D18BAB /* Supporting Files */,
-				0DD05C4515DE032300C851AA /* DromeNSOpenGLView.h */,
-				0DD05C4615DE032300C851AA /* DromeNSOpenGLView.mm */,
 			);
 			path = DromeDemo;
 			sourceTree = "<group>";
@@ -157,11 +180,25 @@
 		0D1C1D69149C61A800D18BAB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0D29DFC11829692B0005BB9C /* normalmap.png */,
+				0D29DFC21829692B0005BB9C /* shader.fp */,
+				0D29DFC31829692B0005BB9C /* shader.vp */,
+				0D29DFC41829692B0005BB9C /* shader.c */,
 				0D57C07F149FEE8A00D9DADB /* drome.icns */,
 				0D1C1D6A149C61A800D18BAB /* DromeDemo-Info.plist */,
 				0D1C1D6B149C61A800D18BAB /* InfoPlist.strings */,
 				0D1C1D6E149C61A800D18BAB /* main.mm */,
 				0D1C1D70149C61A800D18BAB /* DromeDemo-Prefix.pch */,
+				0D29DFB21829691E0005BB9C /* Scene.h */,
+				0D29DFB31829691E0005BB9C /* Scene.m */,
+				0D29DFB41829691E0005BB9C /* Texture.h */,
+				0D29DFB51829691E0005BB9C /* Texture.m */,
+				0D29DFB61829691E0005BB9C /* Cylinder.h */,
+				0D29DFB71829691E0005BB9C /* Cylinder.m */,
+				0D29DFB81829691E0005BB9C /* ShaderProgram.h */,
+				0D29DFB91829691E0005BB9C /* ShaderProgram.m */,
+				0D29DFBA1829691E0005BB9C /* Matrix4.h */,
+				0D29DFBB1829691E0005BB9C /* Matrix4.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -250,8 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D1C1D6D149C61A800D18BAB /* InfoPlist.strings in Resources */,
-				0D1C1D79149C61A900D18BAB /* MainMenu.xib in Resources */,
+				0D29DFC61829692B0005BB9C /* shader.fp in Resources */,
 				0D57C080149FEE8A00D9DADB /* drome.icns in Resources */,
+				0D29DFC71829692B0005BB9C /* shader.vp in Resources */,
+				0D29DFC51829692B0005BB9C /* normalmap.png in Resources */,
+				0D29DFCA182969F70005BB9C /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D29DFBC1829691E0005BB9C /* Scene.m in Sources */,
+				0D29DFBE1829691E0005BB9C /* Cylinder.m in Sources */,
 				0D1C1D6F149C61A800D18BAB /* main.mm in Sources */,
-				0D1C1D76149C61A800D18BAB /* DromeDemoAppDelegate.mm in Sources */,
-				0DD05C4715DE032300C851AA /* DromeNSOpenGLView.mm in Sources */,
+				0D29DFBF1829691E0005BB9C /* ShaderProgram.m in Sources */,
+				0D29DFC81829692B0005BB9C /* shader.c in Sources */,
+				0D29DFB1182968EC0005BB9C /* MyNSOpenGLView.m in Sources */,
+				0D29DFC01829691E0005BB9C /* Matrix4.m in Sources */,
+				0D29DFBD1829691E0005BB9C /* Texture.m in Sources */,
+				0D29DFAE182968E10005BB9C /* CocoaOpenGLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,14 +341,6 @@
 				0D1C1D6C149C61A800D18BAB /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0D1C1D77149C61A900D18BAB /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D1C1D78149C61A900D18BAB /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

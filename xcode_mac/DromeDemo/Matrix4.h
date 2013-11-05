@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Josh A. Beam
+ * Copyright (C) 2013 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,17 +23,18 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Cocoa/Cocoa.h>
-#import <DromeCore/File.h>
-#import <DromeCore/Exception.h>
+#import <Foundation/Foundation.h>
 
-int main(int argc, char *argv[])
-{
-    try {
-        DromeCore::File::init(argc, (const char **)argv);
-        return NSApplicationMain(argc, (const char **)argv);
-    } catch(DromeCore::Exception ex) {
-        NSLog(@"%s", ex.toString().c_str());
-        return 1;
-    }
-}
+@interface Matrix4 : NSObject
+
+- (id)initWithData:(const float *)data;
+- (const float *)data;
+- (float)getValueForIndex:(int)index;
+- (void)setValue:(float)value forIndex:(int)index;
+- (Matrix4 *)multiplyWithMatrix:(Matrix4 *)matrix;
+
++ (Matrix4 *)perspectiveMatrixWithFieldOfView:(float)fov aspect:(float)aspect near:(float)near far:(float)far;
++ (Matrix4 *)translationMatrixWithX:(float)x y:(float)y z:(float)z;
++ (Matrix4 *)rotationMatrixWithAngle:(float)angle x:(float)x y:(float)y z:(float)z;
+
+@end
