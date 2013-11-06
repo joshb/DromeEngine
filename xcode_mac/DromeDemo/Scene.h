@@ -25,7 +25,6 @@
 
 #import <DromeMath/Matrix4.h>
 #import <Foundation/Foundation.h>
-#import "Texture.h"
 
 #define NUM_LIGHTS 3
 

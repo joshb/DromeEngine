@@ -26,6 +26,7 @@
 #include <math.h>
 #include <sys/time.h>
 #include <OpenGL/gl3.h>
+#import <DromeGL/Texture.h>
 #import "Scene.h"
 #import "Cylinder.h"
 
@@ -35,7 +36,7 @@ using namespace DromeMath;
 
 @interface Scene()
 {
-	Texture *_normalmap;
+	RefPtr <Texture> _normalmap;
     Cylinder *_cylinder;
 
 	RefPtr <ShaderProgram> _program;
@@ -71,7 +72,7 @@ using namespace DromeMath;
 - (void)sceneInit
 {	
 	// load normalmap texture
-	_normalmap = [[Texture alloc] initFromFile:@"normalmap.png"];
+    _normalmap = Texture::create(Image::create("normalmap.png"));
 
 	// create the program, attach shaders, and link the program */
     _program = ShaderProgram::create();
@@ -107,6 +108,7 @@ using namespace DromeMath;
     DromeMath::Matrix4 modelviewMatrix = rotationMatrix * translationMatrix;
 
 	// enable the program and set uniform variables
+    glBindTexture(GL_TEXTURE_2D, _normalmap->getId());
     glUseProgram(_program->getId());
 	glUniformMatrix4fv(_programProjectionMatrixLocation, 1, GL_FALSE, projectionMatrix.getData());
 	glUniformMatrix4fv(_programModelviewMatrixLocation, 1, GL_FALSE, modelviewMatrix.getData());

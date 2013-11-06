@@ -17,7 +17,6 @@
 		0D29DFAE182968E10005BB9C /* CocoaOpenGLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFAD182968E10005BB9C /* CocoaOpenGLAppDelegate.mm */; };
 		0D29DFB1182968EC0005BB9C /* MyNSOpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB0182968EC0005BB9C /* MyNSOpenGLView.mm */; };
 		0D29DFBC1829691E0005BB9C /* Scene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB31829691E0005BB9C /* Scene.mm */; };
-		0D29DFBD1829691E0005BB9C /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB51829691E0005BB9C /* Texture.m */; };
 		0D29DFBE1829691E0005BB9C /* Cylinder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB71829691E0005BB9C /* Cylinder.mm */; };
 		0D29DFC51829692B0005BB9C /* normalmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC11829692B0005BB9C /* normalmap.png */; };
 		0D29DFC61829692B0005BB9C /* shader.fp in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC21829692B0005BB9C /* shader.fp */; };
@@ -89,8 +88,6 @@
 		0D29DFB0182968EC0005BB9C /* MyNSOpenGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyNSOpenGLView.mm; sourceTree = "<group>"; };
 		0D29DFB21829691E0005BB9C /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		0D29DFB31829691E0005BB9C /* Scene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Scene.mm; sourceTree = "<group>"; };
-		0D29DFB41829691E0005BB9C /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
-		0D29DFB51829691E0005BB9C /* Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture.m; sourceTree = "<group>"; };
 		0D29DFB61829691E0005BB9C /* Cylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cylinder.h; sourceTree = "<group>"; };
 		0D29DFB71829691E0005BB9C /* Cylinder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Cylinder.mm; sourceTree = "<group>"; };
 		0D29DFC11829692B0005BB9C /* normalmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalmap.png; sourceTree = "<group>"; };
@@ -182,8 +179,6 @@
 				0D1C1D70149C61A800D18BAB /* DromeDemo-Prefix.pch */,
 				0D29DFB21829691E0005BB9C /* Scene.h */,
 				0D29DFB31829691E0005BB9C /* Scene.mm */,
-				0D29DFB41829691E0005BB9C /* Texture.h */,
-				0D29DFB51829691E0005BB9C /* Texture.m */,
 				0D29DFB61829691E0005BB9C /* Cylinder.h */,
 				0D29DFB71829691E0005BB9C /* Cylinder.mm */,
 			);
@@ -293,7 +288,6 @@
 				0D29DFBE1829691E0005BB9C /* Cylinder.mm in Sources */,
 				0D1C1D6F149C61A800D18BAB /* main.mm in Sources */,
 				0D29DFB1182968EC0005BB9C /* MyNSOpenGLView.mm in Sources */,
-				0D29DFBD1829691E0005BB9C /* Texture.m in Sources */,
 				0D29DFAE182968E10005BB9C /* CocoaOpenGLAppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
