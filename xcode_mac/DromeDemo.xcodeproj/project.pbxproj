@@ -16,12 +16,12 @@
 		0D1C1DD4149C74E800D18BAB /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C1D54149C615700D18BAB /* libDromeCore.a */; };
 		0D29DFAE182968E10005BB9C /* CocoaOpenGLAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFAD182968E10005BB9C /* CocoaOpenGLAppDelegate.mm */; };
 		0D29DFB1182968EC0005BB9C /* MyNSOpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB0182968EC0005BB9C /* MyNSOpenGLView.mm */; };
-		0D29DFBC1829691E0005BB9C /* Scene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D29DFB31829691E0005BB9C /* Scene.mm */; };
 		0D29DFC51829692B0005BB9C /* normalmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC11829692B0005BB9C /* normalmap.png */; };
 		0D29DFC61829692B0005BB9C /* shader.fp in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC21829692B0005BB9C /* shader.fp */; };
 		0D29DFC71829692B0005BB9C /* shader.vp in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC31829692B0005BB9C /* shader.vp */; };
 		0D29DFCA182969F70005BB9C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D29DFC9182969F70005BB9C /* MainMenu.xib */; };
 		0D57C080149FEE8A00D9DADB /* drome.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C07F149FEE8A00D9DADB /* drome.icns */; };
+		0D7B4BC9182B025E00B687B2 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D7B4BC7182B025E00B687B2 /* Scene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,13 +85,13 @@
 		0D29DFAD182968E10005BB9C /* CocoaOpenGLAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CocoaOpenGLAppDelegate.mm; sourceTree = "<group>"; };
 		0D29DFAF182968EC0005BB9C /* MyNSOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNSOpenGLView.h; sourceTree = "<group>"; };
 		0D29DFB0182968EC0005BB9C /* MyNSOpenGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyNSOpenGLView.mm; sourceTree = "<group>"; };
-		0D29DFB21829691E0005BB9C /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
-		0D29DFB31829691E0005BB9C /* Scene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Scene.mm; sourceTree = "<group>"; };
 		0D29DFC11829692B0005BB9C /* normalmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalmap.png; sourceTree = "<group>"; };
 		0D29DFC21829692B0005BB9C /* shader.fp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.fp; sourceTree = "<group>"; };
 		0D29DFC31829692B0005BB9C /* shader.vp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.vp; sourceTree = "<group>"; };
 		0D29DFC9182969F70005BB9C /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		0D57C07F149FEE8A00D9DADB /* drome.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = drome.icns; sourceTree = SOURCE_ROOT; };
+		0D7B4BC7182B025E00B687B2 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		0D7B4BC8182B025E00B687B2 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +174,8 @@
 				0D1C1D6B149C61A800D18BAB /* InfoPlist.strings */,
 				0D1C1D6E149C61A800D18BAB /* main.mm */,
 				0D1C1D70149C61A800D18BAB /* DromeDemo-Prefix.pch */,
-				0D29DFB21829691E0005BB9C /* Scene.h */,
-				0D29DFB31829691E0005BB9C /* Scene.mm */,
+				0D7B4BC7182B025E00B687B2 /* Scene.cpp */,
+				0D7B4BC8182B025E00B687B2 /* Scene.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D29DFBC1829691E0005BB9C /* Scene.mm in Sources */,
+				0D7B4BC9182B025E00B687B2 /* Scene.cpp in Sources */,
 				0D1C1D6F149C61A800D18BAB /* main.mm in Sources */,
 				0D29DFB1182968EC0005BB9C /* MyNSOpenGLView.mm in Sources */,
 				0D29DFAE182968E10005BB9C /* CocoaOpenGLAppDelegate.mm in Sources */,

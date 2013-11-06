@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2012 Josh A. Beam
+ * Copyright (C) 2013 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,14 +23,44 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <DromeMath/Matrix4.h>
-#import <Foundation/Foundation.h>
+#ifndef __DromeDemo__Scene2__
+#define __DromeDemo__Scene2__
+
+#import <DromeCore/EventHandler.h>
+#import <DromeGL/Cube.h>
+#import <DromeGL/Texture.h>
+#import <DromeGL/ShaderProgram.h>
 
 #define NUM_LIGHTS 3
 
-@interface Scene : NSObject
+class Scene : public DromeCore::EventHandler
+{
+private:
+    DromeMath::Matrix4 _projectionMatrix;
+    
+    DromeCore::RefPtr <DromeGL::Texture> _normalmap;
+    DromeGL::Cube *_cube;
+    
+    DromeCore::RefPtr <DromeGL::ShaderProgram> _program;
+	GLint _programProjectionMatrixLocation;
+	GLint _programModelviewMatrixLocation;
+	GLint _programCameraPositionLocation;
+	GLint _programLightPositionLocation;
+	GLint _programLightColorLocation;
+	GLint _programFragmentColorLocation;
+    
+    GLfloat _cameraRotation;
+	GLfloat _cameraPosition[3];
+	
+	float _lightPosition[NUM_LIGHTS * 3];
+	float _lightColor[NUM_LIGHTS * 3];
+	float _lightRotation;
+    
+public:
+    Scene();
+    void setProjectionMatrix(const DromeMath::Matrix4 &projectionMatrix);
+    bool render();
+    void cycle(float secondsElapsed);
+};
 
-- (void)renderWithProjectionMatrix:(const DromeMath::Matrix4 &)projectionMatrix;
-- (void)cycle;
-
-@end
+#endif /* defined(__DromeDemo__Scene2__) */

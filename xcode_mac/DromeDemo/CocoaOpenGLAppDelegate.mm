@@ -23,10 +23,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <math.h>
+#import <cmath>
+#import <sys/time.h>
 #import <OpenGL/gl3.h>
 #import "CocoaOpenGLAppDelegate.h"
 #import "Scene.h"
+
+using namespace DromeCore;
 
 @interface CocoaOpenGLAppDelegate()
 {
@@ -54,7 +57,7 @@
 	glCullFace(GL_BACK);
 
 	// initialize the scene
-	_scene = [[Scene alloc] init];
+	_scene = new Scene();
 	
 	// create timer to render the scene at 60fps
     _timer = [NSTimer timerWithTimeInterval:(1.0f / 60.0f)
@@ -70,16 +73,43 @@
 	return YES;
 }
 
+static long
+getTicks(void)
+{
+	struct timeval t;
+	gettimeofday(&t, NULL);
+	return (t.tv_sec * 1000) + (t.tv_usec / 1000);
+}
+
+static float
+getSecondsElapsed(void)
+{
+    static long prevTicks = 0;
+	long ticks;
+	float secondsElapsed;
+    
+    // calculate the number of seconds that have
+    // passed since the last call to this function
+	if(prevTicks == 0)
+		prevTicks = getTicks();
+	ticks = getTicks();
+	secondsElapsed = (float)(ticks - prevTicks) / 1000.0f;
+	prevTicks = ticks;
+    
+    return secondsElapsed;
+}
+
 - (void)timerFireMethod:(NSTimer *)theTimer
 {
 	// render the scene
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	[_scene renderWithProjectionMatrix:_view.projectionMatrix];
+    _scene->setProjectionMatrix(_view.projectionMatrix);
+    _scene->render();
 	glFlush();
 	[_view flush];
 	
 	// cycle the scene
-	[_scene cycle];
+	_scene->cycle(getSecondsElapsed());
 }
 
 @end
