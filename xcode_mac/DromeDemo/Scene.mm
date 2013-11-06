@@ -27,8 +27,8 @@
 #include <sys/time.h>
 #include <OpenGL/gl3.h>
 #import <DromeGL/Texture.h>
+#import <DromeGL/DromeGL>
 #import "Scene.h"
-#import "Cylinder.h"
 
 using namespace DromeCore;
 using namespace DromeGL;
@@ -37,7 +37,7 @@ using namespace DromeMath;
 @interface Scene()
 {
 	RefPtr <Texture> _normalmap;
-    Cylinder *_cylinder;
+    Cube *_cube;
 
 	RefPtr <ShaderProgram> _program;
 	GLint _programProjectionMatrixLocation;
@@ -92,8 +92,8 @@ using namespace DromeMath;
 	_lightColor[3] = 0.0f; _lightColor[4] = 1.0f; _lightColor[5] = 0.0f;
 	_lightColor[6] = 0.0f; _lightColor[7] = 0.0f; _lightColor[8] = 1.0f;
 
-	// create the cylinder
-    _cylinder = [[Cylinder alloc] initWithProgram:_program andNumberOfDivisions:36];
+	// create the cube
+    _cube = new Cube(_program);
 
 	// do the first cycle to initialize positions
 	_lightRotation = 0.0f;
@@ -116,8 +116,8 @@ using namespace DromeMath;
 	glUniform3fv(_programLightPositionLocation, NUM_LIGHTS, _lightPosition);
 	glUniform3fv(_programLightColorLocation, NUM_LIGHTS, _lightColor);
 
-	// render the cylinder
-    [_cylinder render];
+	// render the cube
+    _cube->render();
 
 	// disable the program
 	glUseProgram(0);
