@@ -37,52 +37,52 @@ Cube::Cube(RefPtr <ShaderProgram> program)
 
 	float v[] = {
 		// -x
-		-1.0f, +1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
-		-1.0f, +1.0f, +1.0f,	-1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		-1.0f, +1.0f, +1.0f,	-1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
-		-1.0f, -1.0f, +1.0f,	-1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
+		-1.0f, +1.0f, -1.0f,	0.0f, 0.0f, 1.0f,   0.0f, -1.0f, 0.0f,  -1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
+		-1.0f, -1.0f, -1.0f,	0.0f, 0.0f, 1.0f,   0.0f, -1.0f, 0.0f,  -1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+		-1.0f, +1.0f, +1.0f,	0.0f, 0.0f, 1.0f,   0.0f, -1.0f, 0.0f,  -1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+		-1.0f, +1.0f, +1.0f,	0.0f, 0.0f, 1.0f,   0.0f, -1.0f, 0.0f,  -1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+		-1.0f, -1.0f, -1.0f,	0.0f, 0.0f, 1.0f,   0.0f, -1.0f, 0.0f,  -1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+		-1.0f, -1.0f, +1.0f,	0.0f, 0.0f, 1.0f,   0.0f, -1.0f, 0.0f,  -1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
 
 		// +x
-		+1.0f, +1.0f, +1.0f,	+1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
-		+1.0f, -1.0f, +1.0f,	+1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
-		+1.0f, +1.0f, -1.0f,	+1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		+1.0f, +1.0f, -1.0f,	+1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		+1.0f, -1.0f, +1.0f,	+1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
-		+1.0f, -1.0f, -1.0f,	+1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
+		+1.0f, +1.0f, +1.0f,	0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,  +1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
+		+1.0f, -1.0f, +1.0f,	0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,  +1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+		+1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,  +1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+		+1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,  +1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
+		+1.0f, -1.0f, +1.0f,	0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,  +1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
+		+1.0f, -1.0f, -1.0f,	0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,  +1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
 
 		// -y
-		-1.0f, -1.0f, +1.0f,	0.0f, -1.0f, 0.0f,	0.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	0.0f, -1.0f, 0.0f,	0.0f, 1.0f,
-		+1.0f, -1.0f, +1.0f,	0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
-		+1.0f, -1.0f, +1.0f,	0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f,	0.0f, -1.0f, 0.0f,	0.0f, 1.0f,
-		+1.0f, -1.0f, -1.0f,	0.0f, -1.0f, 0.0f,	1.0f, 1.0f,
+		-1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,	0.0f, 0.0f,
+		-1.0f, -1.0f, -1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,	0.0f, 1.0f,
+		+1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
+		+1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
+		-1.0f, -1.0f, -1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,	0.0f, 1.0f,
+		+1.0f, -1.0f, -1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, -1.0f,  0.0f, -1.0f, 0.0f,	1.0f, 1.0f,
 
 		// +y
-		-1.0f, +1.0f, -1.0f,	0.0f, +1.0f, 0.0f,	0.0f, 0.0f,
-		-1.0f, +1.0f, +1.0f,	0.0f, +1.0f, 0.0f,	0.0f, 1.0f,
-		+1.0f, +1.0f, -1.0f,	0.0f, +1.0f, 0.0f,	1.0f, 0.0f,
-		+1.0f, +1.0f, -1.0f,	0.0f, +1.0f, 0.0f,	1.0f, 0.0f,
-		-1.0f, +1.0f, +1.0f,	0.0f, +1.0f, 0.0f,	0.0f, 1.0f,
-		+1.0f, +1.0f, +1.0f,	0.0f, +1.0f, 0.0f,	1.0f, 1.0f,
+		-1.0f, +1.0f, -1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, +1.0f, 0.0f,	0.0f, 0.0f,
+		-1.0f, +1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, +1.0f, 0.0f,	0.0f, 1.0f,
+		+1.0f, +1.0f, -1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, +1.0f, 0.0f,	1.0f, 0.0f,
+		+1.0f, +1.0f, -1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, +1.0f, 0.0f,	1.0f, 0.0f,
+		-1.0f, +1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, +1.0f, 0.0f,	0.0f, 1.0f,
+		+1.0f, +1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, +1.0f, 0.0f,	1.0f, 1.0f,
 
 		// -z
-		+1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,	0.0f, 0.0f,
-		+1.0f, -1.0f, -1.0f,	0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
-		-1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
-		-1.0f, +1.0f, -1.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
-		+1.0f, -1.0f, -1.0f,	0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
-		-1.0f, -1.0f, -1.0f,	0.0f, 0.0f, -1.0f,	1.0f, 1.0f,
+		+1.0f, +1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,  0.0f, -1.0f, 0.0f,  0.0f, 0.0f, -1.0f,	0.0f, 0.0f,
+		+1.0f, -1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,  0.0f, -1.0f, 0.0f,  0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
+		-1.0f, +1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,  0.0f, -1.0f, 0.0f,  0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
+		-1.0f, +1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,  0.0f, -1.0f, 0.0f,  0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
+		+1.0f, -1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,  0.0f, -1.0f, 0.0f,  0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
+		-1.0f, -1.0f, -1.0f,	-1.0f, 0.0f, 0.0f,  0.0f, -1.0f, 0.0f,  0.0f, 0.0f, -1.0f,	1.0f, 1.0f,
 
 		// +z
-		-1.0f, +1.0f, +1.0f,	0.0f, 0.0f, +1.0f,	0.0f, 0.0f,
-		-1.0f, -1.0f, +1.0f,	0.0f, 0.0f, +1.0f,	0.0f, 1.0f,
-		+1.0f, +1.0f, +1.0f,	0.0f, 0.0f, +1.0f,	1.0f, 0.0f,
-		+1.0f, +1.0f, +1.0f,	0.0f, 0.0f, +1.0f,	1.0f, 0.0f,
-		-1.0f, -1.0f, +1.0f,	0.0f, 0.0f, +1.0f,	0.0f, 1.0f,
-		+1.0f, -1.0f, +1.0f,	0.0f, 0.0f, +1.0f,	1.0f, 1.0f
+		-1.0f, +1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	0.0f, 0.0f,
+		-1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	0.0f, 1.0f,
+		+1.0f, +1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	1.0f, 0.0f,
+		+1.0f, +1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	1.0f, 0.0f,
+		-1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	0.0f, 1.0f,
+		+1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	1.0f, 1.0f
 	};
 
 	// create VAO and VBO
@@ -100,20 +100,34 @@ Cube::Cube(RefPtr <ShaderProgram> program)
 	// set vertex position attribute
 	GLint location = m_program->getAttribLocation("vertexPosition");
 	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*8, 0);
+	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, 0);
+    
+    // set vertex tangent attribute
+	try {
+		location = m_program->getAttribLocation("vertexTangent");
+		glEnableVertexAttribArray(location);
+		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 3));
+	} catch(Exception) {}
+    
+    // set vertex bitangent attribute
+	try {
+		location = m_program->getAttribLocation("vertexBitangent");
+		glEnableVertexAttribArray(location);
+		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 6));
+	} catch(Exception) {}
 
 	// set vertex normal attribute
 	try {
 		location = m_program->getAttribLocation("vertexNormal");
 		glEnableVertexAttribArray(location);
-		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float)*8, (const GLvoid *)(sizeof(float)*3));
+		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 9));
 	} catch(Exception) {}
 
 	// set vertex texture coordinates attribute
 	try {
 		location = m_program->getAttribLocation("vertexTexCoords");
 		glEnableVertexAttribArray(location);
-		glVertexAttribPointer(location, 2, GL_FLOAT, GL_FALSE, sizeof(float)*8, (const GLvoid *)(sizeof(float)*6));
+		glVertexAttribPointer(location, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 12));
 	} catch(Exception) {}
 }
 
