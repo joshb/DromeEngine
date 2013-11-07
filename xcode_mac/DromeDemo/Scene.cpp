@@ -23,8 +23,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <cmath>
-#import "Scene.h"
+#include <cmath>
+#include "Scene.h"
 
 using namespace DromeCore;
 using namespace DromeGL;
@@ -53,8 +53,8 @@ Scene::Scene()
 	_lightColor[3] = 0.0f; _lightColor[4] = 1.0f; _lightColor[5] = 0.0f;
 	_lightColor[6] = 0.0f; _lightColor[7] = 0.0f; _lightColor[8] = 1.0f;
     
-	// create the cube
-    _cube = new Cube(_program);
+	// create the sphere
+    _sphere = new Sphere(_program);
     
 	// do the first cycle to initialize positions
 	_lightRotation = 0.0f;
@@ -83,8 +83,8 @@ Scene::render()
 	glUniform3fv(_programLightPositionLocation, NUM_LIGHTS, _lightPosition);
 	glUniform3fv(_programLightColorLocation, NUM_LIGHTS, _lightColor);
     
-	// render the cube
-    _cube->render();
+	// render the sphere
+    _sphere->render();
     
 	// disable the program
 	glUseProgram(0);

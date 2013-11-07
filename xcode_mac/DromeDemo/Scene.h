@@ -26,10 +26,10 @@
 #ifndef __DromeDemo__Scene2__
 #define __DromeDemo__Scene2__
 
-#import <DromeCore/EventHandler.h>
-#import <DromeGL/Cube.h>
-#import <DromeGL/Texture.h>
-#import <DromeGL/ShaderProgram.h>
+#include <DromeCore/EventHandler.h>
+#include <DromeGL/Sphere.h>
+#include <DromeGL/Texture.h>
+#include <DromeGL/ShaderProgram.h>
 
 #define NUM_LIGHTS 3
 
@@ -39,7 +39,7 @@ private:
     DromeMath::Matrix4 _projectionMatrix;
     
     DromeCore::RefPtr <DromeGL::Texture> _normalmap;
-    DromeGL::Cube *_cube;
+    DromeGL::Sphere *_sphere;
     
     DromeCore::RefPtr <DromeGL::ShaderProgram> _program;
 	GLint _programProjectionMatrixLocation;

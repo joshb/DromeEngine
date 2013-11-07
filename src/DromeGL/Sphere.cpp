@@ -34,16 +34,8 @@ using namespace DromeMath;
 
 namespace DromeGL {
 
-struct Vertex
-{
-	float x, y, z;
-};
-
 Sphere::Sphere(RefPtr <ShaderProgram> program, int numDivisions)
 {
-	m_program = program;
-
-	vector <Vertex> vertices;
 	for(int i = 0; i < (numDivisions / 2); ++i) {
 		float theta1 = (float)M_PI * (float)i / (float)(numDivisions / 2);
 		float c1 = cosf(theta1);
@@ -60,79 +52,54 @@ Sphere::Sphere(RefPtr <ShaderProgram> program, int numDivisions)
 			float c4 = cosf(theta4);
 			float s4 = -sinf(theta4);
 
-			Vertex vert;
-			vert.x = c3 * s1; vert.y = c1; vert.z = s3 * s1;
-			vertices.push_back(vert);
-			vert.x = c3 * s2; vert.y = c2; vert.z = s3 * s2;
-			vertices.push_back(vert);
-			vert.x = c4 * s1; vert.y = c1; vert.z = s4 * s1;
-			vertices.push_back(vert);
+            Vertex vertex;
+            vertex.position = Vector3(c3 * s1, c1, s3 * s1);
+            vertex.tangent = Vector3(cosf(theta3 + M_PI / 2.0f), 0.0f, -sinf(theta3 + M_PI / 2.0f));
+            vertex.bitangent = Vector3(0.0f, cosf(theta1 + M_PI / 2.0f), -sinf(theta1 + M_PI / 2.0f));
+            vertex.normal = vertex.position;
+            vertex.s = (float)j / (float)numDivisions;
+            vertex.t = (float)i / (float)(numDivisions / 2);
+            addVertex(vertex);
+            vertex.position = Vector3(c3 * s2, c2, s3 * s2);
+            vertex.tangent = Vector3(cosf(theta3 + M_PI / 2.0f), 0.0f, -sinf(theta3 + M_PI / 2.0f));
+            vertex.bitangent = Vector3(0.0f, cosf(theta2 + M_PI / 2.0f), -sinf(theta2 + M_PI / 2.0f));
+            vertex.normal = vertex.position;
+            vertex.s = (float)j / (float)numDivisions;
+            vertex.t = (float)(i+1) / (float)(numDivisions / 2);
+            addVertex(vertex);
+            vertex.position = Vector3(c4 * s1, c1, s4 * s1);
+            vertex.tangent = Vector3(cosf(theta4 + M_PI / 2.0f), 0.0f, -sinf(theta4 + M_PI / 2.0f));
+            vertex.bitangent = Vector3(0.0f, cosf(theta1 + M_PI / 2.0f), -sinf(theta1 + M_PI / 2.0f));
+            vertex.normal = vertex.position;
+            vertex.s = (float)(j+1) / (float)numDivisions;
+            vertex.t = (float)i / (float)(numDivisions / 2);
+            addVertex(vertex);
 
-			vert.x = c4 * s1; vert.y = c1; vert.z = s4 * s1;
-			vertices.push_back(vert);
-			vert.x = c3 * s2; vert.y = c2; vert.z = s3 * s2;
-			vertices.push_back(vert);
-			vert.x = c4 * s2; vert.y = c2; vert.z = s4 * s2;
-			vertices.push_back(vert);
+            vertex.position = Vector3(c4 * s1, c1, s4 * s1);
+            vertex.normal = vertex.position;
+            vertex.tangent = Vector3(cosf(theta4 + M_PI / 2.0f), 0.0f, -sinf(theta4 + M_PI / 2.0f));
+            vertex.bitangent = Vector3(0.0f, cosf(theta1 + M_PI / 2.0f), -sinf(theta1 + M_PI / 2.0f));
+            vertex.s = (float)(j+1) / (float)numDivisions;
+            vertex.t = (float)i / (float)(numDivisions / 2);
+            addVertex(vertex);
+            vertex.position = Vector3(c3 * s2, c2, s3 * s2);
+            vertex.tangent = Vector3(cosf(theta3 + M_PI / 2.0f), 0.0f, -sinf(theta3 + M_PI / 2.0f));
+            vertex.bitangent = Vector3(0.0f, cosf(theta2 + M_PI / 2.0f), -sinf(theta2 + M_PI / 2.0f));
+            vertex.normal = vertex.position;
+            vertex.s = (float)j / (float)numDivisions;
+            vertex.t = (float)(i+1) / (float)(numDivisions / 2);
+            addVertex(vertex);
+            vertex.position = Vector3(c4 * s2, c2, s4 * s2);
+            vertex.tangent = Vector3(cosf(theta4 + M_PI / 2.0f), 0.0f, -sinf(theta4 + M_PI / 2.0f));
+            vertex.bitangent = Vector3(0.0f, cosf(theta2 + M_PI / 2.0f), -sinf(theta2 + M_PI / 2.0f));
+            vertex.normal = vertex.position;
+            vertex.s = (float)(j+1) / (float)numDivisions;
+            vertex.t = (float)(i+1) / (float)(numDivisions / 2);
+            addVertex(vertex);
 		}
 	}
 
-	m_numVertices = (GLsizei)vertices.size();
-	float *v = new float[m_numVertices * 3];
-	for(unsigned int i = 0; i < vertices.size(); ++i) {
-		v[i*3+0] = vertices[i].x;
-		v[i*3+1] = vertices[i].y;
-		v[i*3+2] = vertices[i].z;
-	}
-
-	// create VAO and VBO
-#ifdef GLES
-	glGenVertexArraysOES(1, &m_vaoId);
-	glBindVertexArrayOES(m_vaoId);
-#else
-	glGenVertexArrays(1, &m_vaoId);
-	glBindVertexArray(m_vaoId);
-#endif
-	glGenBuffers(1, &m_vboId);
-	glBindBuffer(GL_ARRAY_BUFFER, m_vboId);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_numVertices * 3, v, GL_STATIC_DRAW);
-	delete [] v;
-
-	// set vertex position attribute
-	GLint location = m_program->getAttribLocation("vertexPosition");
-	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, 0);
-
-	// set vertex normal attribute
-	try {
-        location = m_program->getAttribLocation("vertexNormal");
-        glEnableVertexAttribArray(location);
-        glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, 0);
-    } catch(Exception ex) {
-        
-    }
-}
-
-Sphere::~Sphere()
-{
-	// delete VAO and VBO
-#ifdef GLES
-	glDeleteVertexArraysOES(1, &m_vaoId);
-#else
-	glDeleteVertexArrays(1, &m_vaoId);
-#endif
-	glDeleteBuffers(1, &m_vboId);
-}
-
-void
-Sphere::render()
-{
-#ifdef GLES
-	glBindVertexArrayOES(m_vaoId);
-#else
-	glBindVertexArray(m_vaoId);
-#endif
-	glDrawArrays(GL_TRIANGLES, 0, m_numVertices);
+    finalize(program);
 }
 
 } // namespace DromeGL

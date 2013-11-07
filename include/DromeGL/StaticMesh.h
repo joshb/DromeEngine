@@ -41,6 +41,7 @@ class Vertex
         DromeMath::Vector3 normal;
         float s, t;
 
+        Vertex();
         Vertex(const DromeMath::Vector3 &position, const DromeMath::Vector3 &tangent, const DromeMath::Vector3 &bitangent, const DromeMath::Vector3 &normal, float s, float t);
 };
 

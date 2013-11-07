@@ -26,25 +26,14 @@
 #ifndef __DROMEGL_SPHERE_H__
 #define __DROMEGL_SPHERE_H__
 
-#include "OpenGL.h"
-#include "ShaderProgram.h"
+#include "StaticMesh.h"
 
 namespace DromeGL {
 
-class Sphere
+class Sphere : public StaticMesh
 {
-	private:
-		GLuint m_vaoId;
-		GLuint m_vboId;
-		DromeCore::RefPtr <ShaderProgram> m_program;
-
-		GLsizei m_numVertices;
-
 	public:
-		Sphere(DromeCore::RefPtr <ShaderProgram> program, int numDivisions = 18);
-		virtual ~Sphere();
-
-		void render();
+		Sphere(DromeCore::RefPtr <ShaderProgram> program, int numDivisions = 36);
 };
 
 } // namespace DromeGL

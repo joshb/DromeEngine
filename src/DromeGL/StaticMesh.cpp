@@ -31,6 +31,11 @@ using namespace DromeMath;
 
 namespace DromeGL {
     
+Vertex::Vertex()
+{
+    this->s = this->t = 0.0f;
+}
+    
 Vertex::Vertex(const Vector3 &position, const Vector3 &tangent, const Vector3 &bitangent, const Vector3 &normal, float s, float t)
 {
     this->position = position;
