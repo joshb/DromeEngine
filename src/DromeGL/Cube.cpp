@@ -33,8 +33,6 @@ namespace DromeGL {
 
 Cube::Cube(RefPtr <ShaderProgram> program)
 {
-	m_program = program;
-
 	float v[] = {
 		// -x
 		-1.0f, +1.0f, -1.0f,	0.0f, 0.0f, 1.0f,   0.0f, -1.0f, 0.0f,  -1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
@@ -84,73 +82,12 @@ Cube::Cube(RefPtr <ShaderProgram> program)
 		-1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	0.0f, 1.0f,
 		+1.0f, -1.0f, +1.0f,	1.0f, 0.0f, 0.0f,   0.0f, -1.0f, 0.0f,  0.0f, 0.0f, +1.0f,	1.0f, 1.0f
 	};
-
-	// create VAO and VBO
-#ifdef GLES
-	glGenVertexArraysOES(1, &m_vaoId);
-	glBindVertexArrayOES(m_vaoId);
-#else
-	glGenVertexArrays(1, &m_vaoId);
-	glBindVertexArray(m_vaoId);
-#endif
-	glGenBuffers(1, &m_vboId);
-	glBindBuffer(GL_ARRAY_BUFFER, m_vboId);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(v), v, GL_STATIC_DRAW);
-
-	// set vertex position attribute
-	GLint location = m_program->getAttribLocation("vertexPosition");
-	glEnableVertexAttribArray(location);
-	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, 0);
     
-    // set vertex tangent attribute
-	try {
-		location = m_program->getAttribLocation("vertexTangent");
-		glEnableVertexAttribArray(location);
-		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 3));
-	} catch(Exception) {}
-    
-    // set vertex bitangent attribute
-	try {
-		location = m_program->getAttribLocation("vertexBitangent");
-		glEnableVertexAttribArray(location);
-		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 6));
-	} catch(Exception) {}
+    for(int i = 0; i < sizeof(v) / sizeof(float); i += 14) {
+        addVertex(Vertex(Vector3(v[i+0], v[i+1], v[i+2]), Vector3(v[i+3], v[i+4], v[i+5]), Vector3(v[i+6], v[i+7], v[i+8]), Vector3(v[i+9], v[i+10], v[i+11]), v[i+12], v[i+13]));
+    }
 
-	// set vertex normal attribute
-	try {
-		location = m_program->getAttribLocation("vertexNormal");
-		glEnableVertexAttribArray(location);
-		glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 9));
-	} catch(Exception) {}
-
-	// set vertex texture coordinates attribute
-	try {
-		location = m_program->getAttribLocation("vertexTexCoords");
-		glEnableVertexAttribArray(location);
-		glVertexAttribPointer(location, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 14, (const GLvoid *)(sizeof(float) * 12));
-	} catch(Exception) {}
-}
-
-Cube::~Cube()
-{
-	// delete VAO and VBO
-#ifdef GLES
-	glDeleteVertexArraysOES(1, &m_vaoId);
-#else
-	glDeleteVertexArrays(1, &m_vaoId);
-#endif
-	glDeleteBuffers(1, &m_vboId);
-}
-
-void
-Cube::render()
-{
-#ifdef GLES
-	glBindVertexArrayOES(m_vaoId);
-#else
-	glBindVertexArray(m_vaoId);
-#endif
-	glDrawArrays(GL_TRIANGLES, 0, 36);
+    finalize(program);
 }
 
 } // namespace DromeGL

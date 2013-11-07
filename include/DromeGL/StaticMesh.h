@@ -23,19 +23,46 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DROMEGL_CUBE_H__
-#define __DROMEGL_CUBE_H__
+#ifndef __DROMEGL_STATICMESH_H__
+#define __DROMEGL_STATICMESH_H__
 
-#include "StaticMesh.h"
+#include <vector>
+#include "OpenGL.h"
+#include "ShaderProgram.h"
 
 namespace DromeGL {
 
-class Cube : public StaticMesh
+class Vertex
 {
+    public:
+        DromeMath::Vector3 position;
+        DromeMath::Vector3 tangent;
+        DromeMath::Vector3 bitangent;
+        DromeMath::Vector3 normal;
+        float s, t;
+
+        Vertex(const DromeMath::Vector3 &position, const DromeMath::Vector3 &tangent, const DromeMath::Vector3 &bitangent, const DromeMath::Vector3 &normal, float s, float t);
+};
+
+class StaticMesh
+{
+	private:
+        std::vector <Vertex> m_vertices;
+        size_t m_numVertices;
+
+		GLuint m_vaoId;
+		GLuint m_vboId;
+		DromeCore::RefPtr <ShaderProgram> m_program;
+
 	public:
-		Cube(DromeCore::RefPtr <ShaderProgram> program);
+        StaticMesh();
+        virtual ~StaticMesh();
+
+        void addVertex(const Vertex &vertex);
+        void finalize(DromeCore::RefPtr <ShaderProgram> program);
+        void render();
 };
 
 } // namespace DromeGL
 
-#endif /* __DROMEGL_CUBE_H__ */
+#endif /* __DROMEGL_STATICMESH_H__ */

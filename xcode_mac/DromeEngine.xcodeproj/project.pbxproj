@@ -30,6 +30,7 @@
 		0D1C1DCC149C74CE00D18BAB /* File_Apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C85149C5FD300D18BAB /* File_Apple.mm */; };
 		0D1C1DCF149C74CE00D18BAB /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C89149C5FD300D18BAB /* String.cpp */; };
 		0D1C1DD0149C74CE00D18BAB /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1C8A149C5FD300D18BAB /* Util.cpp */; };
+		0D89A9CA182BF81200EF1154 /* StaticMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D89A9C9182BF81200EF1154 /* StaticMesh.cpp */; };
 		0D9DC04515D70B7C001AE4D7 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC03E15D70B7C001AE4D7 /* Cube.cpp */; };
 		0D9DC04715D70B7C001AE4D7 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */; };
 		0D9DC04815D70B7C001AE4D7 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */; };
@@ -85,6 +86,8 @@
 		0D1C1C8A149C5FD300D18BAB /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		0D1C1C9D149C5FFD00D18BAB /* libDromeGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1C1DC2149C74B700D18BAB /* libDromeCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D89A9C8182BF7FE00EF1154 /* StaticMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StaticMesh.h; path = DromeGL/StaticMesh.h; sourceTree = "<group>"; };
+		0D89A9C9182BF81200EF1154 /* StaticMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaticMesh.cpp; sourceTree = "<group>"; };
 		0D9DC03015D709EC001AE4D7 /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		0D9DC03215D70A37001AE4D7 /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = DromeGL/Cube.h; sourceTree = "<group>"; };
 		0D9DC03315D70A37001AE4D7 /* DromeGL */ = {isa = PBXFileReference; lastKnownFileType = text; name = DromeGL; path = DromeGL/DromeGL; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 				0D9DC03615D70A37001AE4D7 /* ShaderProgram.h */,
 				0D9DC03715D70A37001AE4D7 /* Sphere.h */,
 				0D9DC03815D70A37001AE4D7 /* Square.h */,
+				0D89A9C8182BF7FE00EF1154 /* StaticMesh.h */,
 				0D9DC03915D70A37001AE4D7 /* Texture.h */,
 				0D9DC03A15D70A37001AE4D7 /* VertexBuffer.h */,
 			);
@@ -265,6 +269,7 @@
 				0D9DC04015D70B7C001AE4D7 /* ShaderProgram.cpp */,
 				0D9DC04115D70B7C001AE4D7 /* Sphere.cpp */,
 				0D9DC04215D70B7C001AE4D7 /* Square.cpp */,
+				0D89A9C9182BF81200EF1154 /* StaticMesh.cpp */,
 				0D9DC04315D70B7C001AE4D7 /* Texture.cpp */,
 				0D9DC04415D70B7C001AE4D7 /* VertexBuffer.cpp */,
 			);
@@ -403,6 +408,7 @@
 				0D9DC04515D70B7C001AE4D7 /* Cube.cpp in Sources */,
 				0D9DC04715D70B7C001AE4D7 /* ShaderProgram.cpp in Sources */,
 				0D9DC04815D70B7C001AE4D7 /* Sphere.cpp in Sources */,
+				0D89A9CA182BF81200EF1154 /* StaticMesh.cpp in Sources */,
 				0D9DC04915D70B7C001AE4D7 /* Square.cpp in Sources */,
 				0D9DC04A15D70B7C001AE4D7 /* Texture.cpp in Sources */,
 				0D9DC04B15D70B7C001AE4D7 /* VertexBuffer.cpp in Sources */,

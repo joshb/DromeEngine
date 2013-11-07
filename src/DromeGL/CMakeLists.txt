@@ -5,6 +5,7 @@ set(
 	ShaderProgram.cpp
 	Sphere.cpp
 	Square.cpp
+    StaticMesh.cpp
 	Texture.cpp
 	VertexBuffer.cpp
 )
