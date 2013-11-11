@@ -58,7 +58,7 @@ private:
     
 public:
     Scene();
-    void setProjectionMatrix(const DromeMath::Matrix4 &projectionMatrix);
+    void windowDimensionsChanged(int width, int height);
     bool render();
     void cycle(float secondsElapsed);
 };

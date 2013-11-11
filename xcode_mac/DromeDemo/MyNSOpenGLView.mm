@@ -23,13 +23,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <DromeMath/Matrix4.h>
 #import "MyNSOpenGLView.h"
 #import <OpenGL/gl3.h>
 
 @interface MyNSOpenGLView()
 {
-    DromeMath::Matrix4 _projectionMatrix;
     NSTrackingArea *_trackingArea;
 }
 
@@ -37,9 +35,11 @@
 
 @implementation MyNSOpenGLView
 
-- (DromeMath::Matrix4)projectionMatrix
+- (void)setEventHandler:(DromeCore::EventHandler *)eventHandler
 {
-	return _projectionMatrix;
+    _eventHandler = eventHandler;
+    if(_eventHandler != NULL)
+        _eventHandler->windowDimensionsChanged((int)self.frame.size.width, (int)self.frame.size.height);
 }
 
 - (void)awakeFromNib
@@ -68,10 +68,9 @@
 	
 	// set viewport
 	glViewport(0, 0, (GLsizei)frame.size.width, (GLsizei)frame.size.height);
-	
-    // create projection matrix
-    _projectionMatrix = DromeMath::Matrix4::perspective((float)M_PI / 4.0f, (float)frame.size.width / (float)frame.size.height, 0.1f, 200.0f);
-    
+    if(self.eventHandler != NULL)
+        self.eventHandler->windowDimensionsChanged((int)frame.size.width, (int)frame.size.height);
+	   
     // remove existing tracking area if necessary
     if(_trackingArea != nil)
         [self removeTrackingArea:_trackingArea];

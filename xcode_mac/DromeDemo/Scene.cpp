@@ -62,9 +62,9 @@ Scene::Scene()
 }
 
 void
-Scene::setProjectionMatrix(const Matrix4 &projectionMatrix)
+Scene::windowDimensionsChanged(int width, int height)
 {
-    _projectionMatrix = projectionMatrix;
+    _projectionMatrix = DromeMath::Matrix4::perspective((float)M_PI / 4.0f, (float)width / (float)height, 0.1f, 200.0f);
 }
 
 bool

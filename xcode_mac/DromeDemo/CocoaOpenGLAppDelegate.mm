@@ -41,9 +41,6 @@ using namespace DromeCore;
 
 @implementation CocoaOpenGLAppDelegate
 
-@synthesize window = _window;
-@synthesize view = _view;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// do some GL setup
@@ -58,6 +55,7 @@ using namespace DromeCore;
 
 	// initialize the scene
 	_scene = new Scene();
+    _view.eventHandler = _scene;
 	
 	// create timer to render the scene at 60fps
     _timer = [NSTimer timerWithTimeInterval:(1.0f / 60.0f)
@@ -103,7 +101,6 @@ getSecondsElapsed(void)
 {
 	// render the scene
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    _scene->setProjectionMatrix(_view.projectionMatrix);
     _scene->render();
 	glFlush();
 	[_view flush];
