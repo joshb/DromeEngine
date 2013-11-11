@@ -49,9 +49,9 @@ Scene::Scene()
 	_programLightColorLocation = _program->getUniformLocation("lightColor");
     
 	// set up red/green/blue lights
-	_lightColor[0] = 1.0f; _lightColor[1] = 0.0f; _lightColor[2] = 0.0f;
-	_lightColor[3] = 0.0f; _lightColor[4] = 1.0f; _lightColor[5] = 0.0f;
-	_lightColor[6] = 0.0f; _lightColor[7] = 0.0f; _lightColor[8] = 1.0f;
+    _lightColor[0] = Color3(1.0f, 0.0f, 0.0f);
+    _lightColor[1] = Color3(0.0f, 1.0f, 0.0f);
+    _lightColor[2] = Color3(0.0f, 0.0f, 1.0f);
     
 	// create the sphere
     _sphere = new Sphere(_program);
@@ -70,18 +70,18 @@ Scene::setProjectionMatrix(const Matrix4 &projectionMatrix)
 bool
 Scene::render()
 {
-    DromeMath::Matrix4 translationMatrix = DromeMath::Matrix4::translation(Vector3(-_cameraPosition[0], -_cameraPosition[1], -_cameraPosition[2]));
+    DromeMath::Matrix4 translationMatrix = DromeMath::Matrix4::translation(_cameraPosition * -1.0f);
     DromeMath::Matrix4 rotationMatrix = DromeMath::Matrix4::rotation(_cameraRotation, Vector3(0.0f, -1.0f, 0.0f));
     DromeMath::Matrix4 modelviewMatrix = rotationMatrix * translationMatrix;
     
 	// enable the program and set uniform variables
     glBindTexture(GL_TEXTURE_2D, _normalmap->getId());
     glUseProgram(_program->getId());
-	glUniformMatrix4fv(_programProjectionMatrixLocation, 1, GL_FALSE, _projectionMatrix.getData());
-	glUniformMatrix4fv(_programModelviewMatrixLocation, 1, GL_FALSE, modelviewMatrix.getData());
-	glUniform3fv(_programCameraPositionLocation, 1, _cameraPosition);
-	glUniform3fv(_programLightPositionLocation, NUM_LIGHTS, _lightPosition);
-	glUniform3fv(_programLightColorLocation, NUM_LIGHTS, _lightColor);
+    _program->setUniform("projectionMatrix", _projectionMatrix);
+    _program->setUniform("modelviewMatrix", modelviewMatrix);
+    _program->setUniform("cameraPosition", _cameraPosition);
+    _program->setUniform("lightPosition", _lightPosition, NUM_LIGHTS);
+    _program->setUniform("lightColor", _lightColor, NUM_LIGHTS);
     
 	// render the sphere
     _sphere->render();
@@ -100,13 +100,13 @@ Scene::cycle(float secondsElapsed)
 		const float radius = 1.75f;
 		float r = (((M_PI * 2.0f) / (float)NUM_LIGHTS) * (float)i) + _lightRotation;
         
-		_lightPosition[i * 3 + 0] = cosf(r) * radius;
-		_lightPosition[i * 3 + 1] = cosf(r) * sinf(r);
-		_lightPosition[i * 3 + 2] = sinf(r) * radius;
+		_lightPosition[i].x = cosf(r) * radius;
+		_lightPosition[i].y = cosf(r) * sinf(r);
+		_lightPosition[i].z = sinf(r) * radius;
 	}
     
     _cameraRotation -= (M_PI / 16.0f) * secondsElapsed;
-    _cameraPosition[0] = sinf(_cameraRotation) * 4.0f;
-    _cameraPosition[1] = 0.0f;
-    _cameraPosition[2] = cosf(_cameraRotation) * 4.0f;
+    _cameraPosition.x = sinf(_cameraRotation) * 4.0f;
+    _cameraPosition.y = 0.0f;
+    _cameraPosition.z = cosf(_cameraRotation) * 4.0f;
 }

@@ -49,11 +49,11 @@ private:
 	GLint _programLightColorLocation;
 	GLint _programFragmentColorLocation;
     
-    GLfloat _cameraRotation;
-	GLfloat _cameraPosition[3];
+    float _cameraRotation;
+    DromeMath::Vector3 _cameraPosition;
 	
-	float _lightPosition[NUM_LIGHTS * 3];
-	float _lightColor[NUM_LIGHTS * 3];
+    DromeMath::Vector3 _lightPosition[NUM_LIGHTS];
+    DromeMath::Color3 _lightColor[NUM_LIGHTS];
 	float _lightRotation;
     
 public:
