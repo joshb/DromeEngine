@@ -48,7 +48,11 @@ Texture::Texture(RefPtr <Image> image)
 			throw Exception("Texture::Texture(): Unsupported number of color components");
 			break;
 		case 1:
-			format = GL_RED;
+#ifndef GL_RGB
+			format = GL_LUMINANCE;
+#else
+            format = GL_RGB;
+#endif
 			break;
 		case 3:
 			format = GL_RGB;
