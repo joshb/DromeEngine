@@ -30,6 +30,5 @@
 @interface AppDelegate : NSObject <UIApplicationDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong, nonatomic) IBOutlet ViewController *viewController;
 
 @end

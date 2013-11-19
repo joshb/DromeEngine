@@ -50,8 +50,6 @@
 - (void)dealloc
 {
 	[self tearDownGL];
-	[_context release];
-	[super dealloc];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -74,16 +72,9 @@
 			forMode:NSDefaultRunLoopMode];
 			
 		// create EAGLContext
-		self.context = [[[EAGLContext alloc]
-			initWithAPI:kEAGLRenderingAPIOpenGLES2] autorelease];
+		self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 		if(!self.context) {
-			NSLog(@"Failed to create ES2 context; attempting to create ES1 context");
-            
-            self.context = [[[EAGLContext alloc]
-                             initWithAPI:kEAGLRenderingAPIOpenGLES1] autorelease];
-            if(!self.context) {
-                NSLog(@"Failed to create ES1 context");
-            }
+			NSLog(@"Failed to create ES2 context");
 		}
 		
 		[self setupGL];

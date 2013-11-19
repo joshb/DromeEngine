@@ -24,33 +24,22 @@
  */
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]
-		bounds]] autorelease];
-    // Override point for customization after application launch.
-	NSString *nibName = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-		? @"ViewController-iPad" : @"ViewController";
-	self.viewController = [[[ViewController alloc]
-		initWithNibName:nibName bundle:nil] autorelease];
-	self.window.rootViewController = self.viewController;
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]
+		bounds]];
     [self.window makeKeyAndVisible];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    self.window.rootViewController = [storyboard instantiateInitialViewController];
+    
     return YES;
-}
-
-- (void)dealloc
-{
-    [_window release];
-    [_viewController release];
-    [super dealloc];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

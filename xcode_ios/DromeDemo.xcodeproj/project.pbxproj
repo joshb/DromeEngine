@@ -11,9 +11,6 @@
 		0D03A28215D844D5005D6261 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D03A27F15D844D5005D6261 /* AppDelegate.mm */; };
 		0D03A28315D844D5005D6261 /* DromeGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03A28115D844D5005D6261 /* DromeGLView.m */; };
 		0D03A28915D844DE005D6261 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D03A28415D844DE005D6261 /* main.mm */; };
-		0D03A28A15D844DE005D6261 /* ViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D03A28515D844DE005D6261 /* ViewController-iPad.xib */; };
-		0D03A28B15D844DE005D6261 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03A28715D844DE005D6261 /* ViewController.m */; };
-		0D03A28C15D844DE005D6261 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D03A28815D844DE005D6261 /* ViewController.xib */; };
 		0D03A28E15D845E7005D6261 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A28D15D845E7005D6261 /* OpenGLES.framework */; };
 		0D03A29015D84606005D6261 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A28F15D84606005D6261 /* Foundation.framework */; };
 		0D03A29215D8461B005D6261 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A29115D8461B005D6261 /* CoreGraphics.framework */; };
@@ -22,6 +19,7 @@
 		0D03A29715D846C6005D6261 /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A25E15D843C5005D6261 /* libDromeCore.a */; };
 		0D03A29815D846C6005D6261 /* libDromeGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A26015D843C5005D6261 /* libDromeGL.a */; };
 		0D03A29915D846C6005D6261 /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A25C15D843C5005D6261 /* libDromeMath.a */; };
+		0D732A68183AA0FD00617785 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D732A67183AA0FD00617785 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,15 +57,12 @@
 		0D03A28015D844D5005D6261 /* DromeGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DromeGLView.h; sourceTree = "<group>"; };
 		0D03A28115D844D5005D6261 /* DromeGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DromeGLView.m; sourceTree = "<group>"; };
 		0D03A28415D844DE005D6261 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		0D03A28515D844DE005D6261 /* ViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ViewController-iPad.xib"; sourceTree = "<group>"; };
-		0D03A28615D844DE005D6261 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0D03A28715D844DE005D6261 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0D03A28815D844DE005D6261 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		0D03A28D15D845E7005D6261 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		0D03A28F15D84606005D6261 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0D03A29115D8461B005D6261 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		0D03A29315D8462D005D6261 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		0D03A29515D846AA005D6261 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		0D732A67183AA0FD00617785 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,15 +128,12 @@
 			isa = PBXGroup;
 			children = (
 				0D03A28415D844DE005D6261 /* main.mm */,
-				0D03A28515D844DE005D6261 /* ViewController-iPad.xib */,
-				0D03A28615D844DE005D6261 /* ViewController.h */,
-				0D03A28715D844DE005D6261 /* ViewController.m */,
-				0D03A28815D844DE005D6261 /* ViewController.xib */,
 				0D03A27915D843EF005D6261 /* AppDelegate.h */,
 				0D03A27F15D844D5005D6261 /* AppDelegate.mm */,
 				0D03A28015D844D5005D6261 /* DromeGLView.h */,
 				0D03A28115D844D5005D6261 /* DromeGLView.m */,
 				0D03A27115D843EF005D6261 /* Supporting Files */,
+				0D732A67183AA0FD00617785 /* Storyboard.storyboard */,
 			);
 			path = DromeDemo;
 			sourceTree = "<group>";
@@ -237,8 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D03A27515D843EF005D6261 /* InfoPlist.strings in Resources */,
-				0D03A28A15D844DE005D6261 /* ViewController-iPad.xib in Resources */,
-				0D03A28C15D844DE005D6261 /* ViewController.xib in Resources */,
+				0D732A68183AA0FD00617785 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +243,6 @@
 				0D03A28215D844D5005D6261 /* AppDelegate.mm in Sources */,
 				0D03A28315D844D5005D6261 /* DromeGLView.m in Sources */,
 				0D03A28915D844DE005D6261 /* main.mm in Sources */,
-				0D03A28B15D844DE005D6261 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +280,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -312,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "DromeDemo/DromeDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,6 +317,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -341,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "DromeDemo/DromeDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -370,6 +362,7 @@
 				0D03A27E15D843EF005D6261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

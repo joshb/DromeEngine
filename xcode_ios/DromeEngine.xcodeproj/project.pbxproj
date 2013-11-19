@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D05EAE1129B23EF0000C6AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EAE0129B23EF0000C6AB /* UIKit.framework */; };
-		0D05EB3D129B24250000C6AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D05EB3C129B24250000C6AB /* QuartzCore.framework */; };
 		0DB9B7AB157AF33F00B737EF /* BoundingBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A1157AF33F00B737EF /* BoundingBox.cpp */; };
 		0DB9B7AC157AF33F00B737EF /* BoundingSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A2157AF33F00B737EF /* BoundingSphere.cpp */; };
 		0DB9B7AD157AF33F00B737EF /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A4157AF33F00B737EF /* Matrix4.cpp */; };
@@ -41,12 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D05EA76129B23900000C6AB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		0D05EAE0129B23EF0000C6AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0D05EB3C129B24250000C6AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0D5196331299EDCE0065E656 /* libDromeCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D51964A1299EE180065E656 /* libDromeGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D51970E1299EF510065E656 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0DB9B768157AF2F600B737EF /* BoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingBox.h; sourceTree = "<group>"; };
 		0DB9B769157AF2F600B737EF /* BoundingSphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingSphere.h; sourceTree = "<group>"; };
 		0DB9B76A157AF2F600B737EF /* DromeMath */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeMath; sourceTree = "<group>"; };
@@ -106,7 +100,6 @@
 		0DB9B7D1157AF3FE00B737EF /* PngImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PngImage.h; sourceTree = "<group>"; };
 		0DB9B7D2157AF3FE00B737EF /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
 		0DB9B7D3157AF3FE00B737EF /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
-		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libDromeMath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeMath.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,8 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D05EAE1129B23EF0000C6AB /* UIKit.framework in Frameworks */,
-				0D05EB3D129B24250000C6AB /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,22 +143,9 @@
 			children = (
 				0DB9B766157AF2E300B737EF /* include */,
 				0DB9B765157AF2DB00B737EF /* src */,
-				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = DromeEngine;
-			sourceTree = "<group>";
-		};
-		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0D05EAE0129B23EF0000C6AB /* UIKit.framework */,
-				0D05EA76129B23900000C6AB /* OpenGLES.framework */,
-				0D51970E1299EF510065E656 /* CoreGraphics.framework */,
-				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
-				0D05EB3C129B24250000C6AB /* QuartzCore.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0DB9B765157AF2DB00B737EF /* src */ = {
@@ -532,6 +510,7 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -560,6 +539,7 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;

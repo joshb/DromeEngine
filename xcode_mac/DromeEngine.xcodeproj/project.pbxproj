@@ -134,8 +134,8 @@
 		0D1C1BF9149C5F0600D18BAB = {
 			isa = PBXGroup;
 			children = (
-				0D1C1C46149C5F7300D18BAB /* src */,
 				0D1C1C05149C5F4200D18BAB /* include */,
+				0D1C1C46149C5F7300D18BAB /* src */,
 				0D1C1C41149C5F5200D18BAB /* Products */,
 			);
 			sourceTree = "<group>";
