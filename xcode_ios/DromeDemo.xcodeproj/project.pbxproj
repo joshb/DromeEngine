@@ -19,6 +19,8 @@
 		0D03A29715D846C6005D6261 /* libDromeCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A25E15D843C5005D6261 /* libDromeCore.a */; };
 		0D03A29815D846C6005D6261 /* libDromeGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A26015D843C5005D6261 /* libDromeGL.a */; };
 		0D03A29915D846C6005D6261 /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A25C15D843C5005D6261 /* libDromeMath.a */; };
+		0D5E3838183BFBA80090BC54 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5E3837183BFBA80090BC54 /* Default-568h@2x.png */; };
+		0D5E383A183BFC200090BC54 /* dromeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5E3839183BFC200090BC54 /* dromeIcon.png */; };
 		0D732A68183AA0FD00617785 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D732A67183AA0FD00617785 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		0D03A29115D8461B005D6261 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		0D03A29315D8462D005D6261 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		0D03A29515D846AA005D6261 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		0D5E3837183BFBA80090BC54 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0D5E3839183BFC200090BC54 /* dromeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dromeIcon.png; path = ../../dromeIcon.png; sourceTree = "<group>"; };
 		0D732A67183AA0FD00617785 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +91,7 @@
 		0D03A23E15D84260005D6261 = {
 			isa = PBXGroup;
 			children = (
+				0D5E3837183BFBA80090BC54 /* Default-568h@2x.png */,
 				0D03A25215D843C5005D6261 /* DromeEngine.xcodeproj */,
 				0D03A27015D843EF005D6261 /* DromeDemo */,
 				0D03A26915D843EF005D6261 /* Frameworks */,
@@ -141,6 +146,7 @@
 		0D03A27115D843EF005D6261 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0D5E3839183BFC200090BC54 /* dromeIcon.png */,
 				0D03A27215D843EF005D6261 /* DromeDemo-Info.plist */,
 				0D03A27315D843EF005D6261 /* InfoPlist.strings */,
 				0D03A27815D843EF005D6261 /* DromeDemo-Prefix.pch */,
@@ -228,8 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5E383A183BFC200090BC54 /* dromeIcon.png in Resources */,
 				0D03A27515D843EF005D6261 /* InfoPlist.strings in Resources */,
 				0D732A68183AA0FD00617785 /* Storyboard.storyboard in Resources */,
+				0D5E3838183BFBA80090BC54 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
