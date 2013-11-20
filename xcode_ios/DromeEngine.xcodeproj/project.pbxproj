@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D5E3846183C023D0090BC54 /* StaticMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E3845183C023D0090BC54 /* StaticMesh.cpp */; };
 		0DB9B7AB157AF33F00B737EF /* BoundingBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A1157AF33F00B737EF /* BoundingBox.cpp */; };
 		0DB9B7AC157AF33F00B737EF /* BoundingSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A2157AF33F00B737EF /* BoundingSphere.cpp */; };
 		0DB9B7AD157AF33F00B737EF /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7A4157AF33F00B737EF /* Matrix4.cpp */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0D5196331299EDCE0065E656 /* libDromeCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D51964A1299EE180065E656 /* libDromeGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDromeGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5E3844183C02240090BC54 /* StaticMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticMesh.h; sourceTree = "<group>"; };
+		0D5E3845183C023D0090BC54 /* StaticMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaticMesh.cpp; sourceTree = "<group>"; };
 		0DB9B768157AF2F600B737EF /* BoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingBox.h; sourceTree = "<group>"; };
 		0DB9B769157AF2F600B737EF /* BoundingSphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundingSphere.h; sourceTree = "<group>"; };
 		0DB9B76A157AF2F600B737EF /* DromeMath */ = {isa = PBXFileReference; lastKnownFileType = text; path = DromeMath; sourceTree = "<group>"; };
@@ -196,6 +199,7 @@
 				0DB9B778157AF30400B737EF /* ShaderProgram.h */,
 				0DB9B779157AF30400B737EF /* Sphere.h */,
 				0DB9B77A157AF30400B737EF /* Square.h */,
+				0D5E3844183C02240090BC54 /* StaticMesh.h */,
 				0DB9B77B157AF30400B737EF /* Texture.h */,
 				0DB9B77C157AF30400B737EF /* VertexBuffer.h */,
 			);
@@ -246,6 +250,7 @@
 				0DB9B7B8157AF3F500B737EF /* ShaderProgram.cpp */,
 				0DB9B7B9157AF3F500B737EF /* Sphere.cpp */,
 				0DB9B7BA157AF3F500B737EF /* Square.cpp */,
+				0D5E3845183C023D0090BC54 /* StaticMesh.cpp */,
 				0DB9B7BB157AF3F500B737EF /* Texture.cpp */,
 				0DB9B7BC157AF3F500B737EF /* VertexBuffer.cpp */,
 			);
@@ -409,6 +414,7 @@
 				0DB9B7BD157AF3F500B737EF /* Cube.cpp in Sources */,
 				0DB9B7BF157AF3F500B737EF /* ShaderProgram.cpp in Sources */,
 				0DB9B7C0157AF3F500B737EF /* Sphere.cpp in Sources */,
+				0D5E3846183C023D0090BC54 /* StaticMesh.cpp in Sources */,
 				0DB9B7C1157AF3F500B737EF /* Square.cpp in Sources */,
 				0DB9B7C2157AF3F500B737EF /* Texture.cpp in Sources */,
 				0DB9B7C3157AF3F500B737EF /* VertexBuffer.cpp in Sources */,
