@@ -21,6 +21,10 @@
 		0D03A29915D846C6005D6261 /* libDromeMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A25C15D843C5005D6261 /* libDromeMath.a */; };
 		0D5E3838183BFBA80090BC54 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5E3837183BFBA80090BC54 /* Default-568h@2x.png */; };
 		0D5E383A183BFC200090BC54 /* dromeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5E3839183BFC200090BC54 /* dromeIcon.png */; };
+		0D5E383D183C00BA0090BC54 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E383B183C00BA0090BC54 /* Scene.cpp */; };
+		0D5E3840183C00D30090BC54 /* shader.fp in Resources */ = {isa = PBXBuildFile; fileRef = 0D5E383E183C00D30090BC54 /* shader.fp */; };
+		0D5E3841183C00D30090BC54 /* shader.vp in Resources */ = {isa = PBXBuildFile; fileRef = 0D5E383F183C00D30090BC54 /* shader.vp */; };
+		0D5E3843183C00E00090BC54 /* normalmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5E3842183C00E00090BC54 /* normalmap.png */; };
 		0D732A68183AA0FD00617785 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D732A67183AA0FD00617785 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,11 @@
 		0D03A29515D846AA005D6261 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		0D5E3837183BFBA80090BC54 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0D5E3839183BFC200090BC54 /* dromeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dromeIcon.png; path = ../../dromeIcon.png; sourceTree = "<group>"; };
+		0D5E383B183C00BA0090BC54 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		0D5E383C183C00BA0090BC54 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		0D5E383E183C00D30090BC54 /* shader.fp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.fp; sourceTree = "<group>"; };
+		0D5E383F183C00D30090BC54 /* shader.vp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.vp; sourceTree = "<group>"; };
+		0D5E3842183C00E00090BC54 /* normalmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalmap.png; sourceTree = "<group>"; };
 		0D732A67183AA0FD00617785 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +155,11 @@
 		0D03A27115D843EF005D6261 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0D5E3842183C00E00090BC54 /* normalmap.png */,
+				0D5E383E183C00D30090BC54 /* shader.fp */,
+				0D5E383F183C00D30090BC54 /* shader.vp */,
+				0D5E383B183C00BA0090BC54 /* Scene.cpp */,
+				0D5E383C183C00BA0090BC54 /* Scene.h */,
 				0D5E3839183BFC200090BC54 /* dromeIcon.png */,
 				0D03A27215D843EF005D6261 /* DromeDemo-Info.plist */,
 				0D03A27315D843EF005D6261 /* InfoPlist.strings */,
@@ -235,8 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5E383A183BFC200090BC54 /* dromeIcon.png in Resources */,
+				0D5E3843183C00E00090BC54 /* normalmap.png in Resources */,
+				0D5E3840183C00D30090BC54 /* shader.fp in Resources */,
 				0D03A27515D843EF005D6261 /* InfoPlist.strings in Resources */,
 				0D732A68183AA0FD00617785 /* Storyboard.storyboard in Resources */,
+				0D5E3841183C00D30090BC54 /* shader.vp in Resources */,
 				0D5E3838183BFBA80090BC54 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5E383D183C00BA0090BC54 /* Scene.cpp in Sources */,
 				0D03A28215D844D5005D6261 /* AppDelegate.mm in Sources */,
 				0D03A28315D844D5005D6261 /* DromeGLView.m in Sources */,
 				0D03A28915D844DE005D6261 /* main.mm in Sources */,
@@ -303,6 +321,8 @@
 				GCC_PREFIX_HEADER = "DromeDemo/DromeDemo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
+					"APPLE=1",
+					"IOS=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -336,6 +356,10 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DromeDemo/DromeDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"APPLE=1",
+					"IOS=1",
+				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
