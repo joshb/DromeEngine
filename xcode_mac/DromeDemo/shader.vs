@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Josh A. Beam
+ * Copyright (C) 2010-2012 Josh A. Beam
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,45 +22,40 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+ 
+#version 150
 
-#ifndef __DromeDemo__Scene2__
-#define __DromeDemo__Scene2__
+const int NUM_LIGHTS = 3;
 
-#include <DromeCore/EventHandler.h>
-#include <DromeGL/StaticMesh.h>
-#include <DromeGL/Texture.h>
-#include <DromeGL/ShaderProgram.h>
+uniform mat4 projectionMatrix;
+uniform mat4 modelviewMatrix;
 
-#define NUM_LIGHTS 3
+uniform vec3 cameraPosition;
+uniform vec3 lightPosition[NUM_LIGHTS];
 
-class Scene : public DromeCore::EventHandler
+in vec3 vertexPosition;
+in vec2 vertexTexCoords;
+in vec3 vertexTangent;
+in vec3 vertexBitangent;
+in vec3 vertexNormal;
+
+out vec2 fragmentTexCoords;
+out vec3 cameraVector;
+out vec3 lightVector[NUM_LIGHTS];
+
+void
+main()
 {
-private:
-    DromeMath::Matrix4 _projectionMatrix;
-    
-    DromeCore::RefPtr <DromeGL::Texture> _normalmap;
-    DromeGL::StaticMesh *_mesh;
-    
-    DromeCore::RefPtr <DromeGL::ShaderProgram> _program;
-	GLint _programProjectionMatrixLocation;
-	GLint _programModelviewMatrixLocation;
-	GLint _programCameraPositionLocation;
-	GLint _programLightPositionLocation;
-	GLint _programLightColorLocation;
-	GLint _programFragmentColorLocation;
-    
-    float _cameraRotation;
-    DromeMath::Vector3 _cameraPosition;
-	
-    DromeMath::Vector3 _lightPosition[NUM_LIGHTS];
-    DromeMath::Color3 _lightColor[NUM_LIGHTS];
-	float _lightRotation;
-    
-public:
-    Scene();
-    void windowDimensionsChanged(int width, int height);
-    bool render();
-    void cycle(float secondsElapsed);
-};
+	mat3 tangentSpace = mat3(vertexTangent, vertexBitangent, vertexNormal);
 
-#endif /* defined(__DromeDemo__Scene2__) */
+	// set the vector from the vertex to the camera
+	cameraVector = (cameraPosition - vertexPosition.xyz) * tangentSpace;
+
+	// set the vectors from the vertex to each light
+	for(int i = 0; i < NUM_LIGHTS; ++i)
+		lightVector[i] = (lightPosition[i] - vertexPosition.xyz) * tangentSpace;
+
+	// output the transformed vertex
+	fragmentTexCoords = vertexTexCoords;
+	gl_Position = (projectionMatrix * modelviewMatrix) * vec4(vertexPosition, 1.0);
+}

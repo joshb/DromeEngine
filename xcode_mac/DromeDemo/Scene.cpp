@@ -24,6 +24,7 @@
  */
 
 #include <cmath>
+#include <DromeGL/Sphere.h>
 #include "Scene.h"
 
 using namespace DromeCore;
@@ -37,8 +38,8 @@ Scene::Scene()
     
 	// create the program, attach shaders, and link the program */
     _program = ShaderProgram::create();
-    _program->attachVertexShaderFromFile("shader.vp");
-    _program->attachFragmentShaderFromFile("shader.fp");
+    _program->attachVertexShaderFromFile("shader.vs");
+    _program->attachFragmentShaderFromFile("shader.fs");
     _program->linkShaders();
     
 	// get uniform locations
@@ -53,8 +54,8 @@ Scene::Scene()
     _lightColor[1] = Color3(0.0f, 1.0f, 0.0f);
     _lightColor[2] = Color3(0.0f, 0.0f, 1.0f);
     
-	// create the sphere
-    _sphere = new Sphere(_program);
+	// create the mesh
+    _mesh = new Sphere(_program);
     
 	// do the first cycle to initialize positions
 	_lightRotation = 0.0f;
@@ -82,9 +83,8 @@ Scene::render()
     _program->setUniform("cameraPosition", _cameraPosition);
     _program->setUniform("lightPosition", _lightPosition, NUM_LIGHTS);
     _program->setUniform("lightColor", _lightColor, NUM_LIGHTS);
-    
-	// render the sphere
-    _sphere->render();
+
+    _mesh->render();
     
 	// disable the program
 	glUseProgram(0);
