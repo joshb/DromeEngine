@@ -17,4 +17,4 @@ if(APPLE)
 	add_definitions(-DAPPLE)
 endif(APPLE)
 
-subdirs(DromeXml include src doc utils demo)
+subdirs(include src doc utils demo)
