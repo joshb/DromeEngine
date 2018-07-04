@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D02B9BA15DC874C00D8EF2A /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9B515DC874C00D8EF2A /* Image.cpp */; };
-		0D02B9BB15DC874C00D8EF2A /* PcxImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9B615DC874C00D8EF2A /* PcxImage.cpp */; };
-		0D02B9BC15DC874C00D8EF2A /* PcxImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D02B9B715DC874C00D8EF2A /* PcxImage.h */; };
 		0D02B9BD15DC874C00D8EF2A /* PngImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9B815DC874C00D8EF2A /* PngImage.cpp */; };
 		0D02B9BE15DC874C00D8EF2A /* PngImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D02B9B915DC874C00D8EF2A /* PngImage.h */; };
 		0D02B9C015DC879200D8EF2A /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D02B9BF15DC879200D8EF2A /* Vector4.cpp */; };
@@ -41,8 +39,6 @@
 
 /* Begin PBXFileReference section */
 		0D02B9B515DC874C00D8EF2A /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
-		0D02B9B615DC874C00D8EF2A /* PcxImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PcxImage.cpp; sourceTree = "<group>"; };
-		0D02B9B715DC874C00D8EF2A /* PcxImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcxImage.h; sourceTree = "<group>"; };
 		0D02B9B815DC874C00D8EF2A /* PngImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PngImage.cpp; sourceTree = "<group>"; };
 		0D02B9B915DC874C00D8EF2A /* PngImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PngImage.h; sourceTree = "<group>"; };
 		0D02B9BF15DC879200D8EF2A /* Vector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector4.cpp; sourceTree = "<group>"; };
@@ -228,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				0D02B9B515DC874C00D8EF2A /* Image.cpp */,
-				0D02B9B615DC874C00D8EF2A /* PcxImage.cpp */,
-				0D02B9B715DC874C00D8EF2A /* PcxImage.h */,
 				0D02B9B815DC874C00D8EF2A /* PngImage.cpp */,
 				0D02B9B915DC874C00D8EF2A /* PngImage.h */,
 				0D1C1C7E149C5FD300D18BAB /* Button.cpp */,
@@ -298,7 +292,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D02B9BC15DC874C00D8EF2A /* PcxImage.h in Headers */,
 				0D02B9BE15DC874C00D8EF2A /* PngImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +422,6 @@
 				0D1C1DCF149C74CE00D18BAB /* String.cpp in Sources */,
 				0D1C1DD0149C74CE00D18BAB /* Util.cpp in Sources */,
 				0D02B9BA15DC874C00D8EF2A /* Image.cpp in Sources */,
-				0D02B9BB15DC874C00D8EF2A /* PcxImage.cpp in Sources */,
 				0D02B9BD15DC874C00D8EF2A /* PngImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

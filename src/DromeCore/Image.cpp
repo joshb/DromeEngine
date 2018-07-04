@@ -28,7 +28,6 @@
 #include <DromeCore/String.h>
 #include <DromeCore/Util.h>
 #include <DromeCore/Image.h>
-#include "PcxImage.h"
 #include "PngImage.h"
 
 #ifdef APPLE
@@ -365,9 +364,7 @@ Image::create(const string &filename)
 	// get file extension and use it to call the
 	// appropriate function to load the image
 	string extension = filename.substr(tmp);
-	if(strCaseCmp(extension.c_str(), ".pcx") == 0)
-		return PcxImage::create(File::getPath(filename).c_str());
-	else if(strCaseCmp(extension.c_str(), ".png") == 0)
+	if(strCaseCmp(extension.c_str(), ".png") == 0)
 		return PngImage::create(File::getPath(filename).c_str());
 	else
 		throw Exception(string("Image::create(): Unsupported file extension: ") + filename);

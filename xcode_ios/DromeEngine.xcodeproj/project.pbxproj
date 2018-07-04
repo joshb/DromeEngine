@@ -31,8 +31,6 @@
 		0DB9B7DA157AF3FE00B737EF /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7CB157AF3FE00B737EF /* File.cpp */; };
 		0DB9B7DB157AF3FE00B737EF /* File_Apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7CC157AF3FE00B737EF /* File_Apple.mm */; };
 		0DB9B7DC157AF3FE00B737EF /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7CD157AF3FE00B737EF /* Image.cpp */; };
-		0DB9B7DD157AF3FE00B737EF /* PcxImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7CE157AF3FE00B737EF /* PcxImage.cpp */; };
-		0DB9B7DE157AF3FE00B737EF /* PcxImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB9B7CF157AF3FE00B737EF /* PcxImage.h */; };
 		0DB9B7DF157AF3FE00B737EF /* PngImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D0157AF3FE00B737EF /* PngImage.cpp */; };
 		0DB9B7E0157AF3FE00B737EF /* PngImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB9B7D1157AF3FE00B737EF /* PngImage.h */; };
 		0DB9B7E1157AF3FE00B737EF /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9B7D2157AF3FE00B737EF /* String.cpp */; };
@@ -97,8 +95,6 @@
 		0DB9B7CB157AF3FE00B737EF /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
 		0DB9B7CC157AF3FE00B737EF /* File_Apple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = File_Apple.mm; sourceTree = "<group>"; };
 		0DB9B7CD157AF3FE00B737EF /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
-		0DB9B7CE157AF3FE00B737EF /* PcxImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PcxImage.cpp; sourceTree = "<group>"; };
-		0DB9B7CF157AF3FE00B737EF /* PcxImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcxImage.h; sourceTree = "<group>"; };
 		0DB9B7D0157AF3FE00B737EF /* PngImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PngImage.cpp; sourceTree = "<group>"; };
 		0DB9B7D1157AF3FE00B737EF /* PngImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PngImage.h; sourceTree = "<group>"; };
 		0DB9B7D2157AF3FE00B737EF /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
@@ -269,8 +265,6 @@
 				0DB9B7CB157AF3FE00B737EF /* File.cpp */,
 				0DB9B7CC157AF3FE00B737EF /* File_Apple.mm */,
 				0DB9B7CD157AF3FE00B737EF /* Image.cpp */,
-				0DB9B7CE157AF3FE00B737EF /* PcxImage.cpp */,
-				0DB9B7CF157AF3FE00B737EF /* PcxImage.h */,
 				0DB9B7D0157AF3FE00B737EF /* PngImage.cpp */,
 				0DB9B7D1157AF3FE00B737EF /* PngImage.h */,
 				0DB9B7D2157AF3FE00B737EF /* String.cpp */,
@@ -287,7 +281,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DB9B7DE157AF3FE00B737EF /* PcxImage.h in Headers */,
 				0DB9B7E0157AF3FE00B737EF /* PngImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +393,6 @@
 				0DB9B7DA157AF3FE00B737EF /* File.cpp in Sources */,
 				0DB9B7DB157AF3FE00B737EF /* File_Apple.mm in Sources */,
 				0DB9B7DC157AF3FE00B737EF /* Image.cpp in Sources */,
-				0DB9B7DD157AF3FE00B737EF /* PcxImage.cpp in Sources */,
 				0DB9B7DF157AF3FE00B737EF /* PngImage.cpp in Sources */,
 				0DB9B7E1157AF3FE00B737EF /* String.cpp in Sources */,
 				0DB9B7E2157AF3FE00B737EF /* Util.cpp in Sources */,
