@@ -140,7 +140,6 @@ BoundingBox::collisionCheck(const BoundingBox *box) const
 		if(!infoSet || dist < info.distance) {
 			info.direction = Vector3(0.0f, 0.0f, 1.0f);
 			info.distance = dist;
-			infoSet = true;
 		}
 	}
 
