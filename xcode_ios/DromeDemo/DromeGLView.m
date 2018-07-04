@@ -67,7 +67,7 @@
 		// set up display link
 		CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self
 			selector:@selector(drawView:)];
-		link.frameInterval = 1;
+		link.preferredFramesPerSecond = 30;
 		[link addToRunLoop:[NSRunLoop currentRunLoop]
 			forMode:NSDefaultRunLoopMode];
 			
